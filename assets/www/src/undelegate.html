@@ -1,0 +1,293 @@
+<script>{
+		"title":
+			".undelegate()",
+		"excerpt":
+			"Remove a handler from the event for all elements which match the current selector, based upon a specific set of root elements.",
+		"termSlugs": {
+			"category": [
+				"events/event-handler-attachment","version/1.4.2","version/1.4.3","version/1.6"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">.undelegate()</span><span class="returns">Returns: jQuery</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Remove a handler from the event for all elements which match the current selector, based upon a specific set of root elements.</p>
+<ul class="signatures">
+<li class="signature" id="undelegate">
+<h4 class="name">
+<span class="version-details">version added: 1.4.2</span>.undelegate()</h4>
+<ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
+</li>
+<li class="signature" id="undelegate-selector-eventType">
+<h4 class="name">
+<span class="version-details">version added: 1.4.2</span>.undelegate( selector, eventType )</h4>
+<ul>
+<li>
+<div><strong>selector</strong></div>
+<div>Type: String</div>
+<div>A selector which will be used to filter the event results.</div>
+</li>
+<li>
+<div><strong>eventType</strong></div>
+<div>Type: String</div>
+<div>A string containing a JavaScript event type, such as "click" or "keydown"</div>
+</li>
+</ul>
+</li>
+<li class="signature" id="undelegate-selector-eventType-handlereventObject">
+<h4 class="name">
+<span class="version-details">version added: 1.4.2</span>.undelegate( selector, eventType, handler(eventObject) )</h4>
+<ul>
+<li>
+<div><strong>selector</strong></div>
+<div>Type: String</div>
+<div>A selector which will be used to filter the event results.</div>
+</li>
+<li>
+<div><strong>eventType</strong></div>
+<div>Type: String</div>
+<div>A string containing a JavaScript event type, such as "click" or "keydown"</div>
+</li>
+<li>
+<div><strong>handler(eventObject)</strong></div>
+<div>Type: Function()</div>
+<div>A function to execute at the time the event is triggered.</div>
+</li>
+</ul>
+</li>
+<li class="signature" id="undelegate-selector-events">
+<h4 class="name">
+<span class="version-details">version added: 1.4.3</span>.undelegate( selector, events )</h4>
+<ul>
+<li>
+<div><strong>selector</strong></div>
+<div>Type: String</div>
+<div>A selector which will be used to filter the event results.</div>
+</li>
+<li>
+<div><strong>events</strong></div>
+<div>Type: PlainObject</div>
+<div>An object of one or more event types and previously bound functions to unbind from them.</div>
+</li>
+</ul>
+</li>
+<li class="signature" id="undelegate-namespace">
+<h4 class="name">
+<span class="version-details">version added: 1.6</span>.undelegate( namespace )</h4>
+<ul><li>
+<div><strong>namespace</strong></div>
+<div>Type: String</div>
+<div>A string containing a namespace to unbind all events from.</div>
+</li></ul>
+</li>
+</ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>The <code>.undelegate()</code> method is a way of removing event handlers that have been bound using <code>.delegate()</code>. <strong>As of jQuery 1.7</strong>, the <code>.on()</code> and <code>.off()</code> methods are preferred for attaching and removing event handlers.</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
+<h4>Example: <span class="desc">Can bind and unbind events to the colored button.</span>
+</h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+						<div class="line n28">28</div>
+					
+						<div class="line n29">29</div>
+					
+						<div class="line n30">30</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code><span class="tag">button</span> <span class="rules">{ <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">5</span>px;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code><span class="tag">button</span><span class="id">#theone</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">red;</span></span> <span class="rule"><span class="attribute">background</span>:<span class="value">yellow;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"theone"</span>&gt;</span>Does nothing...<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"bind"</span>&gt;</span>Bind Click<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"unbind"</span>&gt;</span>Unbind Click<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"display:none;"</span>&gt;</span>Click!<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="function"><span class="keyword">function</span> <span class="title">aClick</span><span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"div"</span>).show().fadeOut(<span class="string">"slow"</span>);</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#bind"</span>).click(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"body"</span>).delegate(<span class="string">"#theone"</span>, <span class="string">"click"</span>, aClick)</code></div></div><div class="container"><div class="line"><code>    .find(<span class="string">"#theone"</span>).text(<span class="string">"Can Click!"</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#unbind"</span>).click(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"body"</span>).undelegate(<span class="string">"#theone"</span>, <span class="string">"click"</span>, aClick)</code></div></div><div class="container"><div class="line"><code>    .find(<span class="string">"#theone"</span>).text(<span class="string">"Does nothing..."</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div>
+<div class="entry-example" id="example-1">
+<h4>Example: <span class="desc">To unbind all delegated events from all paragraphs, write:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).undelegate()</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-2">
+<h4>Example: <span class="desc">To unbind all delegated click events from all paragraphs, write:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).undelegate( <span class="string">"click"</span> )</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-3">
+<h4>Example: <span class="desc">To undelegate just one previously bound handler, pass the function in as the third argument:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  <span class="comment">// code to handle some kind of event</span></code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// ... now foo will be called when paragraphs are clicked ...</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"body"</span>).delegate(<span class="string">"p"</span>, <span class="string">"click"</span>, foo);</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// ... foo will no longer be called.</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"body"</span>).undelegate(<span class="string">"p"</span>, <span class="string">"click"</span>, foo); </code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-4">
+<h4>Example: <span class="desc">To unbind all delegated events by their namespace:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  <span class="comment">// code to handle some kind of event</span></code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// delegate events under the ".whatever" namespace</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"form"</span>).delegate(<span class="string">":button"</span>, <span class="string">"click.whatever"</span>, foo);</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$(<span class="string">"form"</span>).delegate(<span class="string">"input[type='text']"</span>, <span class="string">"keypress.whatever"</span>, foo);</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// unbind all events delegated under the ".whatever" namespace</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$(<span class="string">"form"</span>).undelegate(<span class="string">".whatever"</span>);</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>

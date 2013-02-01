@@ -1,0 +1,76 @@
+<script>{
+		"title":
+			"jQuery.isNumeric()",
+		"excerpt":
+			"Determines whether its argument is a number.",
+		"termSlugs": {
+			"category": [
+				"utilities","version/1.7"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">jQuery.isNumeric( value )</span><span class="returns">Returns: Boolean</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Determines whether its argument is a number.</p>
+<ul class="signatures"><li class="signature" id="jQuery-isNumeric-value">
+<h4 class="name">
+<span class="version-details">version added: 1.7</span>jQuery.isNumeric( value )</h4>
+<ul><li>
+<div><strong>value</strong></div>
+<div>Type: PlainObject</div>
+<div>The value to be tested.</div>
+</li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>The <code>$.isNumeric()</code> method checks whether its argument represents a numeric value. If so, it returns <code>true</code>. Otherwise it returns <code>false</code>. The argument can be of any type.</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Sample return values of $.isNumeric with various inputs.</span></h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$.isNumeric(<span class="string">"-10"</span>);  <span class="comment">// true</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(<span class="number">16</span>);     <span class="comment">// true</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(<span class="number">0xFF</span>);   <span class="comment">// true</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(<span class="string">"0xFF"</span>); <span class="comment">// true</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(<span class="string">"8e5"</span>);  <span class="comment">// true (exponential notation string)</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(<span class="number">3.1415</span>); <span class="comment">// true</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(+<span class="number">10</span>);    <span class="comment">// true</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(<span class="number">0144</span>);   <span class="comment">// true (octal integer literal)</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(<span class="string">""</span>);     <span class="comment">// false</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric({});     <span class="comment">// false (empty object)</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(<span class="literal">NaN</span>);    <span class="comment">// false</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(<span class="literal">null</span>);   <span class="comment">// false</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(<span class="literal">true</span>);   <span class="comment">// false</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(<span class="literal">Infinity</span>); <span class="comment">// false</span></code></div></div><div class="container"><div class="line"><code>$.isNumeric(<span class="literal">undefined</span>); <span class="comment">// false</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>

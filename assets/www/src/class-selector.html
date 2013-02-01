@@ -1,0 +1,160 @@
+<script>{
+		"title":
+			"Class Selector (\".class\")",
+		"excerpt":
+			"Selects all elements with the given class. ",
+		"termSlugs": {
+			"category": [
+				"selectors/basic-css-selectors","version/1.0"
+			]
+		}
+	}</script><h2 class="section-title"><span>class selector</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Selects all elements with the given class. </p>
+<ul class="signatures"><li class="signature">
+<h4 class="name">
+<span class="version-details">version added: 1.0</span>jQuery( ".class" )</h4>
+<p class="argument"><strong>class: </strong>A class to search for. An element can have multiple classes; only one of them must match.</p>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>For class selectors, jQuery uses JavaScript's native <code>getElementsByClassName()</code> function if the browser supports it.</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
+<h4>Example: <span class="desc">Finds the element with the class "myClass".</span>
+</h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">div</span>,<span class="tag">span</span> <span class="rules">{</span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">40</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">float</span>:<span class="value">left;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">10</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#EEEEEE</span>;</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"notMe"</span>&gt;</span>div class="notMe"<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"myClass"</span>&gt;</span>div class="myClass"<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"myClass"</span>&gt;</span>span class="myClass"<span class="tag">&lt;/<span class="title">span</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">$(<span class="string">".myClass"</span>).css(<span class="string">"border"</span>,<span class="string">"3px solid red"</span>);</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div>
+<div class="entry-example" id="example-1">
+<h4>Example: <span class="desc">Finds the element with both "myclass" and "otherclass" classes.</span>
+</h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">div</span>,<span class="tag">span</span> <span class="rules">{</span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">40</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">float</span>:<span class="value">left;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">10</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#EEEEEE</span>;</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"myclass"</span>&gt;</span>div class="notMe"<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"myclass otherclass"</span>&gt;</span>div class="myClass"<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"myclass otherclass"</span>&gt;</span>span class="myClass"<span class="tag">&lt;/<span class="title">span</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">$(<span class="string">".myclass.otherclass"</span>).css(<span class="string">"border"</span>,<span class="string">"13px solid red"</span>);</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div></section>
+</div></article>

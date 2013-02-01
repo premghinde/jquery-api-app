@@ -1,0 +1,234 @@
+<script>{
+		"title":
+			"jQuery.each()",
+		"excerpt":
+			"A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length property (such as a function's arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties.",
+		"termSlugs": {
+			"category": [
+				"utilities","version/1.0"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">jQuery.each( collection, callback(indexInArray, valueOfElement) )</span><span class="returns">Returns: Object</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length property (such as a function's arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties.</p>
+<ul class="signatures"><li class="signature" id="jQuery-each-collection-callbackindexInArray--valueOfElement">
+<h4 class="name">
+<span class="version-details">version added: 1.0</span>jQuery.each( collection, callback(indexInArray, valueOfElement) )</h4>
+<ul>
+<li>
+<div><strong>collection</strong></div>
+<div>Type: Object</div>
+<div>The object or array to iterate over.</div>
+</li>
+<li>
+<div><strong>callback(indexInArray, valueOfElement)</strong></div>
+<div>Type: Function()</div>
+<div>The function that will be executed on every object.</div>
+</li>
+</ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>The <code>$.each()</code> function is not the same as $(selector).each(), which is used to iterate, exclusively, over a jQuery object. The <code>$.each()</code> function can be used to iterate over any collection, whether it is an object or an array. In the case of an array, the callback is passed an array index and a corresponding array value each time. (The value can also be accessed through the <code>this</code> keyword, but Javascript will always wrap the <code>this</code> value as an <code>Object</code> even if it is a simple string or number value.) The method returns its first argument, the object that was iterated.</p>
+    <div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$.each([<span class="number">52</span>, <span class="number">97</span>], <span class="keyword">function</span>(index, value) {</code></div></div><div class="container"><div class="line"><code>  alert(index + <span class="string">': '</span> + value);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>This produces two messages:</p>
+    <p>
+      <span class="output">0: 52</span>
+      <br/>
+      <span class="output">1: 97</span>
+    </p>
+    <p>If an object is used as the collection, the callback is passed a key-value pair each time:</p>
+    <div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> obj = {</code></div></div><div class="container"><div class="line"><code>  <span class="string">"flammable"</span>: <span class="string">"inflammable"</span>,</code></div></div><div class="container"><div class="line"><code>  <span class="string">"duh"</span>: <span class="string">"no duh"</span></code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code>$.each( obj, <span class="keyword">function</span>( key, value ) {</code></div></div><div class="container"><div class="line"><code>  alert( key + <span class="string">": "</span> + value );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>Once again, this produces two messages:</p>
+    <p>
+      <span class="output">flammable: inflammable</span>
+      <br/>
+      <span class="output">duh: no duh</span>
+    </p>
+    <p>We can break the <code>$.each()</code> loop at a particular iteration by making the callback function return <code>false</code>. Returning <em>non-false</em> is the same as a <code>continue</code> statement in a for loop; it will skip immediately to the next iteration.</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
+<h4>Example: <span class="desc">Iterates through the array displaying each number as both a word and numeral</span>
+</h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+						<div class="line n28">28</div>
+					
+						<div class="line n29">29</div>
+					
+						<div class="line n30">30</div>
+					
+						<div class="line n31">31</div>
+					
+						<div class="line n32">32</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">div</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">blue;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">div</span><span class="id">#five</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">red;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"one"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"two"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"three"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"four"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"five"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>    <span class="keyword">var</span> arr = [ <span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>, <span class="string">"four"</span>, <span class="string">"five"</span> ];</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">var</span> obj = { one:<span class="number">1</span>, two:<span class="number">2</span>, three:<span class="number">3</span>, four:<span class="number">4</span>, five:<span class="number">5</span> };</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    jQuery.each(arr, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>      $(<span class="string">"#"</span> + <span class="keyword">this</span>).text(<span class="string">"Mine is "</span> + <span class="keyword">this</span> + <span class="string">"."</span>);</code></div></div><div class="container"><div class="line"><code>       <span class="keyword">return</span> (<span class="keyword">this</span> != <span class="string">"three"</span>); <span class="comment">// will stop running after "three"</span></code></div></div><div class="container"><div class="line"><code>   });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    jQuery.each(obj, <span class="keyword">function</span>(i, val) {</code></div></div><div class="container"><div class="line"><code>      $(<span class="string">"#"</span> + i).append(document.createTextNode(<span class="string">" - "</span> + val));</code></div></div><div class="container"><div class="line"><code>    });</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div>
+<div class="entry-example" id="example-1">
+<h4>Example: <span class="desc">Iterates over items in an array, accessing both the current item and its index.</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$.each( [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>], <span class="keyword">function</span>(i, l){</code></div></div><div class="container"><div class="line"><code>   alert( <span class="string">"Index #"</span> + i + <span class="string">": "</span> + l );</code></div></div><div class="container"><div class="line"><code> });</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-2">
+<h4>Example: <span class="desc">Iterates over the properties in an object, accessing both the current item and its key.</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$.each( { name: <span class="string">"John"</span>, lang: <span class="string">"JS"</span> }, <span class="keyword">function</span>(k, v){</code></div></div><div class="container"><div class="line"><code>   alert( <span class="string">"Key: "</span> + k + <span class="string">", Value: "</span> + v );</code></div></div><div class="container"><div class="line"><code> });</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>

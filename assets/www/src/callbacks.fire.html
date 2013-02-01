@@ -1,0 +1,99 @@
+<script>{
+		"title":
+			"callbacks.fire()",
+		"excerpt":
+			"Call all of the callbacks with the given arguments",
+		"termSlugs": {
+			"category": [
+				"callbacks-object","version/1.7"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">callbacks.fire( arguments )</span><span class="returns">Returns: Callbacks</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Call all of the callbacks with the given arguments</p>
+<ul class="signatures"><li class="signature" id="callbacks-fire-arguments">
+<h4 class="name">
+<span class="version-details">version added: 1.7</span>callbacks.fire( arguments )</h4>
+<ul><li>
+<div><strong>arguments</strong></div>
+<div>Type: Anything</div>
+<div>The argument or list of arguments to pass back to the callback list.</div>
+</li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
+    <h2 id="example-1">Example</h2>
+    <p>Use <code>callbacks.fire()</code> to invoke the callbacks in a list with any arguments that have been passed:</p>
+    <div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="comment">// a sample logging function to be added to a callbacks list</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> foo = <span class="keyword">function</span>( value ) {</code></div></div><div class="container"><div class="line"><code>  console.log( <span class="string">"foo:"</span> + value );</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> callbacks = $.Callbacks();</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// add the function "foo" to the list</span></code></div></div><div class="container"><div class="line"><code>callbacks.add( foo );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// fire the items on the list</span></code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">"hello"</span> ); <span class="comment">// outputs: "foo: hello"</span></code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">"world"</span> ); <span class="comment">// outputs: "foo: world"</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// add another function to the list</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> bar = <span class="keyword">function</span>( value ){</code></div></div><div class="container"><div class="line"><code>    console.log( <span class="string">"bar:"</span> + value );</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// add this function to the list</span></code></div></div><div class="container"><div class="line"><code>callbacks.add( bar );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// fire the items on the list again</span></code></div></div><div class="container"><div class="line"><code>callbacks.fire( <span class="string">"hello again"</span> );</code></div></div><div class="container"><div class="line"><code><span class="comment">// outputs:</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// "foo: hello again"</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// "bar: hello again"</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+  </div>
+</div></article>

@@ -1,0 +1,132 @@
+<script>{
+		"title":
+			"jQuery.parseHTML()",
+		"excerpt":
+			"Parses a string into an array of DOM nodes.",
+		"termSlugs": {
+			"category": [
+				"utilities","version/1.8"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">jQuery.parseHTML( data [, context ] [, keepScripts ] )</span><span class="returns">Returns: Array</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Parses a string into an array of DOM nodes.</p>
+<ul class="signatures"><li class="signature" id="jQuery-parseHTML-data-context-keepScripts">
+<h4 class="name">
+<span class="version-details">version added: 1.8</span>jQuery.parseHTML( data [, context ] [, keepScripts ] )</h4>
+<ul>
+<li>
+<div><strong>data</strong></div>
+<div>Type: String</div>
+<div>HTML string to be parsed</div>
+</li>
+<li>
+<div>
+<strong>context</strong> (default: <code>document</code>)</div>
+<div>Type: Element</div>
+<div>DOM element to serve as the context in which the HTML fragment will be created</div>
+</li>
+<li>
+<div>
+<strong>keepScripts</strong> (default: <code>false</code>)</div>
+<div>Type: Boolean</div>
+<div>A Boolean indicating whether to include scripts passed in the HTML string</div>
+</li>
+</ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p><code>jQuery.parseHTML</code> uses a native DOM element creation function to convert the string to a set of DOM elements, which can then be inserted into the document.</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Create an array of Dom nodes using an HTML string and insert it into a div.</span></h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+						<div class="line n28">28</div>
+					
+						<div class="line n29">29</div>
+					
+						<div class="line n30">30</div>
+					
+						<div class="line n31">31</div>
+					
+						<div class="line n32">32</div>
+					
+						<div class="line n33">33</div>
+					
+						<div class="line n34">34</div>
+					
+						<div class="line n35">35</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"log"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">h3</span>&gt;</span>Content:<span class="tag">&lt;/<span class="title">h3</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> $log = $( <span class="string">"#log"</span> ),</code></div></div><div class="container"><div class="line"><code>    str = <span class="string">"hello, &lt;b&gt;my name is&lt;/b&gt; jQuery."</span>,</code></div></div><div class="container"><div class="line"><code>    html = $.parseHTML( str ),</code></div></div><div class="container"><div class="line"><code>    nodeNames = [];</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Append the parsed HTML</span></code></div></div><div class="container"><div class="line"><code>$log.append( html );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Gather the parsed HTML's node names</span></code></div></div><div class="container"><div class="line"><code>$.each( html, <span class="keyword">function</span>( i, el ) {</code></div></div><div class="container"><div class="line"><code>    nodeNames[i] = <span class="string">"&lt;li&gt;"</span> + el.nodeName + <span class="string">"&lt;/li&gt;"</span>;</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Insert the node names</span></code></div></div><div class="container"><div class="line"><code>$log.append( <span class="string">"&lt;h3&gt;Node Names:&lt;/h3&gt;"</span> );</code></div></div><div class="container"><div class="line"><code>$( <span class="string">"&lt;ol&gt;&lt;/ol&gt;"</span> )</code></div></div><div class="container"><div class="line"><code>  .append( nodeNames.join( <span class="string">""</span> ) )</code></div></div><div class="container"><div class="line"><code>  .appendTo( $log );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div></section>
+</div></article>

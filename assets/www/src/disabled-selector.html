@@ -1,0 +1,74 @@
+<script>{
+		"title":
+			":disabled Selector",
+		"excerpt":
+			"Selects all elements that are disabled.",
+		"termSlugs": {
+			"category": [
+				"selectors/form-selectors","version/1.0"
+			]
+		}
+	}</script><h2 class="section-title"><span>disabled selector</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Selects all elements that are disabled.</p>
+<ul class="signatures"><li class="signature"><h4 class="name">
+<span class="version-details">version added: 1.0</span>jQuery( ":disabled" )</h4></li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>As with other pseudo-class selectors (those that begin with a ":"), it is recommended to precede it with a tag name or some other selector; otherwise, the universal selector ("*") is implied. In other words, the bare <code>$(':disabled')</code> is equivalent to <code>$('*:disabled')</code>, so <code>$('input:disabled')</code> or similar should be used instead. </p>
+
+    <p>Although their resulting selections are usually the same, the <code>:disabled</code> selector is subtly different from the <code>[disabled]</code> attribute selector; <code>:disabled</code> checks the boolean (true/false) value of the element's disabled property while <code>[disabled]</code> checks for the existence of the disabled attribute.</p>
+
+    <p>The <code>:disabled</code> selector should only be used for selecting HTML elements that support the <code>disabled</code> attribute (<code>&lt;button&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;optgroup&gt;</code>, <code>&lt;option&gt;</code>, <code>&lt;select&gt;</code>, and <code>&lt;textarea&gt;</code>).</p>
+
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Finds all input elements that are disabled.</span></h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">form</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"email"</span> <span class="attribute">disabled</span>=<span class="value">"disabled"</span> /&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"id"</span> /&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">form</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">$(<span class="string">"input:disabled"</span>).val(<span class="string">"this is it"</span>);</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div></section>
+</div></article>

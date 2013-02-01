@@ -1,0 +1,194 @@
+<script>{
+		"title":
+			"jQuery.support",
+		"excerpt":
+			"A collection of properties that represent the presence of different browser features or bugs. Primarily intended for jQuery's internal use; specific properties may be removed when they are no longer needed internally to improve page startup performance.",
+		"termSlugs": {
+			"category": [
+				"properties/global-jquery-object-properties","utilities","version/1.3","version/1.5.1"
+			]
+		}
+	}</script><h2 class="section-title">
+<span>jQuery.support</span><span class="returns">Returns: Object</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>A collection of properties that represent the presence of different browser features or bugs. Primarily intended for jQuery's internal use; specific properties may be removed when they are no longer needed internally to improve page startup performance.</p>
+<ul class="signatures"><li class="signature"><h4 class="name">
+<span class="version-details">version added: 1.3</span>jQuery.support</h4></li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>Rather than using <code>$.browser</code> to detect the current user agent and alter the page presentation based on which browser is running, it is a good practice to use <strong>feature detection</strong>. To make this process simpler, jQuery performs many such tests and sets properties of the <code>jQuery.support</code> object.</p>
+    <p>
+      <strong>Since jQuery requires these tests internally, they must be performed on <em>every</em> page load. Although some of these properties are documented below, they are not subject to a long deprecation/removal cycle and may be removed once internal jQuery code no longer needs them.</strong>
+    </p>
+    <blockquote>
+      <p>Following are a few resources that explain how feature detection works:</p>
+      <ul>
+        <li>
+          http://peter.michaux.ca/articles/feature-detection-state-of-the-art-browser-scripting
+        </li>
+        <li>
+          http://www.jibbering.com/faq/faq_notes/not_browser_detect.html
+        </li>
+        <li>
+          http://yura.thinkweb2.com/cft/
+        </li>
+      </ul>
+    </blockquote>
+    <p>For your own project's feature-detection needs, we strongly recommend the use of an external library such as Modernizr instead of dependency on properties in <code>jQuery.support</code>.</p>
+    <p>The tests included in <code>jQuery.support</code> are as follows:</p>
+    <ul>
+      <li>
+<code>ajax</code> is equal to true if a browser is able to create an <code>XMLHttpRequest</code> object.</li>
+      <li>
+<code>boxModel</code> is equal to true if the page is rendering according to the W3C CSS Box Model (is currently false in IE 6 and 7 when they are in Quirks Mode). This property is null until document ready occurs.</li>
+      <li>
+<code>changeBubbles</code> is equal to true if the change event bubbles up the DOM tree, as required by the W3C DOM event model. (It is currently false in IE, and jQuery simulates bubbling).</li>
+      <li>
+<code>checkClone</code> is equal to true if a browser correctly clones the checked state of radio buttons or checkboxes in document fragments.</li>
+      <li>
+<code>checkOn</code> is equal to true if the value of a checkbox defaults to "on" when no value is specified.</li>
+      <li>
+<code>cors</code> is equal to true if a browser can create an <code>XMLHttpRequest</code> object and if that <code>XMLHttpRequest</code> object has a <code>withCredentials</code> property. To enable cross-domain requests in environments that do not support cors yet but do allow cross-domain XHR</abbr> requests (windows gadget, etc), set <code>$.support.cors = true;</code>.
+      CORS WD
+</li>
+      <li>
+<code>cssFloat</code> is equal to true if the name of the property containing the CSS float value is .cssFloat, as defined in the CSS Spec. (It is currently false in IE, it uses styleFloat instead).</li>
+      <li>
+<code>hrefNormalized</code> is equal to true if the <code>.getAttribute()</code> method retrieves the <code>href</code> attribute of elements unchanged, rather than normalizing it to a fully-qualified URL. (It is currently false in IE, the URLs are normalized).
+      <div>DOM l3 spec</div>
+</li>
+      <li>
+<code>htmlSerialize</code> is equal to true  if the browser is able to serialize/insert <code>&lt;link&gt;</code> elements using the <code>.innerHTML</code> property of elements. (is currently false in IE). <div>HTML5 WD</div>
+</li>
+      <li>
+<code>leadingWhitespace</code> is equal to true if the browser inserts content with .innerHTML exactly as provided—specifically, if leading whitespace characters are preserved. (It is currently false in IE 6-8). <div>HTML5 WD</div>
+</li>
+      <li>
+<code>noCloneChecked</code> is equal to true if cloned DOM elements copy over the state of the <code>.checked</code> expando. (It is currently false in IE). (Added in jQuery 1.5.1)</li>
+      <li>
+<code>noCloneEvent</code> is equal to true  if cloned DOM elements are created without event handlers (that is, if the event handlers on the source element are not cloned). (It is currently false in IE). <div>DOM l2 spec</div>
+</li>
+      <li>
+<code>opacity</code> is equal to true if a browser can properly interpret the opacity style property. (It is currently false in IE, it uses alpha filters instead). <div>CSS3 spec</div>
+</li>
+      <li>
+<code>optDisabled</code> is equal to true if option elements within disabled select elements are not automatically marked as disabled. <div>HTML5 WD</div>
+</li>
+      <li>
+<code>optSelected</code> is equal to true if an <code>&lt;option&gt;</code> element that is selected by default has a working <code>selected</code> property. <div>HTML5 WD</div>
+</li>
+      <li>
+<code>scriptEval()</code> is equal to true if inline scripts are automatically evaluated and executed when inserted into the document using standard DOM manipulation methods such as <code>.appendChild()</code> and <code>.createTextNode()</code>. (It is currently false in IE, it uses <code>.text</code> to insert executable scripts).
+      <div>
+<strong>Note: No longer supported; removed in jQuery 1.6. Prior to jQuery 1.5.1</strong>, the <code>scriptEval()</code> method was the static <code>scriptEval</code> property. The change to a method allowed the test to be deferred until first use to prevent content security policy inline-script violations. </div>
+      <div>HTML5 WD</div>
+</li>
+      <li>
+<code>style</code> is equal to true if inline styles for an element can be accessed through the DOM attribute called style, as required by the DOM Level 2 specification. In this case, <code>.getAttribute('style')</code> can retrieve this value; in Internet Explorer, <code>.cssText</code> is used for this purpose. <div>DOM l2 Style spec</div>
+</li>
+      <li>
+<code>submitBubbles</code> is equal to true if the submit event bubbles up the DOM tree, as required by the W3C DOM event model. (It is currently false in IE, and jQuery simulates bubbling).</li>
+      <li>
+<code>tbody</code> is equal to true if an empty <code>&lt;table&gt;</code> element can exist without a <code>&lt;tbody&gt;</code> element. According to the HTML specification, this sub-element is optional, so the property should be true in a fully-compliant browser. If false, we must account for the possibility of the browser injecting <code>&lt;tbody&gt;</code> tags implicitly. (It is currently false in IE, which automatically inserts <code>tbody</code> if it is not present in a string assigned to <code>innerHTML</code>). <div>HTML5 spec</div>
+</li>
+    </ul>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
+<h4>Example: <span class="desc">Returns the box model for the iframe.</span>
+</h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">p</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">blue;</span></span> <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">20</span>px;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">span</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">red;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).html(<span class="string">"This frame uses the W3C box model: &lt;span&gt;"</span> +</code></div></div><div class="container"><div class="line"><code>            jQuery.support.boxModel + <span class="string">"&lt;/span&gt;"</span>);</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div>
+<div class="entry-example" id="example-1">
+<h4>Example: <span class="desc">Returns false if the page is in QuirksMode in Internet Explorer</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>jQuery.support.boxModel</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Result:</h4>
+<div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="literal">false</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>

@@ -1,0 +1,252 @@
+<script>{
+		"title":
+			".mouseover()",
+		"excerpt":
+			"Bind an event handler to the \"mouseover\" JavaScript event, or trigger that event on an element.",
+		"termSlugs": {
+			"category": [
+				"events/mouse-events","version/1.0","version/1.4.3"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">.mouseover( handler(eventObject) )</span><span class="returns">Returns: jQuery</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Bind an event handler to the "mouseover" JavaScript event, or trigger that event on an element.</p>
+<ul class="signatures">
+<li class="signature" id="mouseover-handlereventObject">
+<h4 class="name">
+<span class="version-details">version added: 1.0</span>.mouseover( handler(eventObject) )</h4>
+<ul><li>
+<div><strong>handler(eventObject)</strong></div>
+<div>Type: Function()</div>
+<div>A function to execute each time the event is triggered.</div>
+</li></ul>
+</li>
+<li class="signature" id="mouseover-eventData-handlereventObject">
+<h4 class="name">
+<span class="version-details">version added: 1.4.3</span>.mouseover(  [eventData ], handler(eventObject) )</h4>
+<ul>
+<li>
+<div><strong>eventData</strong></div>
+<div>Type: PlainObject</div>
+<div>An object containing data that will be passed to the event handler.</div>
+</li>
+<li>
+<div><strong>handler(eventObject)</strong></div>
+<div>Type: Function()</div>
+<div>A function to execute each time the event is triggered.</div>
+</li>
+</ul>
+</li>
+<li class="signature" id="mouseover">
+<h4 class="name">
+<span class="version-details">version added: 1.0</span>.mouseover()</h4>
+<ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
+</li>
+</ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>This method is a shortcut for <code>.bind('mouseover', handler)</code> in the first two variations, and <code>.trigger('mouseover')</code> in the third.</p>
+    <p>The <code>mouseover</code> event is sent to an element when the mouse pointer enters the element. Any HTML element can receive this event.</p>
+    <p>For example, consider the HTML:</p>
+    <div class="syntaxhighlighter xml nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"outer"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  Outer</code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"inner"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    Inner</code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"other"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  Trigger the handler</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"log"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p class="image">
+      <img src="/resources/0042_05_06.png" alt=""/>
+    </p>
+    <p>The event handler can be bound to any element:</p>
+    <div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(<span class="string">'#outer'</span>).mouseover(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">'#log'</span>).append(<span class="string">'&lt;div&gt;Handler for .mouseover() called.&lt;/div&gt;'</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>Now when the mouse pointer moves over the <span class="output">Outer</span> <code>&lt;div&gt;</code>, the message is appended to <code>&lt;div id="log"&gt;</code>. We can also trigger the event when another element is clicked:</p>
+    <div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(<span class="string">'#other'</span>).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>      $(<span class="string">'#outer'</span>).mouseover();</code></div></div><div class="container"><div class="line"><code>      });</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also append the message.</p>
+    <p>This event type can cause many headaches due to event bubbling. For instance, when the mouse pointer moves over the <span class="output">Inner</span> element in this example, a <code>mouseover</code> event will be sent to that, then trickle up to <span class="output">Outer</span>. This can trigger our bound <code>mouseover</code> handler at inopportune times. See the discussion for <code>.mouseenter()</code> for a useful alternative.</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Show the number of times mouseover and mouseenter events are triggered.
+<code>mouseover</code> fires when the pointer moves into the child element as well, while <code>mouseenter</code> fires only when the pointer moves into the bound element.</span></h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+						<div class="line n28">28</div>
+					
+						<div class="line n29">29</div>
+					
+						<div class="line n30">30</div>
+					
+						<div class="line n31">31</div>
+					
+						<div class="line n32">32</div>
+					
+						<div class="line n33">33</div>
+					
+						<div class="line n34">34</div>
+					
+						<div class="line n35">35</div>
+					
+						<div class="line n36">36</div>
+					
+						<div class="line n37">37</div>
+					
+						<div class="line n38">38</div>
+					
+						<div class="line n39">39</div>
+					
+						<div class="line n40">40</div>
+					
+						<div class="line n41">41</div>
+					
+						<div class="line n42">42</div>
+					
+						<div class="line n43">43</div>
+					
+						<div class="line n44">44</div>
+					
+						<div class="line n45">45</div>
+					
+						<div class="line n46">46</div>
+					
+						<div class="line n47">47</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code><span class="tag">div</span><span class="class">.out</span> <span class="rules">{ <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">40</span>%;</span></span> <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">120</span>px;</span></span> <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span> <span class="number">15</span>px;</span></span></span></code></div></div><div class="container"><div class="line"><code>          <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#D6EDFC</span>;</span></span> <span class="rule"><span class="attribute">float</span>:<span class="value">left;</span></span> <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code><span class="tag">div</span><span class="class">.in</span> <span class="rules">{  <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">60</span>%;</span></span> <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">60</span>%;</span></span></span></code></div></div><div class="container"><div class="line"><code>          <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#FFCC00</span>;</span></span> <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">10</span>px auto;</span></span> <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code><span class="tag">p</span> <span class="rules">{ <span class="rule"><span class="attribute">line-height</span>:<span class="value"><span class="number">1</span>em;</span></span> <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span>;</span></span> <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span>;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"out overout"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">span</span>&gt;</span>move your mouse<span class="tag">&lt;/<span class="title">span</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"in"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"out enterleave"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">span</span>&gt;</span>move your mouse<span class="tag">&lt;/<span class="title">span</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"in"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> i = <span class="number">0</span>;</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"div.overout"</span>).mouseover(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    i += <span class="number">1</span>;</code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).find(<span class="string">"span"</span>).text( <span class="string">"mouse over x "</span> + i );</code></div></div><div class="container"><div class="line"><code>  }).mouseout(<span class="keyword">function</span>(){</code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).find(<span class="string">"span"</span>).text(<span class="string">"mouse out "</span>);</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> n = <span class="number">0</span>;</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"div.enterleave"</span>).mouseenter(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    n += <span class="number">1</span>;</code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).find(<span class="string">"span"</span>).text( <span class="string">"mouse enter x "</span> + n );</code></div></div><div class="container"><div class="line"><code>  }).mouseleave(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).find(<span class="string">"span"</span>).text(<span class="string">"mouse leave"</span>);</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div></section>
+</div></article>

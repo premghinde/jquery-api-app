@@ -1,0 +1,102 @@
+<script>{
+		"title":
+			".removeProp()",
+		"excerpt":
+			"Remove a property for the set of matched elements.",
+		"termSlugs": {
+			"category": [
+				"attributes","manipulation/general-attributes","version/1.6"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">.removeProp( propertyName )</span><span class="returns">Returns: jQuery</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Remove a property for the set of matched elements.</p>
+<ul class="signatures"><li class="signature" id="removeProp-propertyName">
+<h4 class="name">
+<span class="version-details">version added: 1.6</span>.removeProp( propertyName )</h4>
+<ul><li>
+<div><strong>propertyName</strong></div>
+<div>Type: String</div>
+<div>The name of the property to remove.</div>
+</li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>The <code>.removeProp()</code> method removes properties set by the <code>.prop()</code> method.</p>
+    <p>With some built-in properties of a DOM element or <code>window</code> object, browsers may generate an error if an attempt is made to remove the property. jQuery first assigns the value <code>undefined</code> to the property and ignores any error the browser generates. In general, it is only necessary to remove custom properties that have been set on an object, and not built-in (native) properties.</p>
+    <p><strong>Note:</strong> Do not use this method to remove native properties such as checked, disabled, or selected. This will remove the property completely and, once removed, cannot be added again to element. Use <code>.prop()</code> to set these properties to <code>false</code> instead.</p>
+  </div>
+<h3>Additional Notes:</h3>
+<div class="longdesc"><ul><li>
+			In Internet Explorer prior to version 9, using <code>.prop()</code> to set a DOM element property to anything other than a simple primitive value (number, string, or boolean) can cause memory leaks if the property is not removed (using <code>.removeProp()</code>) before the DOM element is removed from the document. To safely set values on DOM objects without memory leaks, use <code>.data()</code>.
+		</li></ul></div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Set a numeric property on a paragraph and then remove it. </span></h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">img</span> <span class="rules">{ <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">10</span>px;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">div</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">red;</span></span> <span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">24</span>px;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> $para = $(<span class="string">"p"</span>);</code></div></div><div class="container"><div class="line"><code>$para.prop(<span class="string">"luggageCode"</span>, <span class="number">1234</span>);</code></div></div><div class="container"><div class="line"><code>$para.append(<span class="string">"The secret luggage code is: "</span>, String($para.prop(<span class="string">"luggageCode"</span>)), <span class="string">". "</span>);</code></div></div><div class="container"><div class="line"><code>$para.removeProp(<span class="string">"luggageCode"</span>);</code></div></div><div class="container"><div class="line"><code>$para.append(<span class="string">"Now the secret luggage code is: "</span>, String($para.prop(<span class="string">"luggageCode"</span>)), <span class="string">". "</span>);</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div></section>
+</div></article>

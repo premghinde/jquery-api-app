@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello">Hello World, JQueryAPI!</string>
-    <string name="app_name">JQueryAPI</string>
-
+    <string name="app_name">jQuery API v1.9</string>
 </resources>

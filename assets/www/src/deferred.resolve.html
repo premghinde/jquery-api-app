@@ -1,0 +1,30 @@
+<script>{
+		"title":
+			"deferred.resolve()",
+		"excerpt":
+			" Resolve a Deferred object and call any doneCallbacks with the given args. ",
+		"termSlugs": {
+			"category": [
+				"deferred-object","version/1.5"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">deferred.resolve( args )</span><span class="returns">Returns: Deferred</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong> Resolve a Deferred object and call any doneCallbacks with the given <code>args</code>. </p>
+<ul class="signatures"><li class="signature" id="deferred-resolve-args">
+<h4 class="name">
+<span class="version-details">version added: 1.5</span>deferred.resolve( args )</h4>
+<ul><li>
+<div><strong>args</strong></div>
+<div>Type: Object</div>
+<div>
+        Optional arguments that are passed to the doneCallbacks.
+      </div>
+</li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>When the Deferred is resolved, any doneCallbacks added by <code>deferred.then</code> or <code>deferred.done</code> are called. Callbacks are executed in the order they were added. Each callback is passed the <code>args</code> from the <code>.resolve()</code>. Any doneCallbacks added after the Deferred enters the resolved state are executed immediately when they are added, using the arguments that were passed to the <code>.resolve()</code> call. For more information, see the documentation for Deferred object.</p>
+  </div>
+</div></article>

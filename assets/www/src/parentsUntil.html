@@ -1,0 +1,146 @@
+<script>{
+		"title":
+			".parentsUntil()",
+		"excerpt":
+			"Get the ancestors of each element in the current set of matched elements, up to but not including the element matched by the selector, DOM node, or jQuery object.",
+		"termSlugs": {
+			"category": [
+				"traversing/tree-traversal","version/1.4","version/1.6"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">.parentsUntil(  [selector ] [, filter ] )</span><span class="returns">Returns: jQuery</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Get the ancestors of each element in the current set of matched elements, up to but not including the element matched by the selector, DOM node, or jQuery object.</p>
+<ul class="signatures">
+<li class="signature" id="parentsUntil-selector-filter">
+<h4 class="name">
+<span class="version-details">version added: 1.4</span>.parentsUntil(  [selector ] [, filter ] )</h4>
+<ul>
+<li>
+<div><strong>selector</strong></div>
+<div>Type: Selector</div>
+<div>A string containing a selector expression to indicate where to stop matching ancestor elements.</div>
+</li>
+<li>
+<div><strong>filter</strong></div>
+<div>Type: Selector</div>
+<div>A string containing a selector expression to match elements against.</div>
+</li>
+</ul>
+</li>
+<li class="signature" id="parentsUntil-element-filter">
+<h4 class="name">
+<span class="version-details">version added: 1.6</span>.parentsUntil(  [element ] [, filter ] )</h4>
+<ul>
+<li>
+<div><strong>element</strong></div>
+<div>Type: Element</div>
+<div>A DOM node or jQuery object indicating where to stop matching ancestor elements.</div>
+</li>
+<li>
+<div><strong>filter</strong></div>
+<div>Type: Selector</div>
+<div>A string containing a selector expression to match elements against.</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>Given a selector expression that represents a set of DOM elements, the <code>.parentsUntil()</code> method traverses through the ancestors of these elements until it reaches an element matched by the selector passed in the method's argument. The resulting jQuery object contains all of the ancestors up to but not including the one matched by the <code>.parentsUntil()</code> selector.</p>
+    <p>If the selector is not matched or is not supplied, all ancestors will be selected; in these cases it selects the same elements as the <code>.parents()</code> method does when no selector is provided.</p>
+    <p><strong>As of jQuery 1.6</strong>, A DOM node or jQuery object, instead of a selector, may be used for the first <strong>.parentsUntil()</strong> argument.</p>
+    <p>The method optionally accepts a selector expression for its second argument. If this argument is supplied, the elements will be filtered by testing whether they match it.</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Find the ancestors of &lt;li class="item-a"&gt; up to &lt;ul class="level-1"&gt; and give them a red background color. Also, find ancestors of &lt;li class="item-2"&gt; that have a class of "yes" up to &lt;ul class="level-1"&gt; and give them a green border.</span></h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+						<div class="line n28">28</div>
+					
+						<div class="line n29">29</div>
+					
+						<div class="line n30">30</div>
+					
+						<div class="line n31">31</div>
+					
+						<div class="line n32">32</div>
+					
+						<div class="line n33">33</div>
+					
+						<div class="line n34">34</div>
+					
+						<div class="line n35">35</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"level-1 yes"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item-i"</span>&gt;</span>I<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item-ii"</span>&gt;</span>II</code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"level-2 yes"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>      <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item-a"</span>&gt;</span>A<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>      <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item-b"</span>&gt;</span>B</code></div></div><div class="container"><div class="line"><code>        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"level-3"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>          <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item-1"</span>&gt;</span>1<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>          <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item-2"</span>&gt;</span>2<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>          <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item-3"</span>&gt;</span>3<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>      <span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>      <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item-c"</span>&gt;</span>C<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item-iii"</span>&gt;</span>III<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"li.item-a"</span>).parentsUntil(<span class="string">".level-1"</span>)</code></div></div><div class="container"><div class="line"><code>  .css(<span class="string">"background-color"</span>, <span class="string">"red"</span>);</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$(<span class="string">"li.item-2"</span>).parentsUntil( $(<span class="string">"ul.level-1"</span>), <span class="string">".yes"</span> )</code></div></div><div class="container"><div class="line"><code>  .css(<span class="string">"border"</span>, <span class="string">"3px solid green"</span>);</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo" data-height="220px"></div>
+</div></section>
+</div></article>

@@ -1,0 +1,86 @@
+<script>{
+		"title":
+			"event.preventDefault()",
+		"excerpt":
+			" If this method is called, the default action of the event will not be triggered. ",
+		"termSlugs": {
+			"category": [
+				"events/event-object","version/1.0"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">event.preventDefault()</span><span class="returns">Returns: undefined</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong> If this method is called, the default action of the event will not be triggered. </p>
+<ul class="signatures"><li class="signature" id="event-preventDefault">
+<h4 class="name">
+<span class="version-details">version added: 1.0</span>event.preventDefault()</h4>
+<ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>For example, clicked anchors will not take the browser to a new URL. We can use <code>event.isDefaultPrevented()</code> to determine if this method has been called by an event handler that was triggered by this event.</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Cancel the default action (navigation) of the click.</span></h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://jquery.com"</span>&gt;</span>default click action is prevented<span class="tag">&lt;/<span class="title">a</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"log"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"a"</span>).click(<span class="keyword">function</span>(event) {</code></div></div><div class="container"><div class="line"><code>  event.preventDefault();</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">'&lt;div/&gt;'</span>)</code></div></div><div class="container"><div class="line"><code>    .append(<span class="string">'default '</span> + event.type + <span class="string">' prevented'</span>)</code></div></div><div class="container"><div class="line"><code>    .appendTo(<span class="string">'#log'</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div></section>
+</div></article>

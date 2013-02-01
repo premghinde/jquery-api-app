@@ -1,0 +1,265 @@
+<script>{
+		"title":
+			".off()",
+		"excerpt":
+			"Remove an event handler.",
+		"termSlugs": {
+			"category": [
+				"events/event-handler-attachment","version/1.7"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">.off( events [, selector ] [, handler(eventObject) ] )</span><span class="returns">Returns: jQuery</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Remove an event handler.</p>
+<ul class="signatures">
+<li class="signature" id="off-events-selector-handlereventObject">
+<h4 class="name">
+<span class="version-details">version added: 1.7</span>.off( events [, selector ] [, handler(eventObject) ] )</h4>
+<ul>
+<li>
+<div><strong>events</strong></div>
+<div>Type: String</div>
+<div>One or more space-separated event types and optional namespaces, or just namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".</div>
+</li>
+<li>
+<div><strong>selector</strong></div>
+<div>Type: String</div>
+<div>A selector which should match the one originally passed to <code>.on()</code> when attaching event handlers.</div>
+</li>
+<li>
+<div><strong>handler(eventObject)</strong></div>
+<div>Type: Function()</div>
+<div>A handler function previously attached for the event(s), or the special value <code>false</code>.</div>
+</li>
+</ul>
+</li>
+<li class="signature" id="off-events-selector">
+<h4 class="name">
+<span class="version-details">version added: 1.7</span>.off( events [, selector ] )</h4>
+<ul>
+<li>
+<div><strong>events</strong></div>
+<div>Type: PlainObject</div>
+<div>An object where the string keys represent one or more space-separated event types and optional namespaces, and the values represent handler functions previously attached for the event(s).</div>
+</li>
+<li>
+<div><strong>selector</strong></div>
+<div>Type: String</div>
+<div>A selector which should match the one originally passed to <code>.on()</code> when attaching event handlers.</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>The <code>off()</code> method removes event handlers that were attached with <code>.on()</code>. See the discussion of delegated and directly bound events on that page for more information. Specific event handlers can be removed on elements by providing combinations of event names, namespaces, selectors, or handler function names. <strong>When multiple filtering arguments are given, all of the arguments provided must match for the event handler to be removed.</strong></p>
+    <p>If a simple event name such as <code>"click"</code> is provided, <em>all</em> events of that type (both direct and delegated) are removed from the elements in the jQuery set. When writing code that will be used as a plugin, or simply when working with a large code base, best practice is to attach and remove events using namespaces so that the code will not inadvertently remove event handlers attached by other code. All events of all types in a specific namespace can be removed from an element by providing just a namespace, such as <code>".myPlugin"</code>. At minimum, either a namespace or event name must be provided.</p>
+    <p>To remove specific delegated event handlers, provide a <code>selector</code> argument. The selector string must exactly match the one passed to <code>.on()</code> when the event handler was attached. To remove all delegated events from an element without removing non-delegated events, use the special value <code>"**"</code>.</p>
+    <p>A handler can also be removed by specifying the function name in the <code>handler</code> argument. When jQuery attaches an event handler, it assigns a unique id to the handler function. Handlers proxied by <code>jQuery.proxy()</code> or a similar mechanism will all have the same unique id (the proxy function), so passing proxied handlers to <code>.off</code> may remove more handlers than intended. In those situations it is better to attach and remove event handlers using namespaces.</p>
+    <p>As with <code>.on()</code>, you can pass <code>events</code> as an object instead of specifying an <code>events</code> string and <code>handler</code> function as separate arguments. The keys for the <code>events</code> object are events and/or namespaces; the values are handler functions or the special value <code>false</code>.</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
+<h4>Example: <span class="desc">Add and remove event handlers on the colored button.</span>
+</h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+						<div class="line n28">28</div>
+					
+						<div class="line n29">29</div>
+					
+						<div class="line n30">30</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code><span class="tag">button</span> <span class="rules">{ <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">5</span>px;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code><span class="tag">button</span><span class="id">#theone</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">red;</span></span> <span class="rule"><span class="attribute">background</span>:<span class="value">yellow;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"theone"</span>&gt;</span>Does nothing...<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"bind"</span>&gt;</span>Add Click<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"unbind"</span>&gt;</span>Remove Click<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"display:none;"</span>&gt;</span>Click!<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="function"><span class="keyword">function</span> <span class="title">aClick</span><span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"div"</span>).show().fadeOut(<span class="string">"slow"</span>);</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#bind"</span>).click(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"body"</span>).on(<span class="string">"click"</span>, <span class="string">"#theone"</span>, aClick)</code></div></div><div class="container"><div class="line"><code>    .find(<span class="string">"#theone"</span>).text(<span class="string">"Can Click!"</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#unbind"</span>).click(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"body"</span>).off(<span class="string">"click"</span>, <span class="string">"#theone"</span>, aClick)</code></div></div><div class="container"><div class="line"><code>    .find(<span class="string">"#theone"</span>).text(<span class="string">"Does nothing..."</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div>
+<div class="entry-example" id="example-1">
+<h4>Example: <span class="desc">Remove all event handlers from all paragraphs:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).off()</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-2">
+<h4>Example: <span class="desc">Remove all delegated click handlers from all paragraphs:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).off( <span class="string">"click"</span>, <span class="string">"**"</span> )</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-3">
+<h4>Example: <span class="desc">Remove just one previously bound handler by passing it as the third argument:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  <span class="comment">// code to handle some kind of event</span></code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// ... now foo will be called when paragraphs are clicked ...</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"body"</span>).on(<span class="string">"click"</span>, <span class="string">"p"</span>, foo);</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// ... foo will no longer be called.</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"body"</span>).off(<span class="string">"click"</span>, <span class="string">"p"</span>, foo); </code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-4">
+<h4>Example: <span class="desc">Unbind all delegated event handlers by their namespace:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> validate = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  <span class="comment">// code to validate form entries</span></code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// delegate events under the ".validator" namespace</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"form"</span>).on(<span class="string">"click.validator"</span>, <span class="string">"button"</span>, validate);</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$(<span class="string">"form"</span>).on(<span class="string">"keypress.validator"</span>, <span class="string">"input[type='text']"</span>, validate);</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// remove event handlers in the ".validator" namespace</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$(<span class="string">"form"</span>).off(<span class="string">".validator"</span>);</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>

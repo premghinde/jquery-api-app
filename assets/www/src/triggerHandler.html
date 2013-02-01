@@ -1,0 +1,115 @@
+<script>{
+		"title":
+			".triggerHandler()",
+		"excerpt":
+			"Execute all handlers attached to an element for an event.",
+		"termSlugs": {
+			"category": [
+				"events/event-handler-attachment","version/1.2"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">.triggerHandler( eventType [, extraParameters ] )</span><span class="returns">Returns: Object</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Execute all handlers attached to an element for an event.</p>
+<ul class="signatures"><li class="signature" id="triggerHandler-eventType-extraParameters">
+<h4 class="name">
+<span class="version-details">version added: 1.2</span>.triggerHandler( eventType [, extraParameters ] )</h4>
+<ul>
+<li>
+<div><strong>eventType</strong></div>
+<div>Type: String</div>
+<div>A string containing a JavaScript event type, such as <code>click</code> or <code>submit</code>.</div>
+</li>
+<li>
+<div><strong>extraParameters</strong></div>
+<div>Type: Array</div>
+<div>An array of additional parameters to pass along to the event handler.</div>
+</li>
+</ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>The <code>.triggerHandler()</code> method behaves similarly to <code>.trigger()</code>, with the following exceptions:</p>
+    <ul>
+      <li>The <code>.triggerHandler()</code> method does not cause the default behavior of an event to occur (such as a form submission).</li>
+      <li>While <code>.trigger()</code> will operate on all elements matched by the jQuery object, <code>.triggerHandler()</code> only affects the first matched element.</li>
+      <li>Events created with <code>.triggerHandler()</code> do not bubble up the DOM hierarchy; if they are not handled by the target element directly, they do nothing.</li>
+      <li>Instead of returning the jQuery object (to allow chaining), <code>.triggerHandler()</code> returns whatever value was returned by the last handler it caused to be executed. If no handlers are triggered, it returns <code>undefined</code>
+</li>
+    </ul>
+    <p>For more information on this method, see the discussion for <code>.trigger()</code>.</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">If you called .triggerHandler() on a focus event - the browser's default focus action would not be triggered, only the event handlers bound to the focus event.</span></h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"old"</span>&gt;</span>.trigger("focus")<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"new"</span>&gt;</span>.triggerHandler("focus")<span class="tag">&lt;/<span class="title">button</span>&gt;</span><span class="tag">&lt;<span class="title">br</span>/&gt;</span><span class="tag">&lt;<span class="title">br</span>/&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">value</span>=<span class="value">"To Be Focused"</span>/&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#old"</span>).click(<span class="keyword">function</span>(){</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"input"</span>).trigger(<span class="string">"focus"</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#new"</span>).click(<span class="keyword">function</span>(){</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"input"</span>).triggerHandler(<span class="string">"focus"</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"input"</span>).focus(<span class="keyword">function</span>(){</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"&lt;span&gt;Focused!&lt;/span&gt;"</span>).appendTo(<span class="string">"body"</span>).fadeOut(<span class="number">1000</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div></section>
+</div></article>

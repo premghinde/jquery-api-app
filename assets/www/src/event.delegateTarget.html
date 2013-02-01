@@ -1,0 +1,46 @@
+<script>{
+		"title":
+			"event.delegateTarget",
+		"excerpt":
+			"The element where the currently-called jQuery event handler was attached.",
+		"termSlugs": {
+			"category": [
+				"events/event-object","events","version/1.7"
+			]
+		}
+	}</script><h2 class="section-title">
+<span>event.delegateTarget</span><span class="returns">Returns: Element</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>The element where the currently-called jQuery event handler was attached.</p>
+<ul class="signatures"><li class="signature"><h4 class="name">
+<span class="version-details">version added: 1.7</span>event.delegateTarget</h4></li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>This property is most often useful in delegated events attached by <code>.delegate()</code> or <code>.on()</code>, where the event handler is attached at an ancestor of the element being processed. It can be used, for example, to identify and remove event handlers at the delegation point.</p>
+    <p>For non-delegated event handlers attached directly to an element, <code>event.delegateTarget</code> will always be equal to <code>event.currentTarget</code>.</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">When a button in any box class is clicked, change the box's background color to red.</span></h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(<span class="string">".box"</span>).on(<span class="string">"click"</span>, <span class="string">"button"</span>, <span class="keyword">function</span>(event) {</code></div></div><div class="container"><div class="line"><code>  $(event.delegateTarget).css(<span class="string">"background-color"</span>, <span class="string">"red"</span>);</code></div></div><div class="container"><div class="line"><code>});  </code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>

@@ -1,0 +1,337 @@
+<script>{
+		"title":
+			".hover()",
+		"excerpt":
+			"Bind one or two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.",
+		"termSlugs": {
+			"category": [
+				"events/mouse-events","version/1.0","events/mouse-events","version/1.0"
+			]
+		}
+	}</script>Bind one or two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.<div class="toc">
+<h4><span>Contents:</span></h4>
+<ul class="toc-list">
+<li>.hover( handlerIn(eventObject), handlerOut(eventObject) )<ul><li>.hover( handlerIn(eventObject), handlerOut(eventObject) )</li></ul>
+</li>
+<li>.hover( handlerInOut(eventObject) )<ul><li>.hover( handlerInOut(eventObject) )</li></ul>
+</li>
+</ul>
+</div><h2 class="section-title">
+<span class="name">.hover( handlerIn(eventObject), handlerOut(eventObject) )</span><span class="returns">Returns: jQuery</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Bind two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.</p>
+<ul class="signatures"><li class="signature" id="hover-handlerIneventObject-handlerOuteventObject">
+<h4 class="name">
+<span class="version-details">version added: 1.0</span>.hover( handlerIn(eventObject), handlerOut(eventObject) )</h4>
+<ul>
+<li>
+<div><strong>handlerIn(eventObject)</strong></div>
+<div>Type: Function()</div>
+<div>A function to execute when the mouse pointer enters the element.</div>
+</li>
+<li>
+<div><strong>handlerOut(eventObject)</strong></div>
+<div>Type: Function()</div>
+<div>A function to execute when the mouse pointer leaves the element.</div>
+</li>
+</ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+      <p>The <code>.hover()</code> method binds handlers for both <code>mouseenter</code> and <code>mouseleave</code> events. You can use it to simply apply behavior to an element during the time the mouse is within the element.</p>
+      <p>Calling <code>$(selector).hover(handlerIn, handlerOut)</code> is shorthand for:</p>
+      <div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(selector).mouseenter(handlerIn).mouseleave(handlerOut);</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+      <p>See the discussions for <code>.mouseenter()</code> and <code>.mouseleave()</code> for more details.</p>
+    </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
+<h4>Example: <span class="desc">To add a special style to list items that are being hovered over, try:</span>
+</h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+						<div class="line n28">28</div>
+					
+						<div class="line n29">29</div>
+					
+						<div class="line n30">30</div>
+					
+						<div class="line n31">31</div>
+					
+						<div class="line n32">32</div>
+					
+						<div class="line n33">33</div>
+					
+						<div class="line n34">34</div>
+					
+						<div class="line n35">35</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">ul</span> <span class="rules">{ <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">20</span>px;</span></span> <span class="rule"><span class="attribute">color</span>:<span class="value">blue;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">li</span> <span class="rules">{ <span class="rule"><span class="attribute">cursor</span>:<span class="value">default;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">span</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">red;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">ul</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">li</span>&gt;</span>Bread<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">'fade'</span>&gt;</span>Chips<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">'fade'</span>&gt;</span>Socks<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"li"</span>).hover(</code></div></div><div class="container"><div class="line"><code>  <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).append($(<span class="string">"&lt;span&gt; ***&lt;/span&gt;"</span>));</code></div></div><div class="container"><div class="line"><code>  },</code></div></div><div class="container"><div class="line"><code>  <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).find(<span class="string">"span:last"</span>).remove();</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>);</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">//li with fade class</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"li.fade"</span>).hover(<span class="keyword">function</span>(){$(<span class="keyword">this</span>).fadeOut(<span class="number">100</span>);$(<span class="keyword">this</span>).fadeIn(<span class="number">500</span>);});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div>
+<div class="entry-example" id="example-1">
+<h4>Example: <span class="desc">To add a special style to table cells that are being hovered over, try:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(<span class="string">"td"</span>).hover(</code></div></div><div class="container"><div class="line"><code>  <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).addClass(<span class="string">"hover"</span>);</code></div></div><div class="container"><div class="line"><code>  },</code></div></div><div class="container"><div class="line"><code>  <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).removeClass(<span class="string">"hover"</span>);</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>);</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-2">
+<h4>Example: <span class="desc">To unbind the above example use:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(<span class="string">"td"</span>).unbind(<span class="string">'mouseenter mouseleave'</span>);</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article><h2 class="section-title">
+<span class="name">.hover( handlerInOut(eventObject) )</span><span class="returns">Returns: jQuery</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Bind a single handler to the matched elements, to be executed when the mouse pointer enters or leaves the elements.</p>
+<ul class="signatures"><li class="signature" id="hover-handlerInOuteventObject">
+<h4 class="name">
+<span class="version-details">version added: 1.4</span>.hover( handlerInOut(eventObject) )</h4>
+<ul><li>
+<div><strong>handlerInOut(eventObject)</strong></div>
+<div>Type: Function()</div>
+<div>A function to execute when the mouse pointer enters or leaves the element.</div>
+</li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc-1">
+      <p>The <code>.hover()</code> method, when passed a single function, will execute that handler for both <code>mouseenter</code> and <code>mouseleave</code> events. This allows the user to use jQuery's various toggle methods within the handler or to respond differently within the handler depending on the <code>event.type</code>.</p>
+      <p>Calling <code>$(selector).hover(handlerInOut)</code> is shorthand for:</p>
+      <div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(selector).bind(<span class="string">"mouseenter mouseleave"</span>, handlerInOut);</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+      <p>See the discussions for <code>.mouseenter()</code> and <code>.mouseleave()</code> for more details.</p>
+    </div>
+<section class="entry-examples" id="entry-examples-1"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-1-0">
+<h4><span class="desc">Slide the next sibling LI up or down on hover, and toggle a class.</span></h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+						<div class="line n28">28</div>
+					
+						<div class="line n29">29</div>
+					
+						<div class="line n30">30</div>
+					
+						<div class="line n31">31</div>
+					
+						<div class="line n32">32</div>
+					
+						<div class="line n33">33</div>
+					
+						<div class="line n34">34</div>
+					
+						<div class="line n35">35</div>
+					
+						<div class="line n36">36</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">ul</span> <span class="rules">{ <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">20</span>px;</span></span> <span class="rule"><span class="attribute">color</span>:<span class="value">blue;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">li</span> <span class="rules">{ <span class="rule"><span class="attribute">cursor</span>:<span class="value">default;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">li</span><span class="class">.active</span> <span class="rules">{ <span class="rule"><span class="attribute">background</span>:<span class="value">black;</span></span><span class="rule"><span class="attribute">color</span>:<span class="value">white;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">span</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">red;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">ul</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">li</span>&gt;</span>White<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">li</span>&gt;</span>Carrots<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">li</span>&gt;</span>Orange<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">li</span>&gt;</span>Broccoli<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">li</span>&gt;</span>Green<span class="tag">&lt;/<span class="title">li</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"li"</span>)</code></div></div><div class="container"><div class="line"><code>.filter(<span class="string">":odd"</span>)</code></div></div><div class="container"><div class="line"><code>.hide()</code></div></div><div class="container"><div class="line"><code> .end()</code></div></div><div class="container"><div class="line"><code>.filter(<span class="string">":even"</span>)</code></div></div><div class="container"><div class="line"><code>.hover(</code></div></div><div class="container"><div class="line"><code>  <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).toggleClass(<span class="string">"active"</span>)</code></div></div><div class="container"><div class="line"><code>      .next().stop(<span class="literal">true</span>, <span class="literal">true</span>).slideToggle();</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>);</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
+</div></section>
+</div></article>

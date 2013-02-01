@@ -1,0 +1,153 @@
+<script>{
+		"title":
+			".ajaxSuccess()",
+		"excerpt":
+			"Attach a function to be executed whenever an Ajax request completes successfully. This is an Ajax Event.",
+		"termSlugs": {
+			"category": [
+				"ajax/global-ajax-event-handlers","version/1.0"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">.ajaxSuccess( handler(event, XMLHttpRequest, ajaxOptions) )</span><span class="returns">Returns: jQuery</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Attach a function to be executed whenever an Ajax request completes successfully. This is an Ajax Event.</p>
+<ul class="signatures"><li class="signature" id="ajaxSuccess-handlerevent--XMLHttpRequest--ajaxOptions">
+<h4 class="name">
+<span class="version-details">version added: 1.0</span>.ajaxSuccess( handler(event, XMLHttpRequest, ajaxOptions) )</h4>
+<ul><li>
+<div><strong>handler(event, XMLHttpRequest, ajaxOptions)</strong></div>
+<div>Type: Function()</div>
+<div>The function to be invoked.</div>
+</li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>Whenever an Ajax request completes successfully, jQuery triggers the <code>ajaxSuccess</code> event. Any and all handlers that have been registered with the <code>.ajaxSuccess()</code> method are executed at this time.</p>
+    <p>To observe this method in action, set up a basic Ajax load request:</p>
+    <div class="syntaxhighlighter xml nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"trigger"</span>&gt;</span>Trigger<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"result"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"log"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>Attach the event handler to any element:</p>
+    <div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(document).ajaxSuccess(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxSuccess handler."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>Now, make an Ajax request using any jQuery method:</p>
+    <div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$( <span class="string">".trigger"</span> ).on(<span class="string">"click"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">".result"</span> ).load( <span class="string">"ajax/test.html"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>When the user clicks the element with class <code>trigger</code> and the Ajax request completes successfully, the log message is displayed.</p>
+    <p><strong>Note:</strong> Because <code>.ajaxSuccess()</code> is implemented as a method of jQuery object instances, use the <code>this</code> keyword to refer to the selected elements within the callback function. <strong>As of jQuery 1.8, however, the <code>.ajaxSuccess()</code> method should only be attached to <code>document</code>.</strong></p>
+    <p>All <code>ajaxSuccess</code> handlers are invoked, regardless of what Ajax request was completed. If you must differentiate between the requests, you can use the parameters passed to the handler. Each time an <code>ajaxSuccess</code> handler is executed, it is passed the event object, the <code>XMLHttpRequest</code> object, and the settings object that was used in the creation of the request. For example, you can restrict the callback to only handling events dealing with a particular URL:</p>
+    <div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(document).ajaxSuccess(<span class="keyword">function</span>(event, xhr, settings) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( settings.url == <span class="string">"ajax/test.html"</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxSuccess handler. The ajax response was: "</span> +</code></div></div><div class="container"><div class="line"><code>                      xhr.responseText );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p><strong>Note:</strong> You can get the returned ajax contents by looking at <code>xhr.responseXML</code> or <code>xhr.responseText</code> for xml and html respectively.</p>
+  </div>
+<h3>Additional Notes:</h3>
+<div class="longdesc"><ul><li>
+			If <code>$.ajax()</code> or <code>$.ajaxSetup()</code> is called with the <code>global</code> option set to <code>false</code>, the <code>.ajaxSuccess()</code> method will not fire.
+		</li></ul></div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Show a message when an Ajax request completes successfully.</span></h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(document).ajaxSuccess(<span class="keyword">function</span>(event, request, settings) {</code></div></div><div class="container"><div class="line"><code>      $( <span class="string">"#msg"</span> ).append( <span class="string">"&lt;li&gt;Successful Request!&lt;/li&gt;"</span> );</code></div></div><div class="container"><div class="line"><code>      });</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>

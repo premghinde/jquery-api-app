@@ -1,0 +1,63 @@
+<script>{
+		"title":
+			"deferred.always()",
+		"excerpt":
+			" Add handlers to be called when the Deferred object is either resolved or rejected. ",
+		"termSlugs": {
+			"category": [
+				"deferred-object","version/1.6"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">deferred.always( alwaysCallbacks [, alwaysCallbacks ] )</span><span class="returns">Returns: Deferred</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong> Add handlers to be called when the Deferred object is either resolved or rejected. </p>
+<ul class="signatures"><li class="signature" id="deferred-always-alwaysCallbacks-alwaysCallbacks">
+<h4 class="name">
+<span class="version-details">version added: 1.6</span>deferred.always( alwaysCallbacks [, alwaysCallbacks ] )</h4>
+<ul>
+<li>
+<div><strong>alwaysCallbacks</strong></div>
+<div>Type: Function()</div>
+<div>
+        A function, or array of functions, that is called when the Deferred is resolved or rejected.
+      </div>
+</li>
+<li>
+<div><strong>alwaysCallbacks</strong></div>
+<div>Type: Function()</div>
+<div>
+        Optional additional functions, or arrays of functions, that are called when the Deferred is resolved or rejected.
+      </div>
+</li>
+</ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>The argument can be either a single function or an array of functions. When the Deferred is resolved or rejected, the <code>alwaysCallbacks</code> are called. Since <code>deferred.always()</code> returns the Deferred object, other methods of the Deferred object can be chained to this one, including additional <code>.always()</code> methods. When the Deferred is resolved or rejected, callbacks are executed in the order they were added, using the arguments provided to the <code>resolve</code>, <code>reject</code>, <code>resolveWith</code> or <code>rejectWith</code> method calls. For more information, see the documentation for Deferred object.</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Since the <code>jQuery.get()</code> method returns a <code>jqXHR</code> object, which is derived from a Deferred object, we can attach a callback for both success and error using the <code>deferred.always()</code> method.</span></h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.php"</span>).always( <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"$.get completed with success or error callback arguments"</span>);</code></div></div><div class="container"><div class="line"><code>} );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>

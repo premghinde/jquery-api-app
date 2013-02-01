@@ -1,0 +1,95 @@
+<script>{
+		"title":
+			".unload()",
+		"excerpt":
+			"Bind an event handler to the \"unload\" JavaScript event.",
+		"termSlugs": {
+			"category": [
+				"events/document-loading","version/1.0","version/1.4.3"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">.unload( handler(eventObject) )</span><span class="returns">Returns: jQuery</span><span class="version-details">version deprecated: 1.8</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Bind an event handler to the "unload" JavaScript event.</p>
+<ul class="signatures">
+<li class="signature" id="unload-handlereventObject">
+<h4 class="name">
+<span class="version-details">version added: 1.0</span>.unload( handler(eventObject) )</h4>
+<ul><li>
+<div><strong>handler(eventObject)</strong></div>
+<div>Type: Function()</div>
+<div>A function to execute when the event is triggered.</div>
+</li></ul>
+</li>
+<li class="signature" id="unload-eventData-handlereventObject">
+<h4 class="name">
+<span class="version-details">version added: 1.4.3</span>.unload(  [eventData ], handler(eventObject) )</h4>
+<ul>
+<li>
+<div><strong>eventData</strong></div>
+<div>Type: Object</div>
+<div>A plain object of data that will be passed to the event handler.</div>
+</li>
+<li>
+<div><strong>handler(eventObject)</strong></div>
+<div>Type: Function()</div>
+<div>A function to execute each time the event is triggered.</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>This method is a shortcut for <code>.bind('unload', handler)</code>.</p>
+    <p>The <code>unload</code> event is sent to the <code>window</code> element when the user navigates away from the page. This could mean one of many things. The user could have clicked on a link to leave the page, or typed in a new URL in the address bar. The forward and back buttons will trigger the event. Closing the browser window will cause the event to be triggered. Even a page reload will first create an <code>unload</code> event.</p>
+    <blockquote>
+      <p>The exact handling of the <code>unload</code> event has varied from version to version of browsers. For example, some versions of Firefox trigger the event when a link is followed, but not when the window is closed. In practical usage, behavior should be tested on all supported browsers, and contrasted with the proprietary <code>beforeunload</code> event.</p>
+    </blockquote>
+    <p>Any <code>unload</code> event handler should be bound to the <code>window</code> object:</p>
+    <div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(window).unload(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">'Handler for .unload() called.'</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+    <p>After this code executes, the alert will be displayed whenever the browser leaves the current page.
+It is not possible to cancel the <code>unload</code> event with <code>.preventDefault()</code>. This event is available so that scripts can perform cleanup when the user leaves the page.
+    </p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">To display an alert when a page is unloaded:</span></h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(window).unload( <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span> alert(<span class="string">"Bye now!"</span>); } );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>

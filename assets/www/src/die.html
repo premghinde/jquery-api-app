@@ -1,0 +1,130 @@
+<script>{
+		"title":
+			".die()",
+		"excerpt":
+			"Remove event handlers previously attached using .live() from the elements.",
+		"termSlugs": {
+			"category": [
+				"events/event-handler-attachment","version/1.3","version/1.4.1","version/1.4.3"
+			]
+		}
+	}</script><h2 class="section-title">
+<span class="name">.die()</span><span class="returns">Returns: jQuery</span><span class="version-details">version deprecated: 1.7, removed: 1.9</span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Remove event handlers previously attached using <code>.live()</code> from the elements.</p>
+<ul class="signatures">
+<li class="signature" id="die">
+<h4 class="name">
+<span class="version-details">version added: 1.4.1</span>.die()</h4>
+<ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
+</li>
+<li class="signature" id="die-eventType-handler">
+<h4 class="name">
+<span class="version-details">version added: 1.3</span>.die( eventType [, handler ] )</h4>
+<ul>
+<li>
+<div><strong>eventType</strong></div>
+<div>Type: String</div>
+<div>A string containing a JavaScript event type, such as <code>click</code> or <code>keydown</code>.</div>
+</li>
+<li>
+<div><strong>handler</strong></div>
+<div>Type: String</div>
+<div>The function that is no longer to be executed.</div>
+</li>
+</ul>
+</li>
+<li class="signature" id="die-events">
+<h4 class="name">
+<span class="version-details">version added: 1.4.3</span>.die( events )</h4>
+<ul><li>
+<div><strong>events</strong></div>
+<div>Type: PlainObject</div>
+<div>A plain object of one or more event types, such as <code>click</code> or <code>keydown</code> and their corresponding functions that are no longer to be executed.</div>
+</li></ul>
+</li>
+</ul>
+<div class="longdesc" id="entry-longdesc">
+    <p>Any handler that has been attached with <code>.live()</code> can be removed with <code>.die()</code>. This method is analogous to calling <code>.unbind()</code> with no arguments, which is used to remove all handlers attached with <code>.bind()</code>.
+  See the discussions of <code>.live()</code> and <code>.unbind()</code> for further details.</p>
+    <p>If used without an argument, .die() removes <em>all</em> event handlers previously attached using <code>.live()</code> from the elements.</p>
+    <p><strong>As of jQuery 1.7</strong>, use of <code>.die()</code> (and its complementary method, <code>.live()</code>) is not recommended. Instead, use <code>.off()</code> to remove event handlers bound with <code>.on()</code></p>
+    <p><strong>Note:</strong> In order for .die() to function correctly, the selector used with it must match exactly the selector initially used with .live().</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
+<h4>Example: <span class="desc">To unbind all live events from all paragraphs, write:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).die()</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-1">
+<h4>Example: <span class="desc">To unbind all live click events from all paragraphs, write:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).die( <span class="string">"click"</span> )</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-2">
+<h4>Example: <span class="desc">To unbind just one previously bound handler, pass the function in as the second argument:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  <span class="comment">// code to handle some kind of event</span></code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).live(<span class="string">"click"</span>, foo); <span class="comment">// ... now foo will be called when paragraphs are clicked ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).die(<span class="string">"click"</span>, foo); <span class="comment">// ... foo will no longer be called.</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>
