@@ -46,9 +46,10 @@
 </li>
 </ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>In the first two variations, this method is a shortcut for <code>.bind("click", handler)</code>, as well as for <code>.on("click", handler)</code> as of jQuery 1.7. In the third variation, when <code>.click()</code> is called without arguments, it is a shortcut for <code>.trigger("click")</code>. </p>
-    <p>The <code>click</code> event is sent to an element when the mouse pointer is over the element, and the mouse button is pressed and released. Any HTML element can receive this event.</p>
-    <div class="syntaxhighlighter javascript nogutter">
+    <p>This method is a shortcut for <code>.on('click', handler)</code> in the first two variations, and <code>.trigger('click')</code> in the third.
+    The <code>click</code> event is sent to an element when the mouse pointer is over the element, and the mouse button is pressed and released. Any HTML element can receive this event.
+    For example, consider the HTML:</p>
+    <div class="syntaxhighlighter xml nogutter">
 	<table>
 		<tbody>
 			<tr>
@@ -66,11 +67,9 @@
 					
 						<div class="line n6">6</div>
 					
-						<div class="line n7">7</div>
-					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>For example, consider the HTML:</code></div></div><div class="container"><div class="line"><code><span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"target"</span>&gt;</span></span></code></div></div><div class="container"><div class="line"><code>  Click here</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"other"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  Trigger the handler</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"target"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  Click here</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"other"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  Trigger the handler</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

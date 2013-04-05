@@ -38,7 +38,7 @@
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
 <h4>Example: <span class="desc">Show the browser info.</span>
 </h4>
-<div class="syntaxhighlighter xml ">
+<div class="syntaxhighlighter javascript ">
 	<table>
 		<tbody>
 			<tr>
@@ -52,53 +52,15 @@
 					
 						<div class="line n4">4</div>
 					
-						<div class="line n5">5</div>
-					
-						<div class="line n6">6</div>
-					
-						<div class="line n7">7</div>
-					
-						<div class="line n8">8</div>
-					
-						<div class="line n9">9</div>
-					
-						<div class="line n10">10</div>
-					
-						<div class="line n11">11</div>
-					
-						<div class="line n12">12</div>
-					
-						<div class="line n13">13</div>
-					
-						<div class="line n14">14</div>
-					
-						<div class="line n15">15</div>
-					
-						<div class="line n16">16</div>
-					
-						<div class="line n17">17</div>
-					
-						<div class="line n18">18</div>
-					
-						<div class="line n19">19</div>
-					
-						<div class="line n20">20</div>
-					
-						<div class="line n21">21</div>
-					
-						<div class="line n22">22</div>
-					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">p</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">green;</span></span> <span class="rule"><span class="attribute">font-weight</span>:<span class="value">bolder;</span></span> <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">3</span>px <span class="number">0</span> <span class="number">0</span> <span class="number">10</span>px;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">div</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">blue;</span></span> <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">20</span>px;</span></span> <span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">14</span>px;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">span</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">red;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>Browser info:<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>    jQuery.each(jQuery.browser, <span class="keyword">function</span>(i, val) {</code></div></div><div class="container"><div class="line"><code>      $(<span class="string">"&lt;div&gt;"</span> + i + <span class="string">" : &lt;span&gt;"</span> + val + <span class="string">"&lt;/span&gt;"</span>)</code></div></div><div class="container"><div class="line"><code>                .appendTo( document.body );</code></div></div><div class="container"><div class="line"><code>    });<span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>jQuery.each(jQuery.browser, <span class="keyword">function</span>(i, val) {</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"&lt;div&gt;"</span> + i + <span class="string">" : &lt;span&gt;"</span> + val + <span class="string">"&lt;/span&gt;"</span>)</code></div></div><div class="container"><div class="line"><code>  .appendTo( document.body );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
-<h4>Demo:</h4>
-<div class="demo code-demo"></div>
 </div>
 <div class="entry-example" id="example-1">
 <h4>Example: <span class="desc">Returns true if the current useragent is some version of Microsoft's Internet Explorer.</span>
@@ -222,7 +184,7 @@
 <section class="entry-examples" id="entry-examples-1"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-1-0">
 <h4>Example: <span class="desc">Returns the version number of the rendering engine used by the user's current browser. For example, FireFox 4 returns 2.0 (the version of the Gecko rendering engine it utilizes).</span>
 </h4>
-<div class="syntaxhighlighter xml ">
+<div class="syntaxhighlighter javascript ">
 	<table>
 		<tbody>
 			<tr>
@@ -232,53 +194,15 @@
 					
 						<div class="line n2">2</div>
 					
-						<div class="line n3">3</div>
-					
-						<div class="line n4">4</div>
-					
-						<div class="line n5">5</div>
-					
-						<div class="line n6">6</div>
-					
-						<div class="line n7">7</div>
-					
-						<div class="line n8">8</div>
-					
-						<div class="line n9">9</div>
-					
-						<div class="line n10">10</div>
-					
-						<div class="line n11">11</div>
-					
-						<div class="line n12">12</div>
-					
-						<div class="line n13">13</div>
-					
-						<div class="line n14">14</div>
-					
-						<div class="line n15">15</div>
-					
-						<div class="line n16">16</div>
-					
-						<div class="line n17">17</div>
-					
-						<div class="line n18">18</div>
-					
-						<div class="line n19">19</div>
-					
-						<div class="line n20">20</div>
-					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">p</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">blue;</span></span> <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">20</span>px;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">span</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">red;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).html( <span class="string">"The version number of the rendering engine your browser uses is: &lt;span&gt;"</span> +</code></div></div><div class="container"><div class="line"><code>                $.browser.version + <span class="string">"&lt;/span&gt;"</span> );</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).html( <span class="string">"The version number of the rendering engine your browser uses is: &lt;span&gt;"</span> +</code></div></div><div class="container"><div class="line"><code>                $.browser.version + <span class="string">"&lt;/span&gt;"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
-<h4>Demo:</h4>
-<div class="demo code-demo"></div>
 </div>
 <div class="entry-example" id="example-1-1">
 <h4>Example: <span class="desc">Alerts the version of IE's rendering engine that is being used:</span>

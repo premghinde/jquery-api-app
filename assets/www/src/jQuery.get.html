@@ -24,7 +24,7 @@
 </li>
 <li>
 <div><strong>data</strong></div>
-<div>Type: PlainObject, String</div>
+<div>Type: PlainObject or String</div>
 <div>A plain object or string that is sent to the server with the request.</div>
 </li>
 <li>
@@ -69,7 +69,7 @@
 </div>
 
     <p>The <code>success</code> callback function is passed the returned data, which will be an XML root element, text string, JavaScript file, or JSON object, depending on the MIME type of the response. It is also passed the text status of the response. </p>
-    <p><strong>As of jQuery 1.5</strong>, the <code>success</code> callback function is also passed a "jqXHR" object (in <strong>jQuery 1.4</strong>, it was passed the <code>XMLHttpRequest</code> object). However, since JSONP and cross-domain GET requests do not use XHR</abbr>,  in those cases the <code>(j)XHR</code> and <code>textStatus</code> parameters passed to the success callback are undefined.</p>
+    <p><strong>As of jQuery 1.5</strong>, the <code>success</code> callback function is also passed a "jqXHR" object (in <strong>jQuery 1.4</strong>, it was passed the <code>XMLHttpRequest</code> object). However, since JSONP and cross-domain GET requests do not use XHR</abbr>,  in those cases the <code>jqXHR</code> and <code>textStatus</code> parameters passed to the success callback are undefined.</p>
     <p>Most implementations will specify a success handler:</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
@@ -96,8 +96,8 @@
 
     <p>This example fetches the requested HTML snippet and inserts it on the page.</p>
     <h4 id="jqxhr-object">The jqXHR Object</h4>
-    <p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.get()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see Deferred object for more information). For convenience and consistency with the callback names used by <code>$.ajax()</code>, it provides <code>.error()</code>, <code>.success()</code>, and <code>.complete()</code> methods. These methods take a function argument that is called when the request terminates, and the function receives the same arguments as the correspondingly-named <code>$.ajax()</code> callback.</p>
-    <p>The Promise interface in jQuery 1.5 also allows jQuery's Ajax methods, including <code>$.get()</code>, to chain multiple <code>.success()</code>, <code>.complete()</code>, and <code>.error()</code> callbacks on a single request, and even to assign these callbacks after the request may have completed. If the request is already complete, the callback is fired immediately.</p>
+    <p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.get()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see Deferred object for more information). The <code>jqXHR.done()</code> (for success), <code>jqXHR.fail() (for error)</code>, and <code>jqXHR.always()</code> (for completion, whether success or error) methods take a function argument that is called when the request terminates. For information about the arguments this function receives, see the jqXHR Object section of the $.ajax() documentation.</p>
+    <p>The Promise interface also allows jQuery's Ajax methods, including <code>$.get()</code>, to chain multiple <code>.done()</code>, <code>.fail()</code>, and <code>.always()</code> callbacks on a single request, and even to assign these callbacks after the request may have completed. If the request is already complete, the callback is fired immediately.</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -132,13 +132,15 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="comment">// Assign handlers immediately after making the request,</span></code></div></div><div class="container"><div class="line"><code>  <span class="comment">// and remember the jqxhr object for this request</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> jqxhr = $.get(<span class="string">"example.php"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    alert(<span class="string">"success"</span>);</code></div></div><div class="container"><div class="line"><code>  })</code></div></div><div class="container"><div class="line"><code>  .success(<span class="keyword">function</span>() { alert(<span class="string">"second success"</span>); })</code></div></div><div class="container"><div class="line"><code>  .error(<span class="keyword">function</span>() { alert(<span class="string">"error"</span>); })</code></div></div><div class="container"><div class="line"><code>  .complete(<span class="keyword">function</span>() { alert(<span class="string">"complete"</span>); });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">// perform other work here ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Set another completion function for the request above</span></code></div></div><div class="container"><div class="line"><code>  jqxhr.complete(<span class="keyword">function</span>(){ alert(<span class="string">"second complete"</span>); });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="comment">// Assign handlers immediately after making the request,</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// and remember the jqxhr object for this request</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> jqxhr = $.get(<span class="string">"example.php"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"success"</span>);</code></div></div><div class="container"><div class="line"><code>})</code></div></div><div class="container"><div class="line"><code>.done(<span class="keyword">function</span>() { alert(<span class="string">"second success"</span>); })</code></div></div><div class="container"><div class="line"><code>.fail(<span class="keyword">function</span>() { alert(<span class="string">"error"</span>); })</code></div></div><div class="container"><div class="line"><code>.always(<span class="keyword">function</span>() { alert(<span class="string">"finished"</span>); });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// perform other work here ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Set another completion function for the request above</span></code></div></div><div class="container"><div class="line"><code>jqxhr.always(<span class="keyword">function</span>(){ alert(<span class="string">"second finished"</span>); });</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
+    <h4>Deprecation Notice</h4>
+    <p>The <code>jqXHR.success()</code>, <code>jqXHR.error()</code>, and <code>jqXHR.complete()</code> callback methods introduced in jQuery 1.5 are <strong>deprecated as of jQuery 1.8</strong>. To prepare your code for their eventual removal, use <code>jqXHR.done()</code>, <code>jqXHR.fail()</code>, and <code>jqXHR.always()</code> instead.</p>
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul>
@@ -195,7 +197,7 @@
 
 </div>
 <div class="entry-example" id="example-2">
-<h4>Example: <span class="desc">pass arrays of data to the server (while still ignoring the return results).</span>
+<h4>Example: <span class="desc">Pass arrays of data to the server (while still ignoring the return results).</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -216,7 +218,7 @@
 
 </div>
 <div class="entry-example" id="example-3">
-<h4>Example: <span class="desc">Alert out the results from requesting test.php (HTML or XML, depending on what was returned).</span>
+<h4>Example: <span class="desc">Alert the results from requesting test.php (HTML or XML, depending on what was returned).</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -232,7 +234,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.php"</span>, <span class="keyword">function</span>(data){</code></div></div><div class="container"><div class="line"><code>alert(<span class="string">"Data Loaded: "</span> + data);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.php"</span>, <span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"Data Loaded: "</span> + data);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -241,7 +243,7 @@
 
 </div>
 <div class="entry-example" id="example-4">
-<h4>Example: <span class="desc">Alert out the results from requesting test.cgi with an additional payload of data (HTML or XML, depending on what was returned).</span>
+<h4>Example: <span class="desc">Alert the results from requesting test.cgi with an additional payload of data (HTML or XML, depending on what was returned).</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -259,7 +261,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.cgi"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> },</code></div></div><div class="container"><div class="line"><code>   <span class="keyword">function</span>(data){</code></div></div><div class="container"><div class="line"><code>     alert(<span class="string">"Data Loaded: "</span> + data);</code></div></div><div class="container"><div class="line"><code>   });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.cgi"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> })</code></div></div><div class="container"><div class="line"><code>.done(<span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"Data Loaded: "</span> + data);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -268,7 +270,7 @@
 
 </div>
 <div class="entry-example" id="example-5">
-<h4>Example: <span class="desc"> Gets the test.php page contents, which has been returned in json format (&lt;?php echo json_encode(array("name"=&gt;"John","time"=&gt;"2pm")); ?&gt;), and adds it to the page.</span>
+<h4>Example: <span class="desc"> Get the test.php page contents, which has been returned in json format (&lt;?php echo json_encode(array("name"=&gt;"John","time"=&gt;"2pm")); ?&gt;), and add it to the page.</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -288,7 +290,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.php"</span>,</code></div></div><div class="container"><div class="line"><code>   <span class="keyword">function</span>(data){</code></div></div><div class="container"><div class="line"><code>     $(<span class="string">'body'</span>).append( <span class="string">"Name: "</span> + data.name ) <span class="comment">// John</span></code></div></div><div class="container"><div class="line"><code>              .append( <span class="string">"Time: "</span> + data.time ); <span class="comment">//  2pm</span></code></div></div><div class="container"><div class="line"><code>   }, <span class="string">"json"</span>);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.php"</span>,</code></div></div><div class="container"><div class="line"><code>   <span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>     $(<span class="string">'body'</span>).append( <span class="string">"Name: "</span> + data.name ) <span class="comment">// John</span></code></div></div><div class="container"><div class="line"><code>              .append( <span class="string">"Time: "</span> + data.time ); <span class="comment">//  2pm</span></code></div></div><div class="container"><div class="line"><code>   }, <span class="string">"json"</span>);</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

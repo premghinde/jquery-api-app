@@ -24,7 +24,7 @@
 </li>
 <li>
 <div><strong>data</strong></div>
-<div>Type: PlainObject, String</div>
+<div>Type: PlainObject or String</div>
 <div>A plain object or string that is sent to the server with the request.</div>
 </li>
 <li>
@@ -97,8 +97,8 @@
     <p>This example fetches the requested HTML snippet and inserts it on the page.</p>
     <p>Pages fetched with <code>POST</code> are never cached, so the <code>cache</code> and <code>ifModified</code> options in <code>jQuery.ajaxSetup()</code> have no effect on these requests.</p>
     <h4 id="jqxhr-object">The jqXHR Object</h4>
-    <p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.post()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see Deferred object for more information). For convenience and consistency with the callback names used by <code>$.ajax()</code>, it provides <code>.error()</code>, <code>.success()</code>, and <code>.complete()</code> methods. These methods take a function argument that is called when the request terminates, and the function receives the same arguments as the correspondingly-named <code>$.ajax()</code> callback.</p>
-    <p>The Promise interface in jQuery 1.5 also allows jQuery's Ajax methods, including <code>$.post()</code>, to chain multiple <code>.success()</code>, <code>.complete()</code>, and <code>.error()</code> callbacks on a single request, and even to assign these callbacks after the request may have completed. If the request is already complete, the callback is fired immediately.</p>
+    <p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.get()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see Deferred object for more information). The <code>jqXHR.done()</code> (for success), <code>jqXHR.fail() (for error)</code>, and <code>jqXHR.always()</code> (for completion, whether success or error) methods take a function argument that is called when the request terminates. For information about the arguments this function receives, see the jqXHR Object section of the $.ajax() documentation.</p>
+        <p>The Promise interface also allows jQuery's Ajax methods, including <code>$.get()</code>, to chain multiple <code>.done()</code>, <code>.fail()</code>, and <code>.always()</code> callbacks on a single request, and even to assign these callbacks after the request may have completed. If the request is already complete, the callback is fired immediately.</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -133,13 +133,16 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="comment">// Assign handlers immediately after making the request,</span></code></div></div><div class="container"><div class="line"><code>    <span class="comment">// and remember the jqxhr object for this request</span></code></div></div><div class="container"><div class="line"><code>    <span class="keyword">var</span> jqxhr = $.post(<span class="string">"example.php"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>      alert(<span class="string">"success"</span>);</code></div></div><div class="container"><div class="line"><code>    })</code></div></div><div class="container"><div class="line"><code>    .success(<span class="keyword">function</span>() { alert(<span class="string">"second success"</span>); })</code></div></div><div class="container"><div class="line"><code>    .error(<span class="keyword">function</span>() { alert(<span class="string">"error"</span>); })</code></div></div><div class="container"><div class="line"><code>    .complete(<span class="keyword">function</span>() { alert(<span class="string">"complete"</span>); });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    <span class="comment">// perform other work here ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    <span class="comment">// Set another completion function for the request above</span></code></div></div><div class="container"><div class="line"><code>    jqxhr.complete(<span class="keyword">function</span>(){ alert(<span class="string">"second complete"</span>); });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="comment">// Assign handlers immediately after making the request,</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// and remember the jqxhr object for this request</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> jqxhr = $.post(<span class="string">"example.php"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"success"</span>);</code></div></div><div class="container"><div class="line"><code>})</code></div></div><div class="container"><div class="line"><code>.done(<span class="keyword">function</span>() { alert(<span class="string">"second success"</span>); })</code></div></div><div class="container"><div class="line"><code>.fail(<span class="keyword">function</span>() { alert(<span class="string">"error"</span>); })</code></div></div><div class="container"><div class="line"><code>.always(<span class="keyword">function</span>() { alert(<span class="string">"finished"</span>); });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// perform other work here ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Set another completion function for the request above</span></code></div></div><div class="container"><div class="line"><code>jqxhr.always(<span class="keyword">function</span>(){ alert(<span class="string">"second finished"</span>); });</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
+
+    <h4>Deprecation Notice</h4>
+    <p>The <code>jqXHR.success()</code>, <code>jqXHR.error()</code>, and <code>jqXHR.complete()</code> callback methods introduced in jQuery 1.5 are <strong>deprecated as of jQuery 1.8</strong>. To prepare your code for their eventual removal, use <code>jqXHR.done()</code>, <code>jqXHR.fail()</code>, and <code>jqXHR.always()</code> instead.</p>
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul>
@@ -193,7 +196,7 @@
 
 </div>
 <div class="entry-example" id="example-2">
-<h4>Example: <span class="desc">pass arrays of data to the server (while still ignoring the return results).</span>
+<h4>Example: <span class="desc">Pass arrays of data to the server (while still ignoring the return results).</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -214,7 +217,7 @@
 
 </div>
 <div class="entry-example" id="example-3">
-<h4>Example: <span class="desc">send form data using ajax requests</span>
+<h4>Example: <span class="desc">Send form data using ajax requests</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -235,7 +238,7 @@
 
 </div>
 <div class="entry-example" id="example-4">
-<h4>Example: <span class="desc">Alert out the results from requesting test.php (HTML or XML, depending on what was returned).</span>
+<h4>Example: <span class="desc">Alert the results from requesting test.php (HTML or XML, depending on what was returned).</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -260,7 +263,7 @@
 
 </div>
 <div class="entry-example" id="example-5">
-<h4>Example: <span class="desc">Alert out the results from requesting test.php with an additional payload of data (HTML or XML, depending on what was returned).</span>
+<h4>Example: <span class="desc">Alert the results from requesting test.php with an additional payload of data (HTML or XML, depending on what was returned).</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -278,7 +281,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.post(<span class="string">"test.php"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> },</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>    alert(<span class="string">"Data Loaded: "</span> + data);</code></div></div><div class="container"><div class="line"><code>  });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.post(<span class="string">"test.php"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> })</code></div></div><div class="container"><div class="line"><code>.done(<span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"Data Loaded: "</span> + data);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -287,38 +290,7 @@
 
 </div>
 <div class="entry-example" id="example-6">
-<h4>Example: <span class="desc">Gets the test.php page content, store it in a XMLHttpResponse object and applies the process() JavaScript function.</span>
-</h4>
-<div class="syntaxhighlighter javascript ">
-	<table>
-		<tbody>
-			<tr>
-				<td class="gutter">
-					
-						<div class="line n1">1</div>
-					
-						<div class="line n2">2</div>
-					
-						<div class="line n3">3</div>
-					
-						<div class="line n4">4</div>
-					
-						<div class="line n5">5</div>
-					
-						<div class="line n6">6</div>
-					
-				</td>
-				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.post(<span class="string">"test.php"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> },</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>    process(data);</code></div></div><div class="container"><div class="line"><code>  },</code></div></div><div class="container"><div class="line"><code> <span class="string">"xml"</span></code></div></div><div class="container"><div class="line"><code>);</code></div></div></pre>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-
-</div>
-<div class="entry-example" id="example-7">
-<h4>Example: <span class="desc">Posts to the test.php page and gets contents which has been returned in json format (&lt;?php echo json_encode(array("name"=&gt;"John","time"=&gt;"2pm")); ?&gt;).</span>
+<h4>Example: <span class="desc">Post to the test.php page and get content which has been returned in json format (&lt;?php echo json_encode(array("name"=&gt;"John","time"=&gt;"2pm")); ?&gt;).</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -346,7 +318,7 @@
 </div>
 
 </div>
-<div class="entry-example" id="example-8">
+<div class="entry-example" id="example-7">
 <h4>Example: <span class="desc">Post a form using ajax and put results in a div</span>
 </h4>
 <div class="syntaxhighlighter xml ">
@@ -429,9 +401,11 @@
 					
 						<div class="line n37">37</div>
 					
+						<div class="line n38">38</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">"/"</span> <span class="attribute">id</span>=<span class="value">"searchForm"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>   <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"s"</span> <span class="attribute">placeholder</span>=<span class="value">"Search..."</span> /&gt;</span></code></div></div><div class="container"><div class="line"><code>   <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Search"</span> /&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">form</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="comment">&lt;!-- the result of the search will be rendered inside this div --&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"result"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="comment">/* attach a submit handler to the form */</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#searchForm"</span>).submit(<span class="keyword">function</span>(event) {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* stop form from submitting normally */</span></code></div></div><div class="container"><div class="line"><code>  event.preventDefault();</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* get some values from elements on the page: */</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> $form = $( <span class="keyword">this</span> ),</code></div></div><div class="container"><div class="line"><code>      term = $form.find( <span class="string">'input[name="s"]'</span> ).val(),</code></div></div><div class="container"><div class="line"><code>      url = $form.attr( <span class="string">'action'</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* Send the data using post and put the results in a div */</span></code></div></div><div class="container"><div class="line"><code>  $.post( url, { s: term },</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>        <span class="keyword">var</span> content = $( data ).find( <span class="string">'#content'</span> );</code></div></div><div class="container"><div class="line"><code>        $( <span class="string">"#result"</span> ).empty().append( content );</code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">"/"</span> <span class="attribute">id</span>=<span class="value">"searchForm"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>   <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"s"</span> <span class="attribute">placeholder</span>=<span class="value">"Search..."</span> /&gt;</span></code></div></div><div class="container"><div class="line"><code>   <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Search"</span> /&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">form</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="comment">&lt;!-- the result of the search will be rendered inside this div --&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"result"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="comment">/* attach a submit handler to the form */</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#searchForm"</span>).submit(<span class="keyword">function</span>(event) {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* stop form from submitting normally */</span></code></div></div><div class="container"><div class="line"><code>  event.preventDefault();</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* get some values from elements on the page: */</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> $form = $( <span class="keyword">this</span> ),</code></div></div><div class="container"><div class="line"><code>      term = $form.find( <span class="string">'input[name="s"]'</span> ).val(),</code></div></div><div class="container"><div class="line"><code>      url = $form.attr( <span class="string">'action'</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* Send the data using post */</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> posting = $.post( url, { s: term } );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* Put the results in a div */</span></code></div></div><div class="container"><div class="line"><code>  posting.done(<span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">var</span> content = $( data ).find( <span class="string">'#content'</span> );</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"#result"</span> ).empty().append( content );</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

@@ -129,14 +129,14 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"#foo"</span>).bind(<span class="string">"click"</span>, <span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"This will be displayed only once."</span>);</code></div></div><div class="container"><div class="line"><code>  $(<span class="keyword">this</span>).unbind( event );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$(<span class="string">"#foo"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"This will be displayed only once."</span>);</code></div></div><div class="container"><div class="line"><code>  $(<span class="keyword">this</span>).off( event );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
-    <p>In other words, explicitly calling <code>.unbind()</code> from within a regularly-bound handler has exactly the same effect.</p>
+    <p>In other words, explicitly calling <code>.off()</code> from within a regularly-bound handler has exactly the same effect.</p>
     <p>If the first argument contains more than one space-separated event types, the event handler is called <em>once for each event type</em>.</p>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">

@@ -52,16 +52,6 @@
 <div>A string indicating which easing function to use for the transition.</div>
 </li>
 <li>
-<div><strong>complete</strong></div>
-<div>Type: Function()</div>
-<div>A function to call once the animation is complete.</div>
-</li>
-<li>
-<div><strong>step</strong></div>
-<div>Type: Function( Number now, PlainObject fx )</div>
-<div>A function to be called after each step of the animation.</div>
-</li>
-<li>
 <div>
 <strong>queue</strong> (default: <code>true</code>)</div>
 <div>Type: Boolean</div>
@@ -71,6 +61,40 @@
 <div><strong>specialEasing</strong></div>
 <div>Type: PlainObject</div>
 <div>A map of one or more of the CSS properties defined by the properties argument and their corresponding easing functions.<span class="version-details"> (version added: 1.4)</span>
+</div>
+</li>
+<li>
+<div><strong>step</strong></div>
+<div>Type: Function( Number now, Tween tween )</div>
+<div>A function to be called for each animated property of each animated element. This function provides an opportunity to modify the Tween object to change the value of the property before it is set.</div>
+</li>
+<li>
+<div><strong>progress</strong></div>
+<div>Type: Function( Promise animation, Number progress, Number remainingMs )</div>
+<div>A function to be called after each step of the animation, only once per animated element regardless of the number of animated properties.<span class="version-details"> (version added: 1.8)</span>
+</div>
+</li>
+<li>
+<div><strong>complete</strong></div>
+<div>Type: Function()</div>
+<div>A function to call once the animation is complete.</div>
+</li>
+<li>
+<div><strong>done</strong></div>
+<div>Type: Function( Promise animation, Boolean jumpedToEnd )</div>
+<div>A function to be called when the animation completes (its Promise object is resolved).<span class="version-details"> (version added: 1.8)</span>
+</div>
+</li>
+<li>
+<div><strong>fail</strong></div>
+<div>Type: Function( Promise animation, Boolean jumpedToEnd )</div>
+<div>A function to be called when the animation fails to complete (its Promise object is rejected).<span class="version-details"> (version added: 1.8)</span>
+</div>
+</li>
+<li>
+<div><strong>always</strong></div>
+<div>Type: Function( Promise animation, Boolean jumpedToEnd )</div>
+<div>A function to be called when the animation completes or stops without completing (its Promise object is either resolved or rejected).<span class="version-details"> (version added: 1.8)</span>
 </div>
 </li>
 </ul>
