@@ -10,10 +10,9 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">jQuery.when( deferreds )</span><span class="returns">Returns: Promise</span>
-</h2>
-<div class="entry-wrapper">
-<p class="desc"><strong>Description: </strong>Provides a way to execute callback functions based on one or more objects, usually Deferred objects that represent asynchronous events.</p>
-<ul class="signatures"><li class="signature" id="jQuery-when-deferreds">
+</h2><div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Provides a way to execute callback functions based on one or more objects, usually <a href="/category/deferred-object/">Deferred</a> objects that represent asynchronous events.</p>
+<ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.5</span>jQuery.when( deferreds )</h4>
 <ul><li>
@@ -23,7 +22,7 @@
 </li></ul>
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>If a single Deferred is passed to <code>jQuery.when</code>, its Promise object (a subset of the Deferred methods) is returned by the method. Additional methods of the Promise object can be called to attach callbacks, such as <code>deferred.then</code>. When the Deferred is resolved or rejected, usually by the code that created the Deferred originally, the appropriate callbacks will be called. For example, the jqXHR object returned by <code>jQuery.ajax()</code> is a Promise and can be used this way:</p>
+    <p>If a single Deferred is passed to <code>jQuery.when</code>, its Promise object (a subset of the Deferred methods) is returned by the method. Additional methods of the Promise object can be called to attach callbacks, such as <a href="/deferred.then"><code>deferred.then</code></a>. When the Deferred is resolved or rejected, usually by the code that created the Deferred originally, the appropriate callbacks will be called. For example, the jqXHR object returned by <code>jQuery.ajax()</code> is a Promise and can be used this way:</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -97,7 +96,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.when($.ajax(<span class="string">"/page1.php"</span>), $.ajax(<span class="string">"/page2.php"</span>)).done(<span class="keyword">function</span>(a1,  a2){</code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* a1 and a2 are arguments resolved for the</span></code></div></div><div class="container"><div class="line"><code>      page1 and page2 ajax requests, respectively */</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> jqXHR = a1[<span class="number">2</span>]; <span class="comment">/* arguments are [ "success", statusText, jqXHR ] */</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( <span class="regexp">/Whip It/</span>.test(jqXHR.responseText) ) {</code></div></div><div class="container"><div class="line"><code>    alert(<span class="string">"First page has 'Whip It' somewhere."</span>);</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.when($.ajax(<span class="string">"/page1.php"</span>), $.ajax(<span class="string">"/page2.php"</span>)).done(<span class="keyword">function</span>(a1,  a2){</code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* a1 and a2 are arguments resolved for the</span></code></div></div><div class="container"><div class="line"><code><span class="comment">      page1 and page2 ajax requests, respectively */</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> jqXHR = a1[<span class="number">2</span>]; <span class="comment">/* arguments are [ "success", statusText, jqXHR ] */</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( <span class="regexp">/Whip It/</span>.test(jqXHR.responseText) ) {</code></div></div><div class="container"><div class="line"><code>    alert(<span class="string">"First page has 'Whip It' somewhere."</span>);</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -128,4 +127,4 @@
 </div>
 
 </div></section>
-</div></article>
+</div>

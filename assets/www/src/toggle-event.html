@@ -10,10 +10,9 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">.toggle( handler(eventObject), handler(eventObject) [, handler(eventObject) ] )</span><span class="returns">Returns: jQuery</span><span class="version-details">version deprecated: 1.8, removed: 1.9</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Bind two or more handlers to the matched elements, to be executed on alternate clicks.</p>
-<ul class="signatures"><li class="signature" id="toggle-handlereventObject-handlereventObject-handlereventObject">
+<ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>.toggle( handler(eventObject), handler(eventObject) [, handler(eventObject) ] )</h4>
 <ul>
@@ -36,7 +35,7 @@
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
     <blockquote>
-      <p>Note: jQuery also provides an animation method named .toggle() that toggles the visibility of elements. Whether the animation or the event method is fired depends on the set of arguments passed.</p>
+      <p>Note: This method signature was deprecated in jQuery 1.8 and removed in jQuery 1.9. jQuery also provides an animation method named <a href="http://api.jquery.com/toggle/">.toggle()</a> that toggles the visibility of elements. Whether the animation or the event method is fired depends on the set of arguments passed.</p>
     </blockquote>
     <p>The <code>.toggle()</code> method binds a handler for the <code>click</code> event, so the rules outlined for the triggering of <code>click</code> apply here as well.</p>
     <div class="syntaxhighlighter javascript nogutter">
@@ -90,15 +89,15 @@
 
     <p>As the element is clicked repeatedly, the messages alternate:</p>
     <p>
-      <span class="output">First handler for .toggle() called.</span>
+      <samp>First handler for .toggle() called.</samp>
       <br/>
-      <span class="output">Second handler for .toggle() called.</span>
+      <samp>Second handler for .toggle() called.</samp>
       <br/>
-      <span class="output">First handler for .toggle() called.</span>
+      <samp>First handler for .toggle() called.</samp>
       <br/>
-      <span class="output">Second handler for .toggle() called.</span>
+      <samp>Second handler for .toggle() called.</samp>
       <br/>
-      <span class="output">First handler for .toggle() called.</span>
+      <samp>First handler for .toggle() called.</samp>
     </p>
     <p>If more than two handlers are provided, <code>.toggle()</code> will cycle among all of them. For example, if there are three handlers, then the first handler will be called on the first click, the fourth click, the seventh click, and so on.</p>
     <p>The <code>.toggle()</code> method is provided for convenience. It is relatively straightforward to implement the same behavior by hand, and this can be necessary if the assumptions built into <code>.toggle()</code> prove limiting. For example, <code>.toggle()</code> is not guaranteed to work correctly if applied twice to the same element. Since <code>.toggle()</code> internally uses a <code>click</code> handler to do its work, we must unbind <code>click</code> to remove a behavior attached with <code>.toggle()</code>, so other <code>click</code> handlers can be caught in the crossfire. The implementation also calls <code>.preventDefault()</code> on the event, so links will not be followed and buttons will not be clicked if <code>.toggle()</code> has been called on the element.</p>
@@ -137,4 +136,4 @@
 </div>
 
 </div></section>
-</div></article>
+</div>

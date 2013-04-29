@@ -10,10 +10,9 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">jQuery.parseJSON( json )</span><span class="returns">Returns: Object</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Takes a well-formed JSON string and returns the resulting JavaScript object.</p>
-<ul class="signatures"><li class="signature" id="jQuery-parseJSON-json">
+<ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.4.1</span>jQuery.parseJSON( json )</h4>
 <ul><li>
@@ -23,15 +22,16 @@
 </li></ul>
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>Passing in a malformed JSON string may result in an exception being thrown. For example, the following are all malformed JSON strings:</p>
+    <p>Passing in a malformed JSON string results in a JavaScript exception being thrown. For example, the following are all malformed JSON strings:</p>
     <ul>
       <li>
 <code>{test: 1}</code> (test does not have double quotes around it).</li>
       <li>
 <code>{'test': 1}</code> ('test' is using single quotes instead of double quotes).</li>
     </ul>
-    <p>Additionally if you pass in nothing, an empty string, null, or undefined, 'null' will be returned from parseJSON. Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see http://json.org/.
-</p>
+	<p>The JSON standard does not permit "control characters" such as a tab or newline. An example like <code>$.parseJSON('{"testing":"1\t2\n3"}')</code> will throw an error in most implementations because the JavaScript parser converts the string's tab and newline escapes into literal tab and newline; doubling the backslashes like <code>"1\\t2\\n3"</code> yields expected results. This problem is often seen when injecting JSON into a JavaScript file from a server-side language such as PHP.</p>
+	<p>Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see <a href="http://json.org/">http://json.org/</a>.</p>
+	<p>Prior to jQuery 1.9, <code>$.parseJSON</code> returned <code>null</code> instead of throwing an error if it was passed an empty string, <code>null</code>, or <code>undefined</code>, even though those are not valid JSON. </p>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Parse a JSON string.</span></h4>
@@ -55,4 +55,4 @@
 </div>
 
 </div></section>
-</div></article>
+</div>

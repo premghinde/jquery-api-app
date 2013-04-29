@@ -10,10 +10,9 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">.ajaxError( handler(event, jqXHR, ajaxSettings, thrownError) )</span><span class="returns">Returns: jQuery</span>
-</h2>
-<div class="entry-wrapper">
-<p class="desc"><strong>Description: </strong>Register a handler to be called when Ajax requests complete with an error. This is an Ajax Event.</p>
-<ul class="signatures"><li class="signature" id="ajaxError-handlerevent--jqXHR--ajaxSettings--thrownError">
+</h2><div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Register a handler to be called when Ajax requests complete with an error. This is an <a href="/Ajax_Events">Ajax Event</a>.</p>
+<ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>.ajaxError( handler(event, jqXHR, ajaxSettings, thrownError) )</h4>
 <ul><li>
@@ -23,7 +22,7 @@
 </li></ul>
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>Whenever an Ajax request completes with an error, jQuery triggers the <code>ajaxError</code> event. Any and all handlers that have been registered with the <code>.ajaxError()</code> method are executed at this time.</p>
+    <p>Whenever an Ajax request completes with an error, jQuery triggers the <code>ajaxError</code> event. Any and all handlers that have been registered with the <code>.ajaxError()</code> method are executed at this time. <strong>Note:</strong> <em>This handler is not called for cross-domain script and cross-domain JSONP requests.</em></p>
     <p>To observe this method in action, set up a basic Ajax load request.</p>
     <div class="syntaxhighlighter xml nogutter">
 	<table>
@@ -83,7 +82,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">"button.trigger"</span> ).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"div.result"</span> ).load( <span class="string">"ajax/missing.html"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"button.trigger"</span> ).on( <span class="string">"click"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"div.result"</span> ).load( <span class="string">"ajax/missing.html"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -91,8 +90,8 @@
 </div>
 
     <p>When the user clicks the button and the Ajax request fails, because the requested file is missing, the log message is displayed.</p>
-    <p><strong>Note:</strong> Because <code>.ajaxError()</code> is implemented as a method of jQuery object instances, you can use the <code>this</code> keyword within the callback function to refer to the selected elements. <strong>As of jQuery 1.8, however, the <code>.ajaxError()</code> method should only be attached to <code>document</code>.</strong></p>
-    <p>All <code>ajaxError</code> handlers are invoked, regardless of what Ajax request was completed. To differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxError</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (prior to jQuery 1.5, the <code>XHR</abbr></code> object), and the settings object that was used in the creation of the request. If the request failed because JavaScript raised an exception, the exception object is passed to the handler as a fourth parameter. For example, to restrict the error callback to only handling events dealing with a particular URL:</p>
+    <p><strong>As of jQuery 1.8, the <code>.ajaxError()</code> method should only be attached to <code>document</code>.</strong></p>
+    <p>All <code>ajaxError</code> handlers are invoked, regardless of what Ajax request was completed. To differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxError</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (prior to jQuery 1.5, the <code><abbr title="XMLHttpRequest">XHR</abbr></code> object), and the settings object that was used in the creation of the request. When an HTTP error occurs, the fourth argument (<code>thrownError</code>) receives the textual portion of the HTTP status, such as "Not Found" or "Internal Server Error." For example, to restrict the error callback to only handling events dealing with a particular URL:</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -121,7 +120,7 @@
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul><li>
-			If <code>$.ajax()</code> or <code>$.ajaxSetup()</code> is called with the <code>global</code> option set to <code>false</code>, the <code>.ajaxError()</code> method will not fire.
+			If <code><a href="/jQuery.Ajax/">$.ajax()</a></code> or <code><a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a></code> is called with the <code>global</code> option set to <code>false</code>, the <code>.ajaxError()</code> method will not fire.
 		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Show a message when an Ajax request fails.</span></h4>
@@ -147,4 +146,4 @@
 </div>
 
 </div></section>
-</div></article>
+</div>

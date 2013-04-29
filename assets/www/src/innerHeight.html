@@ -10,17 +10,16 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">.innerHeight()</span><span class="returns">Returns: Integer</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Get the current computed height for the first element in the set of matched elements, including padding but not border.</p>
-<ul class="signatures"><li class="signature" id="innerHeight">
+<ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.2.6</span>.innerHeight()</h4>
 <ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
     <p>This method returns the height of the element, including top and bottom padding, in pixels.</p>
-    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code>.height()</code> instead.</p>
+    <p>This method is not applicable to <code>window</code> and <code>document</code> objects; for these, use <code><a href="/height">.height()</a></code> instead.</p>
     <p class="image">
       <img src="/resources/0042_04_02.png"/>
     </p>
@@ -61,7 +60,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"><span class="tag">p</span> <span class="rules">{ <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">10</span>px;</span></span><span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">5</span>px;</span></span><span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">2</span>px solid <span class="hexcolor">#666</span>;</span></span> <span class="rule">}</span></span></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">p</span>&gt;</span>Hello<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"><span class="keyword">var</span> p = $(<span class="string">"p:first"</span>);</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"p:last"</span>).text( <span class="string">"innerHeight:"</span> + p.innerHeight() );<span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"><span class="tag">p</span> <span class="rules">{ <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">10</span>px;</span></span><span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">5</span>px;</span></span><span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">2</span>px solid <span class="hexcolor">#666</span>;</span></span> <span class="rule">}</span></span></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">p</span>&gt;</span>Hello<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"><span class="keyword">var</span> p = $(<span class="string">"p:first"</span>);</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"p:last"</span>).text( <span class="string">"innerHeight:"</span> + p.innerHeight() );<span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -71,4 +70,4 @@
 <h4>Demo:</h4>
 <div class="demo code-demo"></div>
 </div></section>
-</div></article>
+</div>

@@ -10,10 +10,9 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">.ajaxStop( handler() )</span><span class="returns">Returns: jQuery</span>
-</h2>
-<div class="entry-wrapper">
-<p class="desc"><strong>Description: </strong>Register a handler to be called when all Ajax requests have completed. This is an Ajax Event.</p>
-<ul class="signatures"><li class="signature" id="ajaxStop-handler">
+</h2><div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Register a handler to be called when all Ajax requests have completed. This is an <a href="/Ajax_Events">Ajax Event</a>.</p>
+<ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>.ajaxStop( handler() )</h4>
 <ul><li>
@@ -91,11 +90,11 @@
 </div>
 
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request completes, the log message is displayed.</p>
-    <p>Because <code>.ajaxStop()</code> is implemented as a method of jQuery object instances, you can use the <code>this</code> keyword to refer to the selected elements within the callback function. <strong>As of jQuery 1.8, however, the <code>.ajaxStop()</code> method should only be attached to <code>document</code>.</strong></p>
+    <p><strong>As of jQuery 1.8, the <code>.ajaxStop()</code> method should only be attached to <code>document</code>.</strong></p>
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul><li>
-			If <code>$.ajax()</code> or <code>$.ajaxSetup()</code> is called with the <code>global</code> option set to <code>false</code>, the <code>.ajaxStop()</code> method will not fire.
+			If <code><a href="/jQuery.Ajax/">$.ajax()</a></code> or <code><a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a></code> is called with the <code>global</code> option set to <code>false</code>, the <code>.ajaxStop()</code> method will not fire.
 		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Hide a loading message after all the Ajax requests have stopped.</span></h4>
@@ -121,4 +120,4 @@
 </div>
 
 </div></section>
-</div></article>
+</div>

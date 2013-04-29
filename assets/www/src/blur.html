@@ -10,11 +10,10 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">.blur( handler(eventObject) )</span><span class="returns">Returns: jQuery</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Bind an event handler to the "blur" JavaScript event, or trigger that event on an element.</p>
 <ul class="signatures">
-<li class="signature" id="blur-handlereventObject">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>.blur( handler(eventObject) )</h4>
 <ul><li>
@@ -23,7 +22,7 @@
 <div>A function to execute each time the event is triggered.</div>
 </li></ul>
 </li>
-<li class="signature" id="blur-eventData-handlereventObject">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.4.3</span>.blur(  [eventData ], handler(eventObject) )</h4>
 <ul>
@@ -39,7 +38,7 @@
 </li>
 </ul>
 </li>
-<li class="signature" id="blur">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>.blur()</h4>
 <ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
@@ -88,7 +87,7 @@
 
     <p>Now if the first field has the focus, clicking elsewhere or tabbing away from it displays the alert:</p>
     <p>
-      <span class="output">Handler for .blur() called.</span>
+      <samp>Handler for .blur() called.</samp>
     </p>
     <p>To trigger the event programmatically, apply <code>.blur()</code> without an argument:</p>
     <div class="syntaxhighlighter javascript nogutter">
@@ -112,8 +111,8 @@
 	</table>
 </div>
 
-    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
-    <p>The <code>blur</code> event does not bubble in Internet Explorer. Therefore, scripts that rely on event delegation with the <code>blur</code> event will not work consistently across browsers. As of version 1.4.2, however, jQuery works around this limitation by mapping <code>blur</code> to the <code>focusout</code> event in its event delegation methods, <code>.live()</code> and <code>.delegate()</code>.</p>
+    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
+    <p>The <code>blur</code> event does not bubble in Internet Explorer. Therefore, scripts that rely on event delegation with the <code>blur</code> event will not work consistently across browsers. As of version 1.4.2, however, jQuery works around this limitation by mapping <code>blur</code> to the <code>focusout</code> event in its event delegation methods, <a href="http://api.jquery.com/live/"><code>.live()</code></a> and <a href="http://api.jquery.com/delegate/"><code>.delegate()</code></a>.</p>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">To trigger the blur event on all paragraphs:</span></h4>
@@ -135,4 +134,4 @@
 </div>
 
 </div></section>
-</div></article>
+</div>

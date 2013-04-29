@@ -10,11 +10,10 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">.mouseup( handler(eventObject) )</span><span class="returns">Returns: jQuery</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Bind an event handler to the "mouseup" JavaScript event, or trigger that event on an element.</p>
 <ul class="signatures">
-<li class="signature" id="mouseup-handlereventObject">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>.mouseup( handler(eventObject) )</h4>
 <ul><li>
@@ -23,7 +22,7 @@
 <div>A function to execute each time the event is triggered.</div>
 </li></ul>
 </li>
-<li class="signature" id="mouseup-eventData-handlereventObject">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.4.3</span>.mouseup(  [eventData ], handler(eventObject) )</h4>
 <ul>
@@ -39,7 +38,7 @@
 </li>
 </ul>
 </li>
-<li class="signature" id="mouseup">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>.mouseup()</h4>
 <ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
@@ -103,7 +102,7 @@
 
     <p>Now if we click on this element, the alert is displayed:</p>
     <p>
-      <span class="output">Handler for .mouseup() called.</span>
+      <samp>Handler for .mouseup() called.</samp>
     </p>
     <p>We can also trigger the event when a different element is clicked:</p>
     <div class="syntaxhighlighter javascript nogutter">
@@ -127,7 +126,7 @@
 	</table>
 </div>
 
-    <p>After this code executes, clicks on <span class="output">Trigger the handler</span> will also alert the message.</p>
+    <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>If the user clicks outside an element, drags onto it, and releases the button, this is still counted as a <code>mouseup</code> event. This sequence of actions is not treated as a button press in most user interfaces, so it is usually better to use the <code>click</code> event unless we know that the <code>mouseup</code> event is preferable for a particular situation.</p>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
@@ -178,7 +177,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">p</span>&gt;</span>Press mouse and release here.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>    $(<span class="string">"p"</span>).mouseup(<span class="keyword">function</span>(){</code></div></div><div class="container"><div class="line"><code>      $(<span class="keyword">this</span>).append(<span class="string">'&lt;span style="color:#F00;"&gt;Mouse up.&lt;/span&gt;'</span>);</code></div></div><div class="container"><div class="line"><code>    }).mousedown(<span class="keyword">function</span>(){</code></div></div><div class="container"><div class="line"><code>      $(<span class="keyword">this</span>).append(<span class="string">'&lt;span style="color:#00F;"&gt;Mouse down.&lt;/span&gt;'</span>);</code></div></div><div class="container"><div class="line"><code>    });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">p</span>&gt;</span>Press mouse and release here.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>    $(<span class="string">"p"</span>).mouseup(<span class="keyword">function</span>(){</code></div></div><div class="container"><div class="line"><code>      $(<span class="keyword">this</span>).append(<span class="string">'&lt;span style="color:#F00;"&gt;Mouse up.&lt;/span&gt;'</span>);</code></div></div><div class="container"><div class="line"><code>    }).mousedown(<span class="keyword">function</span>(){</code></div></div><div class="container"><div class="line"><code>      $(<span class="keyword">this</span>).append(<span class="string">'&lt;span style="color:#00F;"&gt;Mouse down.&lt;/span&gt;'</span>);</code></div></div><div class="container"><div class="line"><code>    });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -188,4 +187,4 @@
 <h4>Demo:</h4>
 <div class="demo code-demo"></div>
 </div></section>
-</div></article>
+</div>

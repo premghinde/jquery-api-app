@@ -2,10 +2,10 @@
 		"title":
 			"jQuery.browser",
 		"excerpt":
-			"Contains flags for the useragent, read from navigator.userAgent. We recommend against using this property; please try to use feature detection instead (see jQuery.support). jQuery.browser may be moved to a plugin in a future release of jQuery. ",
+			"Contains flags for the useragent, read from navigator.userAgent. This property was removed in jQuery 1.9 and is available only through the jQuery.migrate plugin. Please try to use feature detection instead.",
 		"termSlugs": {
 			"category": [
-				"properties/global-jquery-object-properties","utilities","version/1.0","version/1.1.3","properties/global-jquery-object-properties","utilities","version/1.0","version/1.1.3"
+				"properties/global-jquery-object-properties","utilities","version/1.0","version/1.1.3","deprecated/deprecated-1.3","properties/global-jquery-object-properties","utilities","version/1.0","version/1.1.3","deprecated/deprecated-1.3","removed"
 			]
 		}
 	}</script><div class="toc">
@@ -16,9 +16,8 @@
 </ul>
 </div><h2 class="section-title">
 <span>jQuery.browser</span><span class="returns">Returns: PlainObject</span><span class="version-details">version deprecated: 1.3, removed: 1.9</span>
-</h2>
-<div class="entry-wrapper">
-<p class="desc"><strong>Description: </strong>Contains flags for the useragent, read from navigator.userAgent. <strong>We recommend against using this property; please try to use feature detection instead (see jQuery.support). jQuery.browser may be moved to a plugin in a future release of jQuery.</strong> </p>
+</h2><div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Contains flags for the useragent, read from navigator.userAgent. <strong>This property was removed in jQuery 1.9</strong> and is available only through the jQuery.migrate plugin. Please try to use feature detection instead.</p>
 <ul class="signatures"><li class="signature"><h4 class="name">
 <span class="version-details">version added: 1.0</span>jQuery.browser</h4></li></ul>
 <div class="longdesc" id="entry-longdesc">
@@ -33,7 +32,7 @@
       </ul>
       <p>This property is available immediately. It is therefore safe to use it to determine whether or not to call <code>$(document).ready()</code>.
     The <code>$.browser</code> property is deprecated in jQuery 1.3, and its functionality may be moved to a team-supported plugin in a future release of jQuery.</p>
-      <p>Because <code>$.browser</code> uses <code>navigator.userAgent</code> to determine the platform, it is vulnerable to spoofing by the user or misrepresentation by the browser itself. It is always best to avoid browser-specific code entirely where possible. The <code>$.support</code> property is available for detection of support for particular features rather than relying on <code>$.browser</code>. </p>
+      <p>Because <code>$.browser</code> uses <code>navigator.userAgent</code> to determine the platform, it is vulnerable to spoofing by the user or misrepresentation by the browser itself. It is always best to avoid browser-specific code entirely where possible. The <code><a href="http://api.jquery.com/jQuery.support/">$.support</a></code> property is available for detection of support for particular features rather than relying on <code>$.browser</code>. </p>
     </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
 <h4>Example: <span class="desc">Show the browser info.</span>
@@ -63,7 +62,7 @@
 
 </div>
 <div class="entry-example" id="example-1">
-<h4>Example: <span class="desc">Returns true if the current useragent is some version of Microsoft's Internet Explorer.</span>
+<h4>Example: <span class="desc">Return true if the current useragent is some version of Microsoft's Internet Explorer. <strong>Will not work in jQuery 1.9 or later</strong> unless the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate</a> plugin is included.</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -84,7 +83,7 @@
 
 </div>
 <div class="entry-example" id="example-2">
-<h4>Example: <span class="desc">Alerts "this is WebKit!" only for WebKit browsers</span>
+<h4>Example: <span class="desc">Alert "this is WebKit!" only for WebKit browsers. <strong>Will not work in jQuery 1.9 or later</strong> unless the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate</a> plugin is included.</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -107,68 +106,11 @@
 	</table>
 </div>
 
-</div>
-<div class="entry-example" id="example-3">
-<h4>Example: <span class="desc">Alerts "Do stuff for Firefox 3" only for Firefox 3 browsers.</span>
-</h4>
-<div class="syntaxhighlighter javascript ">
-	<table>
-		<tbody>
-			<tr>
-				<td class="gutter">
-					
-						<div class="line n1">1</div>
-					
-						<div class="line n2">2</div>
-					
-						<div class="line n3">3</div>
-					
-						<div class="line n4">4</div>
-					
-				</td>
-				<td class="code">
-					<pre><div class="container"><div class="line"><code>  <span class="keyword">var</span> ua = $.browser;</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( ua.mozilla &amp;&amp; ua.version.slice(<span class="number">0</span>,<span class="number">3</span>) == <span class="string">"1.9"</span> ) {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"Do stuff for firefox 3"</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div></pre>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-
-</div>
-<div class="entry-example" id="example-4">
-<h4>Example: <span class="desc">Set a CSS property that's specific to a particular browser.</span>
-</h4>
-<div class="syntaxhighlighter javascript ">
-	<table>
-		<tbody>
-			<tr>
-				<td class="gutter">
-					
-						<div class="line n1">1</div>
-					
-						<div class="line n2">2</div>
-					
-						<div class="line n3">3</div>
-					
-						<div class="line n4">4</div>
-					
-						<div class="line n5">5</div>
-					
-				</td>
-				<td class="code">
-					<pre><div class="container"><div class="line"><code> <span class="keyword">if</span> ( $.browser.msie ) {</code></div></div><div class="container"><div class="line"><code>    $(<span class="string">"#div ul li"</span>).css( <span class="string">"display"</span>,<span class="string">"inline"</span> );</code></div></div><div class="container"><div class="line"><code> } <span class="keyword">else</span> {</code></div></div><div class="container"><div class="line"><code>    $(<span class="string">"#div ul li"</span>).css( <span class="string">"display"</span>,<span class="string">"inline-table"</span> );</code></div></div><div class="container"><div class="line"><code> }</code></div></div></pre>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-
 </div></section>
-</div></article><h2 class="section-title">
+</div><h2 class="section-title">
 <span>jQuery.browser.version</span><span class="returns">Returns: String</span><span class="version-details">version deprecated: 1.3, removed: 1.9</span>
-</h2>
-<div class="entry-wrapper">
-<p class="desc"><strong>Description: </strong>The version number of the rendering engine for the user's browser.</p>
+</h2><div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>The version number of the rendering engine for the user's browser. <strong>This property was removed in jQuery 1.9</strong> and is available only through the jQuery.migrate plugin.</p>
 <ul class="signatures"><li class="signature"><h4 class="name">
 <span class="version-details">version added: 1.1.3</span>jQuery.browser.version</h4></li></ul>
 <div class="longdesc" id="entry-longdesc-1">
@@ -182,7 +124,7 @@
       <p>Note that IE8 claims to be 7 in Compatibility View.</p>
     </div>
 <section class="entry-examples" id="entry-examples-1"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-1-0">
-<h4>Example: <span class="desc">Returns the version number of the rendering engine used by the user's current browser. For example, FireFox 4 returns 2.0 (the version of the Gecko rendering engine it utilizes).</span>
+<h4>Example: <span class="desc">Return the version number of the rendering engine used by the user's current browser. For example, FireFox 4 returns 2.0 (the version of the Gecko rendering engine it utilizes). <strong>Will not work in jQuery 1.9 or later</strong> unless the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate</a> plugin is included.</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -196,7 +138,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).html( <span class="string">"The version number of the rendering engine your browser uses is: &lt;span&gt;"</span> +</code></div></div><div class="container"><div class="line"><code>                $.browser.version + <span class="string">"&lt;/span&gt;"</span> );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).html( <span class="string">"The version # of the browser's rendering engine is: &lt;span&gt;"</span> +</code></div></div><div class="container"><div class="line"><code>                $.browser.version + <span class="string">"&lt;/span&gt;"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -205,7 +147,7 @@
 
 </div>
 <div class="entry-example" id="example-1-1">
-<h4>Example: <span class="desc">Alerts the version of IE's rendering engine that is being used:</span>
+<h4>Example: <span class="desc">Alert the version of IE's rendering engine that is being used. <strong>Will not work in jQuery 1.9 or later</strong> unless the <a href="https://github.com/jquery/jquery-migrate/#readme">jQuery Migrate</a> plugin is included.</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -228,30 +170,5 @@
 	</table>
 </div>
 
-</div>
-<div class="entry-example" id="example-1-2">
-<h4>Example: <span class="desc">Often you only care about the "major number," the whole number, which you can get by using JavaScript's built-in <code>parseInt()</code> function:</span>
-</h4>
-<div class="syntaxhighlighter javascript ">
-	<table>
-		<tbody>
-			<tr>
-				<td class="gutter">
-					
-						<div class="line n1">1</div>
-					
-						<div class="line n2">2</div>
-					
-						<div class="line n3">3</div>
-					
-				</td>
-				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="keyword">if</span> ( $.browser.msie ) {</code></div></div><div class="container"><div class="line"><code>  alert( parseInt($.browser.version, <span class="number">10</span>) );</code></div></div><div class="container"><div class="line"><code>}</code></div></div></pre>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-
 </div></section>
-</div></article>
+</div>

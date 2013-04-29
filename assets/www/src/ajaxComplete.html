@@ -10,10 +10,9 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">.ajaxComplete( handler(event, XMLHttpRequest, ajaxOptions) )</span><span class="returns">Returns: jQuery</span>
-</h2>
-<div class="entry-wrapper">
-<p class="desc"><strong>Description: </strong>Register a handler to be called when Ajax requests complete. This is an AjaxEvent.</p>
-<ul class="signatures"><li class="signature" id="ajaxComplete-handlerevent--XMLHttpRequest--ajaxOptions">
+</h2><div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Register a handler to be called when Ajax requests complete. This is an <a href="/Ajax_Events">AjaxEvent</a>.</p>
+<ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>.ajaxComplete( handler(event, XMLHttpRequest, ajaxOptions) )</h4>
 <ul><li>
@@ -91,7 +90,7 @@
 </div>
 
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request completes, the log message is displayed.</p>
-    <p><strong>Note:</strong> Because <code>.ajaxComplete()</code> is implemented as a method of jQuery object instances, you can use the <code>this</code> keyword to refer to the selected elements within the callback function. <strong>As of jQuery 1.8, however, the <code>.ajaxComplete()</code> method should only be attached to <code>document</code>.</strong></p>
+    <p><strong>As of jQuery 1.8, the <code>.ajaxComplete()</code> method should only be attached to <code>document</code>.</strong></p>
     <p>All <code>ajaxComplete</code> handlers are invoked, regardless of what Ajax request was completed. If you must differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxComplete</code> handler is executed, it is passed the event object, the <code>XMLHttpRequest</code> object, and the settings object that was used in the creation of the request. For example, you can restrict the callback to only handling events dealing with a particular URL:</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
@@ -124,7 +123,7 @@
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul><li>
-			If <code>$.ajax()</code> or <code>$.ajaxSetup()</code> is called with the <code>global</code> option set to <code>false</code>, the <code>.ajaxComplete()</code> method will not fire.
+			If <code><a href="/jQuery.Ajax/">$.ajax()</a></code> or <code><a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a></code> is called with the <code>global</code> option set to <code>false</code>, the <code>.ajaxComplete()</code> method will not fire.
 		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Show a message when an Ajax request completes.</span></h4>
@@ -150,4 +149,4 @@
 </div>
 
 </div></section>
-</div></article>
+</div>

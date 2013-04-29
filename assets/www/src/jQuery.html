@@ -30,11 +30,10 @@
 </ul>
 </div><h2 class="section-title">
 <span class="name">jQuery( selector [, context ] )</span><span class="returns">Returns: jQuery</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Accepts a string containing a CSS selector which is then used to match a set of elements.</p>
 <ul class="signatures">
-<li class="signature" id="jQuery-selector-context">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>jQuery( selector [, context ] )</h4>
 <ul>
@@ -50,7 +49,7 @@
 </li>
 </ul>
 </li>
-<li class="signature" id="jQuery-element">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>jQuery( element )</h4>
 <ul><li>
@@ -59,7 +58,7 @@
 <div>A DOM element to wrap in a jQuery object.</div>
 </li></ul>
 </li>
-<li class="signature" id="jQuery-elementArray">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>jQuery( elementArray )</h4>
 <ul><li>
@@ -68,7 +67,7 @@
 <div>An array containing a set of DOM elements to wrap in a jQuery object.</div>
 </li></ul>
 </li>
-<li class="signature" id="jQuery-object">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>jQuery( object )</h4>
 <ul><li>
@@ -77,7 +76,7 @@
 <div>A plain object to wrap in a jQuery object.</div>
 </li></ul>
 </li>
-<li class="signature" id="jQuery-jQuery-object">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>jQuery( jQuery object )</h4>
 <ul><li>
@@ -86,7 +85,7 @@
 <div>An existing jQuery object to clone.</div>
 </li></ul>
 </li>
-<li class="signature" id="jQuery">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.4</span>jQuery()</h4>
 <ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
@@ -111,7 +110,7 @@
 	</table>
 </div>
 
-      <p>If no elements match the provided selector, the new jQuery object is "empty"; that is, it contains no elements and has <code>.length</code> property of 0.</p>
+      <p>If no elements match the provided selector, the new jQuery object is "empty"; that is, it contains no elements and has <code><a href="http://api.jquery.com/length/">.length</a></code> property of 0.</p>
       <h4 id="selector-context">Selector Context</h4>
       <p>By default, selectors perform their searches within the DOM starting at the document root. However, an alternate context can be given for the search by using the optional second parameter to the <code>$()</code> function. For example, to do a search within an event handler, the search can be restricted like so:</p>
       <div class="syntaxhighlighter javascript nogutter">
@@ -191,7 +190,7 @@
       <p>When a jQuery object is passed to the <code>$()</code> function, a clone of the object is created. This new jQuery object references the same DOM elements as the initial one.</p>
 
       <h4 id="returning-empty-set">Returning an Empty Set</h4>
-      <p>As of jQuery 1.4, calling the <code>jQuery()</code> method with <em>no arguments</em> returns an empty jQuery set (with a <code>.length</code> property of 0). In previous versions of jQuery, this would return a set containing the document node.</p>
+      <p>As of jQuery 1.4, calling the <code>jQuery()</code> method with <em>no arguments</em> returns an empty jQuery set (with a <code><a href="http://api.jquery.com/length/">.length</a></code> property of 0). In previous versions of jQuery, this would return a set containing the document node.</p>
       <h4 id="working-with-plain-objects">Working With Plain Objects</h4>
       <p>At present, the only operations supported on plain JavaScript objects wrapped in jQuery are: <code>.data()</code>,<code>.prop()</code>,<code>.on()</code>, <code>.off()</code>, <code>.trigger()</code> and <code>.triggerHandler()</code>. The use of <code>.data()</code> (or any method requiring <code>.data()</code>) on a plain object will result in a new property on the object called jQuery{randomNumber} (eg. jQuery123456789).</p>
       <div class="syntaxhighlighter javascript nogutter">
@@ -311,7 +310,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">p</span>&gt;</span>one<span class="tag">&lt;/<span class="title">p</span>&gt;</span> <span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>two<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span> <span class="tag">&lt;<span class="title">p</span>&gt;</span>three<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">"div &gt; p"</span>).css(<span class="string">"border"</span>, <span class="string">"1px solid gray"</span>);</code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">p</span>&gt;</span>one<span class="tag">&lt;/<span class="title">p</span>&gt;</span> <span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>two<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span> <span class="tag">&lt;<span class="title">p</span>&gt;</span>three<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">"div &gt; p"</span>).css(<span class="string">"border"</span>, <span class="string">"1px solid gray"</span>);</code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -405,13 +404,12 @@
 </div>
 
 </div></section>
-</div></article><h2 class="section-title">
+</div><h2 class="section-title">
 <span class="name">jQuery( html [, ownerDocument ] )</span><span class="returns">Returns: jQuery</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Creates DOM elements on the fly from the provided string of raw HTML.</p>
 <ul class="signatures">
-<li class="signature" id="jQuery-html-ownerDocument">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>jQuery( html [, ownerDocument ] )</h4>
 <ul>
@@ -427,7 +425,7 @@
 </li>
 </ul>
 </li>
-<li class="signature" id="jQuery-html-attributes">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.4</span>jQuery( html, attributes )</h4>
 <ul>
@@ -464,10 +462,10 @@
 	</table>
 </div>
 
-      <p>For explicit parsing of a string to HTML, use the $.parseHTML() method.</p>
+      <p>For explicit parsing of a string to HTML, use the <a href="/jQuery.parseHTML/">$.parseHTML()</a> method.</p>
       <p>If the HTML is more complex than a single tag without attributes, as it is in the above example, the actual creation of the elements is handled by the browser's <code>innerHTML</code> mechanism. In most cases, jQuery creates a new &lt;div&gt; element and sets the innerHTML property of the element to the HTML snippet that was passed in. When the parameter has a single tag (with optional closing tag or quick-closing) — <code>$( "&lt;img /&gt;" )</code> or <code>$( "&lt;img&gt;" )</code>, <code>$( "&lt;a&gt;&lt;/a&gt;" )</code> or <code>$( "&lt;a&gt;" )</code> — jQuery creates the element using the native JavaScript <code>createElement()</code> function.</p>
       <p>When passing in complex HTML, some browsers may not generate a DOM that exactly replicates the HTML source provided. As mentioned, jQuery uses the browser"s <code>.innerHTML</code> property to parse the passed HTML and insert it into the current document. During this process, some  browsers filter out certain elements such as  <code>&lt;html&gt;</code>,  <code>&lt;title&gt;</code>, or  <code>&lt;head&gt;</code> elements. As a result, the  elements inserted may not be representative of the original string  passed.</p>
-      <p>Filtering isn't, however, limited to these tags. For example, Internet Explorer prior to version 8 will also convert all <code>href</code> properties on links to absolute URLs, and Internet Explorer prior to version 9 will not correctly handle HTML5 elements without the addition of a separate compatibility layer.</p>
+      <p>Filtering isn't, however, limited to these tags. For example, Internet Explorer prior to version 8 will also convert all <code>href</code> properties on links to absolute URLs, and Internet Explorer prior to version 9 will not correctly handle HTML5 elements without the addition of a separate <a href="http://code.google.com/p/html5shiv/">compatibility layer</a>.</p>
       <p>To ensure cross-platform compatibility, the snippet must be well-formed. Tags that can contain other elements should be paired with a closing tag:</p>
       <div class="syntaxhighlighter javascript nogutter">
 	<table>
@@ -527,8 +525,8 @@
 </div>
 
       <p>This behavior is expected. </p>
-      <p>As of jQuery 1.4, the second argument to <code>jQuery()</code> can accept a plain object consisting of a superset of the properties that can be passed to the .attr() method.</p>
-      <p><strong>Important:</strong> If the second argument is passed, the HTML string in the first argument must represent a a simple element with no attributes. <strong>As of jQuery 1.4</strong>, any event type can be passed in, and the following jQuery methods can be called: val, css, html, text, data, width, height, or offset.</p>
+      <p>As of jQuery 1.4, the second argument to <code>jQuery()</code> can accept a plain object consisting of a superset of the properties that can be passed to the <a href="/attr">.attr()</a> method.</p>
+      <p><strong>Important:</strong> If the second argument is passed, the HTML string in the first argument must represent a a simple element with no attributes. <strong>As of jQuery 1.4</strong>, any <a href="/category/events/">event type</a> can be passed in, and the following jQuery methods can be called: <a href="/val">val</a>, <a href="/css">css</a>, <a href="/html">html</a>, <a href="/text">text</a>, <a href="/data">data</a>, <a href="/width">width</a>, <a href="/height">height</a>, or <a href="/offset">offset</a>.</p>
       <p><strong>As of jQuery 1.8</strong>, any jQuery instance method (a method of <code>jQuery.fn</code>) can be used as a property of the object passed to the second parameter:</p>
       <div class="syntaxhighlighter javascript nogutter">
 	<table>
@@ -647,12 +645,11 @@
 </div>
 
 </div></section>
-</div></article><h2 class="section-title">
+</div><h2 class="section-title">
 <span class="name">jQuery( callback )</span><span class="returns">Returns: jQuery</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Binds a function to be executed when the DOM has finished loading.</p>
-<ul class="signatures"><li class="signature" id="jQuery-callback">
+<ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>jQuery( callback )</h4>
 <ul><li>
@@ -714,4 +711,4 @@
 </div>
 
 </div></section>
-</div></article>
+</div>

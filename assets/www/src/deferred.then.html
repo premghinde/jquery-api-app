@@ -10,11 +10,10 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">deferred.then( doneFilter [, failFilter ] [, progressFilter ] )</span><span class="returns">Returns: Promise</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Add handlers to be called when the Deferred object is resolved, rejected, or still in progress. </p>
 <ul class="signatures">
-<li class="signature" id="deferred-then-doneFilter-failFilter-progressFilter">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.8</span>deferred.then( doneFilter [, failFilter ] [, progressFilter ] )</h4>
 <ul>
@@ -41,7 +40,7 @@
 </li>
 </ul>
 </li>
-<li class="signature" id="deferred-then-doneCallbacks-failCallbacks">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.5, removed: 1.8</span>deferred.then( doneCallbacks, failCallbacks )</h4>
 <ul>
@@ -61,7 +60,7 @@
 </li>
 </ul>
 </li>
-<li class="signature" id="deferred-then-doneCallbacks-failCallbacks-progressCallbacks">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.7, removed: 1.8</span>deferred.then( doneCallbacks, failCallbacks [, progressCallbacks ] )</h4>
 <ul>
@@ -102,7 +101,7 @@
     </p>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
-<h4>Example: <span class="desc">Since the <code>jQuery.get</code> method returns a jqXHR object, which is derived from a Deferred object, we can attach handlers using the <code>.then</code> method.</span>
+<h4>Example: <span class="desc">Since the <a href="/jQuery.get"><code>jQuery.get</code></a> method returns a jqXHR object, which is derived from a Deferred object, we can attach handlers using the <code>.then</code> method.</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -197,7 +196,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">button</span>&gt;</span>Filter Resolve<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> filterResolve = <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> defer = $.Deferred(),</code></div></div><div class="container"><div class="line"><code>      filtered = defer.then(<span class="keyword">function</span>( value ) {</code></div></div><div class="container"><div class="line"><code>        <span class="keyword">return</span> value * <span class="number">2</span>;</code></div></div><div class="container"><div class="line"><code>      });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  defer.resolve( <span class="number">5</span> );</code></div></div><div class="container"><div class="line"><code>  filtered.done(<span class="keyword">function</span>( value ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"p"</span> ).html( <span class="string">"Value is ( 2*5 = ) 10: "</span> + value );</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$( <span class="string">"button"</span> ).on( <span class="string">"click"</span>, filterResolve );</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">button</span>&gt;</span>Filter Resolve<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> filterResolve = <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> defer = $.Deferred(),</code></div></div><div class="container"><div class="line"><code>      filtered = defer.then(<span class="keyword">function</span>( value ) {</code></div></div><div class="container"><div class="line"><code>        <span class="keyword">return</span> value * <span class="number">2</span>;</code></div></div><div class="container"><div class="line"><code>      });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  defer.resolve( <span class="number">5</span> );</code></div></div><div class="container"><div class="line"><code>  filtered.done(<span class="keyword">function</span>( value ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"p"</span> ).html( <span class="string">"Value is ( 2*5 = ) 10: "</span> + value );</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$( <span class="string">"button"</span> ).on( <span class="string">"click"</span>, filterResolve );</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -281,4 +280,4 @@
 </div>
 
 </div></section>
-</div></article>
+</div>

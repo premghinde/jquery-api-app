@@ -5,16 +5,15 @@
 			"Bind an event handler to the \"error\" JavaScript event.",
 		"termSlugs": {
 			"category": [
-				"events/browser-events","version/1.0","version/1.4.3"
+				"events/browser-events","version/1.0","version/1.4.3","deprecated/deprecated-1.8"
 			]
 		}
 	}</script><h2 class="section-title">
 <span class="name">.error( handler(eventObject) )</span><span class="returns">Returns: jQuery</span><span class="version-details">version deprecated: 1.8</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Bind an event handler to the "error" JavaScript event.</p>
 <ul class="signatures">
-<li class="signature" id="error-handlereventObject">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>.error( handler(eventObject) )</h4>
 <ul><li>
@@ -23,7 +22,7 @@
 <div>A function to execute when the event is triggered.</div>
 </li></ul>
 </li>
-<li class="signature" id="error-eventData-handlereventObject">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.4.3</span>.error(  [eventData ], handler(eventObject) )</h4>
 <ul>
@@ -89,7 +88,7 @@
 
     <p>If the image cannot be loaded (for example, because it is not present at the supplied URL), the alert  is displayed:</p>
     <p>
-      <span class="output">Handler for .error() called.</span>
+      <samp>Handler for .error() called.</samp>
     </p>
     <blockquote>
       <p>The event handler <em>must</em> be attached before the browser fires the error event, which is why the example sets the src attribute after attaching the handler. Also, the error event may not be correctly fired when the page is served locally; <code>error</code> relies on HTTP status codes and will generally not be triggered if the URL uses the <code>file:</code> protocol.</p>
@@ -124,4 +123,4 @@
 </div>
 
 </div></section>
-</div></article>
+</div>

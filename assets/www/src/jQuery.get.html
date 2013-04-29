@@ -10,10 +10,9 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">jQuery.get( url [, data ] [, success(data, textStatus, jqXHR) ] [, dataType ] )</span><span class="returns">Returns: jqXHR</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Load data from the server using a HTTP GET request.</p>
-<ul class="signatures"><li class="signature" id="jQuery-get-url-data-successdata--textStatus--jqXHR-dataType">
+<ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>jQuery.get( url [, data ] [, success(data, textStatus, jqXHR) ] [, dataType ] )</h4>
 <ul>
@@ -69,7 +68,7 @@
 </div>
 
     <p>The <code>success</code> callback function is passed the returned data, which will be an XML root element, text string, JavaScript file, or JSON object, depending on the MIME type of the response. It is also passed the text status of the response. </p>
-    <p><strong>As of jQuery 1.5</strong>, the <code>success</code> callback function is also passed a "jqXHR" object (in <strong>jQuery 1.4</strong>, it was passed the <code>XMLHttpRequest</code> object). However, since JSONP and cross-domain GET requests do not use XHR</abbr>,  in those cases the <code>jqXHR</code> and <code>textStatus</code> parameters passed to the success callback are undefined.</p>
+    <p><strong>As of jQuery 1.5</strong>, the <code>success</code> callback function is also passed a <a href="/#jqxhr-object">"jqXHR" object</a> (in <strong>jQuery 1.4</strong>, it was passed the <code>XMLHttpRequest</code> object). However, since JSONP and cross-domain GET requests do not use <abbr title="XMLHTTPRequest">XHR</abbr>,  in those cases the <code>jqXHR</code> and <code>textStatus</code> parameters passed to the success callback are undefined.</p>
     <p>Most implementations will specify a success handler:</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
@@ -96,7 +95,7 @@
 
     <p>This example fetches the requested HTML snippet and inserts it on the page.</p>
     <h4 id="jqxhr-object">The jqXHR Object</h4>
-    <p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.get()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see Deferred object for more information). The <code>jqXHR.done()</code> (for success), <code>jqXHR.fail() (for error)</code>, and <code>jqXHR.always()</code> (for completion, whether success or error) methods take a function argument that is called when the request terminates. For information about the arguments this function receives, see the jqXHR Object section of the $.ajax() documentation.</p>
+    <p><strong>As of jQuery 1.5</strong>, all of jQuery's Ajax methods return  a superset of the <code>XMLHTTPRequest</code> object. This jQuery XHR object, or "jqXHR," returned by <code>$.get()</code> implements the Promise interface, giving it all the properties, methods, and behavior of a Promise (see <a href="/category/deferred-object/">Deferred object</a> for more information). The <code>jqXHR.done()</code> (for success), <code>jqXHR.fail()</code> (for error), and <code>jqXHR.always()</code> (for completion, whether success or error) methods take a function argument that is called when the request terminates. For information about the arguments this function receives, see the <a href="/jQuery.ajax/#jqXHR">jqXHR Object</a> section of the $.ajax() documentation.</p>
     <p>The Promise interface also allows jQuery's Ajax methods, including <code>$.get()</code>, to chain multiple <code>.done()</code>, <code>.fail()</code>, and <code>.always()</code> callbacks on a single request, and even to assign these callbacks after the request may have completed. If the request is already complete, the callback is fired immediately.</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
@@ -145,10 +144,10 @@
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul>
 <li>
-			Due to browser security restrictions, most "Ajax" requests are subject to the same origin policy; the request can not successfully retrieve data from a different domain, subdomain, or protocol.
+			Due to browser security restrictions, most "Ajax" requests are subject to the <a title="Same Origin Policy on Wikipedia" href="http://en.wikipedia.org/wiki/Same_origin_policy">same origin policy</a>; the request can not successfully retrieve data from a different domain, subdomain, or protocol.
 		</li>
 <li>
-			If a request with jQuery.get() returns an error code, it will fail silently unless the script has also called the global .ajaxError()  method. Alternatively, as of jQuery 1.5, the <code>.error()</code> method of the <code>jqXHR</code> object returned by jQuery.get() is also available for error handling.
+			If a request with jQuery.get() returns an error code, it will fail silently unless the script has also called the global <a href="http://api.jquery.com/ajaxError/">.ajaxError() </a> method. Alternatively, as of jQuery 1.5, the <code>.error()</code> method of the <code>jqXHR</code> object returned by jQuery.get() is also available for error handling.
 		</li>
 <li>
 			Script and JSONP requests are not subject to the same origin policy restrictions.
@@ -298,4 +297,4 @@
 </div>
 
 </div></section>
-</div></article>
+</div>

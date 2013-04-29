@@ -10,10 +10,9 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">jQuery.type( obj )</span><span class="returns">Returns: String</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Determine the internal JavaScript [[Class]] of an object.</p>
-<ul class="signatures"><li class="signature" id="jQuery-type-obj">
+<ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.4.3</span>jQuery.type( obj )</h4>
 <ul><li>
@@ -33,13 +32,17 @@
           <li>jQuery.type( null ) === "null"</li>
         </ul>
       </li>
-      <li>If the object has an internal [[Class]] equivalent to one of the browser's built-in objects, the associated name is returned. (More details about this technique.)
+      <li>If the argument is either a primitive value or an instance of a standard built-in ECMAScript object, the [[Class]] internal property is used to determine the type. (<a href="http://perfectionkills.com/instanceof-considered-harmful-or-how-to-write-a-robust-isarray/">More details about this technique.</a>)
         <ul>
           <li>jQuery.type( true ) === "boolean"</li>
+          <li>jQuery.type( new Boolean() ) === "boolean"</li>
           <li>jQuery.type( 3 ) === "number"</li>
+          <li>jQuery.type( new Number(3) ) === "number"</li>
           <li>jQuery.type( "test" ) === "string"</li>
+          <li>jQuery.type( new String("test") ) === "string"</li>
           <li>jQuery.type( function(){} ) === "function"</li>
           <li>jQuery.type( [] ) === "array"</li>
+          <li>jQuery.type( new Array() ) === "array"</li>
           <li>jQuery.type( new Date() ) === "date"</li>
           <li>jQuery.type( new Error() ) === "error" // <strong>as of jQuery 1.9</strong>
 </li>
@@ -81,7 +84,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-latest.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  Is it a RegExp? <span class="tag">&lt;<span class="title">b</span>&gt;</span><span class="tag">&lt;/<span class="title">b</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">$(<span class="string">"b"</span>).append( <span class="string">""</span> + jQuery.type(<span class="regexp">/test/</span>) );</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  Is it a RegExp? <span class="tag">&lt;<span class="title">b</span>&gt;</span><span class="tag">&lt;/<span class="title">b</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">$(<span class="string">"b"</span>).append( <span class="string">""</span> + jQuery.type(<span class="regexp">/test/</span>) );</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -91,4 +94,4 @@
 <h4>Demo:</h4>
 <div class="demo code-demo"></div>
 </div></section>
-</div></article>
+</div>

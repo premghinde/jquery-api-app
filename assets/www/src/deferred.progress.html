@@ -10,21 +10,20 @@
 		}
 	}</script><h2 class="section-title">
 <span class="name">deferred.progress( progressCallbacks )</span><span class="returns">Returns: Deferred</span>
-</h2>
-<div class="entry-wrapper">
+</h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong> Add handlers to be called when the Deferred object generates progress notifications.</p>
-<ul class="signatures"><li class="signature" id="deferred-progress-progressCallbacks">
+<ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.7</span>deferred.progress( progressCallbacks )</h4>
 <ul><li>
 <div><strong>progressCallbacks</strong></div>
-<div>Type: Function()</div>
+<div>Type: Function() or Array</div>
 <div>
-        A function, or array of functions, that is called when the Deferred generates progress notifications.
+        A function, or array of functions, to be called when the Deferred generates progress notifications.
       </div>
 </li></ul>
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>The argument can be either a single function or an array of functions. When the Deferred generates progress notifications by calling <code>notify</code> or <code>notifyWith</code>, the <code>progressCallbacks</code> are called. Since <code>deferred.progress()</code> returns the Deferred object, other methods of the Deferred object can be chained to this one. When the Deferred is resolved or rejected, progress callbacks will no longer be called, with the exception that any <code>progressCallbacks</code> added after the Deferred enters the resolved or rejected state are executed immediately when they are added, using the arguments that were passed to the <code>.notify()</code> or <code>notifyWith()</code> call. For more information, see the documentation jQuery.Deferred().</p>
+    <p>The argument can be either a single function or an array of functions. When the Deferred generates progress notifications by calling <code>notify</code> or <code>notifyWith</code>, the <code>progressCallbacks</code> are called. Since <code>deferred.progress()</code> returns the Deferred object, other methods of the Deferred object can be chained to this one. When the Deferred is resolved or rejected, progress callbacks will no longer be called, with the exception that any <code>progressCallbacks</code> added after the Deferred enters the resolved or rejected state are executed immediately when they are added, using the arguments that were passed to the <code>.notify()</code> or <code>notifyWith()</code> call. For more information, see the documentation for <a href="/jQuery.Deferred/">jQuery.Deferred()</a>.</p>
   </div>
-</div></article>
+</div>
