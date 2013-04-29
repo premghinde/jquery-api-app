@@ -19,7 +19,6 @@
 
 package com.nearlydone.jqueryapi19;
 
-import android.app.Activity;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
