@@ -20,7 +20,7 @@
 </li>
 </ul>
 </div><h2 class="section-title">
-<span class="name">.val()</span><span class="returns">Returns: String, Number, Array</span>
+<span class="name">.val()</span><span class="returns">Returns: String or Number or Array</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Get the current value of the first element in the set of matched elements.</p>
 <ul class="signatures"><li class="signature">
@@ -54,9 +54,9 @@
 	</table>
 </div>
 
-      <blockquote>
+      <div class="warning">
         <p><strong>Note: </strong> At present, using <code>.val()</code> on textarea elements strips carriage return characters from the browser-reported value. When this value is sent to the server via XHR however, carriage returns are preserved (or added by browsers which do not include them in the raw value). A workaround for this issue can be achieved using a valHook as follows:</p>
-      </blockquote>
+      </div>
       <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>

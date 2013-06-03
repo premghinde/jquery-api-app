@@ -44,7 +44,8 @@
 </li>
 </ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>The <code>.clone()</code> method performs a <em>deep</em> copy of the set of matched elements, meaning that it copies the matched elements as well as all of their descendant elements and text nodes. When used in conjunction with one of the insertion methods, <code>.clone()</code> is a convenient way to duplicate elements on a page. Consider the following HTML:</p>
+    <p>The <code>.clone()</code> method performs a <em>deep</em> copy of the set of matched elements, meaning that it copies the matched elements as well as all of their descendant elements and text nodes. For performance reasons, the dynamic state of form elements (e.g., user data typed into <code>input</code>, and <code>textarea</code> or user selections made to a <code>select</code>) is not copied to the cloned elemements. The clone operation sets these fields to their default values as specified in the HTML.</p>
+	<p>When used in conjunction with one of the insertion methods, <code>.clone()</code> is a convenient way to duplicate elements on a page. Consider the following HTML:</p>
     <div class="syntaxhighlighter xml nogutter">
 	<table>
 		<tbody>
@@ -162,9 +163,9 @@
 	</table>
 </div>
 
-    <blockquote>
+    <div class="warning">
       <p><strong>Note:</strong> When using the <code>.clone()</code> method, you can modify the cloned elements or their contents before (re-)inserting them into the document.</p>
-    </blockquote>
+    </div>
     <p>Normally, any event handlers bound to the original element are <em>not</em> copied to the clone. The optional <code>withDataAndEvents</code> parameter allows us to change this behavior, and to instead make copies of all of the event handlers as well, bound to the new copy of the element. As of jQuery 1.4, all element data (attached by the <code>.data()</code> method) is also copied to the new copy. </p>
     <p>However, objects and arrays within element data are not copied and will continue to be shared between the cloned element and the original element. To deep copy all data, copy each one manually:</p>
     <div class="syntaxhighlighter javascript nogutter">
@@ -189,9 +190,9 @@
 </div>
 
     <p>As of jQuery 1.5, <code>withDataAndEvents</code> can be optionally enhanced with <code>deepWithDataAndEvents </code> to copy the events and data for all children of the cloned element.</p>
-    <blockquote>
+    <div class="warning">
       <p><strong>Note:</strong> Using <code>.clone()</code> has the side-effect of producing elements with duplicate <code>id</code> attributes, which are supposed to be unique. Where possible, it is recommended to avoid cloning elements with this attribute or using <code>class</code> attributes as identifiers instead.</p>
-    </blockquote>
+    </div>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
 <h4>Example: <span class="desc">Clones all b elements (and selects the clones) and prepends them to all paragraphs.</span>

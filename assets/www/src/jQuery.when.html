@@ -94,9 +94,13 @@
 					
 						<div class="line n8">8</div>
 					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.when($.ajax(<span class="string">"/page1.php"</span>), $.ajax(<span class="string">"/page2.php"</span>)).done(<span class="keyword">function</span>(a1,  a2){</code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* a1 and a2 are arguments resolved for the</span></code></div></div><div class="container"><div class="line"><code><span class="comment">      page1 and page2 ajax requests, respectively */</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> jqXHR = a1[<span class="number">2</span>]; <span class="comment">/* arguments are [ "success", statusText, jqXHR ] */</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( <span class="regexp">/Whip It/</span>.test(jqXHR.responseText) ) {</code></div></div><div class="container"><div class="line"><code>    alert(<span class="string">"First page has 'Whip It' somewhere."</span>);</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.when($.ajax(<span class="string">"/page1.php"</span>), $.ajax(<span class="string">"/page2.php"</span>)).done(<span class="keyword">function</span>(a1, a2){</code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* a1 and a2 are arguments resolved for the</span></code></div></div><div class="container"><div class="line"><code><span class="comment">      page1 and page2 ajax requests, respectively. </span></code></div></div><div class="container"><div class="line"><code><span class="comment">      each argument is an array with the following </span></code></div></div><div class="container"><div class="line"><code><span class="comment">      structure: [ data, statusText, jqXHR ] */</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> data = a1[<span class="number">0</span>] + a2[<span class="number">0</span>]; <span class="comment">/* a1[0] = "Whip", a2[0] = " It" */</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( <span class="regexp">/Whip It/</span>.test(data) ) {</code></div></div><div class="container"><div class="line"><code>    alert(<span class="string">"We got what we came for!"</span>);</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

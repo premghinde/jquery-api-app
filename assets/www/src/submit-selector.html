@@ -13,11 +13,11 @@
 <ul class="signatures"><li class="signature"><h4 class="name">
 <span class="version-details">version added: 1.0</span>jQuery( ":submit" )</h4></li></ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>The <code>:submit</code> selector typically applies to button or input elements. Note that some browsers treat <code>&lt;button&gt;</code> element as <code>type="default"</code> implicitly while others (such as Internet Explorer) do not.  </p>
+    <p>The <code>:submit</code> selector typically applies to button or input elements. Note that some browsers treat <code>&lt;button&gt;</code> element as <code>type="submit"</code> implicitly while others (such as Internet Explorer) do not. To ensure that markup works consistently across all browsers and guarantee that it is possible to consistently select buttons that will submit a form, always specify a <code>type</code> property.</p>
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul><li>
-			Because <code>:submit</code> is a jQuery extension and not part of the CSS specification, queries using <code>:submit</code> cannot take advantage of the performance boost provided by the native DOM <code>querySelectorAll()</code> method. For better performance in modern browsers, use <code>[type="submit"]</code> instead.
+			Because <code>:submit</code> is a jQuery extension and not part of the CSS specification, queries using <code>:submit</code> cannot take advantage of the performance boost provided by the native DOM <code>querySelectorAll()</code> method. For better performance in modern browsers, use <code>input[type="submit"], button[type="submit"]</code> instead.
 		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Finds all submit elements that are descendants of a td element.</span></h4>

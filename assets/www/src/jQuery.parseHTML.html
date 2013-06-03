@@ -25,7 +25,7 @@
 <div>
 <strong>context</strong> (default: <code>document</code>)</div>
 <div>Type: Element</div>
-<div>DOM element to serve as the context in which the HTML fragment will be created</div>
+<div>Document element to serve as the context in which the HTML fragment will be created</div>
 </li>
 <li>
 <div>
@@ -37,6 +37,7 @@
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
     <p><code>jQuery.parseHTML</code> uses a native DOM element creation function to convert the string to a set of DOM elements, which can then be inserted into the document.</p>
+	<p>By default, the <code>context</code> is the current <code>document</code> if not specified or given as <code>null</code> or <code>undefined</code>. If the HTML was to be used in another document such as an iframe, that frame's document could be used.</p>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Create an array of Dom nodes using an HTML string and insert it into a div.</span></h4>
