@@ -22,7 +22,7 @@
 </li></ul>
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>For details on the settings available for <code>$.ajaxSetup()</code>, see <code><a href="/jQuery.ajax">$.ajax()</a></code>. </p>
+    <p>For details on the settings available for <code>$.ajaxSetup()</code>, see <code>$.ajax()</code>. </p>
     <p>All subsequent Ajax calls using any function will use the new settings, unless overridden by the individual calls, until the next invocation of <code>$.ajaxSetup()</code>.</p>
 	<p><strong>Note:</strong> The settings specified here will affect <em>all</em> calls to <code>$.ajax</code> or AJAX-based derivatives such as <code>$.get()</code>. This can cause undesirable behavior since other callers (for example, plugins) may be expecting the normal default settings. For that reason we <em>strongly recommend against using this API</em>. Instead, set the options explicitly in the call or define a simple plugin to do so.</p>
     <p>For example, the following sets a default for the <code>url</code> parameter before pinging the server repeatedly:</p>
@@ -72,7 +72,7 @@
 </div>
 
     <div class="warning">
-      <p>Note: Global callback functions should be set with their respective global Ajax event handler methods—<code><a href="/ajaxStart">.ajaxStart()</a></code>, <code><a href="/ajaxStop">.ajaxStop()</a></code>, <code><a href="/ajaxComplete">.ajaxComplete()</a></code>, <code><a href="/ajaxError">.ajaxError()</a></code>, <code><a href="/ajaxSuccess">.ajaxSuccess()</a></code>, <code><a href="/ajaxSend">.ajaxSend()</a></code>—rather than within the <code>options</code> object for <code>$.ajaxSetup()</code>.</p>
+      <p>Note: Global callback functions should be set with their respective global Ajax event handler methods—<code>.ajaxStart()</code>, <code>.ajaxStop()</code>, <code>.ajaxComplete()</code>, <code>.ajaxError()</code>, <code>.ajaxSuccess()</code>, <code>.ajaxSend()</code>—rather than within the <code>options</code> object for <code>$.ajaxSetup()</code>.</p>
     </div>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">

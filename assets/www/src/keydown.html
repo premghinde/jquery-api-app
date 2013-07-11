@@ -125,7 +125,7 @@
 
     <p>After this code executes, clicks on <samp>Trigger the handler</samp> will also alert the message.</p>
     <p>If key presses anywhere need to be caught (for example, to implement global shortcut keys on a page), it is useful to attach this behavior to the <code>document</code> object. Because of event bubbling, all key presses will make their way up the DOM to the <code>document</code> object unless explicitly stopped.</p>
-    <p>To determine which key was pressed, examine the <a href="http://api.jquery.com/category/events/event-object/">event object</a> that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the key code. This code corresponds to a key on the keyboard, including codes for special keys such as arrows. For catching actual text entry, <code>.keypress()</code> may be a better choice.</p>
+    <p>To determine which key was pressed, examine the event object that is passed to the handler function. While browsers use differing properties to store this information, jQuery normalizes the <code>.which</code> property so you can reliably use it to retrieve the key code. This code corresponds to a key on the keyboard, including codes for special keys such as arrows. For catching actual text entry, <code>.keypress()</code> may be a better choice.</p>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Show the event object for the keydown handler when a key is pressed in the input.</span></h4>

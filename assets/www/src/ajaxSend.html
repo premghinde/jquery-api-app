@@ -11,7 +11,7 @@
 	}</script><h2 class="section-title">
 <span class="name">.ajaxSend( handler(event, jqXHR, ajaxOptions) )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
-<p class="desc"><strong>Description: </strong>Attach a function to be executed before an Ajax request is sent. This is an <a href="/Ajax_Events">Ajax Event</a>.</p>
+<p class="desc"><strong>Description: </strong>Attach a function to be executed before an Ajax request is sent. This is an Ajax Event.</p>
 <ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>.ajaxSend( handler(event, jqXHR, ajaxOptions) )</h4>
@@ -91,7 +91,7 @@
 
     <p>When the user clicks the element with class <code>trigger</code> and the Ajax request is about to begin, the log message is displayed.</p>
     <p><strong>As of jQuery 1.8, the <code>.ajaxSend()</code> method should only be attached to <code>document</code>.</strong></p>
-    <p>All <code>ajaxSend</code> handlers are invoked, regardless of what Ajax request is to be sent. If you must differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxSend</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (in version 1.4, <code>XMLHttpRequest</code>object), and the <a href="http://api.jquery.com/jQuery.ajax/">settings object</a> that was used in the creation of the Ajax request. For example, you can restrict the callback to only handling events dealing with a particular URL:</p>
+    <p>All <code>ajaxSend</code> handlers are invoked, regardless of what Ajax request is to be sent. If you must differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxSend</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (in version 1.4, <code>XMLHttpRequest</code>object), and the settings object that was used in the creation of the Ajax request. For example, you can restrict the callback to only handling events dealing with a particular URL:</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -120,7 +120,7 @@
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul><li>
-			If <code><a href="/jQuery.Ajax/">$.ajax()</a></code> or <code><a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a></code> is called with the <code>global</code> option set to <code>false</code>, the <code>.ajaxSend()</code> method will not fire.
+			If <code>$.ajax()</code> or <code>$.ajaxSetup()</code> is called with the <code>global</code> option set to <code>false</code>, the <code>.ajaxSend()</code> method will not fire.
 		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Show a message before an Ajax request is sent.</span></h4>

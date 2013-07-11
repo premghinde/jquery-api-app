@@ -124,7 +124,7 @@
 </li>
 </ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>The <code>.fadeIn()</code> method animates the opacity of the matched elements. It is similar to the <code><a href="/fadeTo/">.fadeTo()</a></code> method but that method does not unhide the element and can specify the final opacity level.</p>
+    <p>The <code>.fadeIn()</code> method animates the opacity of the matched elements. It is similar to the <code>.fadeTo()</code> method but that method does not unhide the element and can specify the final opacity level.</p>
     <p>Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of <code>200</code> and <code>600</code> milliseconds, respectively. If any other string is supplied, or if the <code>duration</code> parameter is omitted, the default duration of  <code>400</code> milliseconds is used.</p>
     <p>We can animate any element, such as a simple image:</p>
     <div class="syntaxhighlighter xml nogutter">
@@ -169,14 +169,14 @@
       <img src="/resources/0042_06_36.png" alt=""/>
     </p>
     <h4 id="easing">Easing</h4>
-    <p><strong>As of jQuery 1.4.3</strong>, an optional string naming an easing function may be used. Easing functions specify the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the <a href="http://jqueryui.com">jQuery UI suite</a>.</p>
+    <p><strong>As of jQuery 1.4.3</strong>, an optional string naming an easing function may be used. Easing functions specify the speed at which the animation progresses at different points within the animation. The only easing implementations in the jQuery library are the default, called <code>swing</code>, and one that progresses at a constant pace, called <code>linear</code>. More easing functions are available with the use of plug-ins, most notably the jQuery UI suite.</p>
     <h4 id="callback-function">Callback Function</h4>
     <p>If supplied, the callback is fired once the animation is complete. This can be useful for stringing different animations together in sequence. The callback is not sent any arguments, but <code>this</code> is set to the DOM element being animated. If multiple elements are animated, it is important to note that the callback is executed once per matched element, not once for the animation as a whole. </p>
-    <p><strong>As of jQuery 1.6</strong>, the <code><a href="http://api.jquery.com/promise/">.promise()</a></code> method can be used in conjunction with the <code><a href="http://api.jquery.com/deferred.done/">deferred.done()</a></code> method to execute a single callback for the animation as a whole when <em>all</em> matching elements have completed their animations ( See the <a href="http://api.jquery.com/promise/#example-1">example for .promise()</a> ).  </p>
+    <p><strong>As of jQuery 1.6</strong>, the <code>.promise()</code> method can be used in conjunction with the <code>deferred.done()</code> method to execute a single callback for the animation as a whole when <em>all</em> matching elements have completed their animations ( See the example for .promise() ).  </p>
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul><li>
-			All jQuery effects, including <code>.fadeIn()</code>, can be turned off globally by setting <code>jQuery.fx.off = true</code>, which effectively sets the duration to 0. For more information, see <a href="http://api.jquery.com/jquery.fx.off">jQuery.fx.off</a>.
+			All jQuery effects, including <code>.fadeIn()</code>, can be turned off globally by setting <code>jQuery.fx.off = true</code>, which effectively sets the duration to 0. For more information, see jQuery.fx.off.
 		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
 <h4>Example: <span class="desc">Animates hidden divs to fade in one by one, completing each animation within 600 milliseconds.</span>

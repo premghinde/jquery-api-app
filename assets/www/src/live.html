@@ -61,8 +61,8 @@
 </li>
 </ul>
 <div class="longdesc" id="entry-longdesc">
-    <p><strong>As of jQuery 1.7</strong>, the <code>.live()</code> method is deprecated. Use <a href="http://api.jquery.com/on/"><code>.on()</code></a> to attach event handlers. Users of older versions of jQuery should use <a href="http://api.jquery.com/delegate/"><code>.delegate()</code></a> in preference to <code>.live()</code>.</p>
-    <p>This method provides a means to attach delegated event handlers to the <code>document</code> element of a page, which simplifies the use of event handlers when content is dynamically added to a page. See the discussion of direct versus delegated events in the <a href="http://api.jquery.com/on/"><code>.on()</code></a> method for more information. </p>
+    <p><strong>As of jQuery 1.7</strong>, the <code>.live()</code> method is deprecated. Use <code>.on()</code> to attach event handlers. Users of older versions of jQuery should use <code>.delegate()</code> in preference to <code>.live()</code>.</p>
+    <p>This method provides a means to attach delegated event handlers to the <code>document</code> element of a page, which simplifies the use of event handlers when content is dynamically added to a page. See the discussion of direct versus delegated events in the <code>.on()</code> method for more information. </p>
     <p>Rewriting the <code>.live()</code> method in terms of its successors is straightforward; these are templates for equivalent calls for all three event attachment methods:</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
@@ -119,7 +119,7 @@
 <li>Apply the CSS style <code>cursor:pointer</code> to the element that needs to bubble clicks (or a parent including <code>document.documentElement</code>). Note however, this will disable copy\paste on the element and cause it to be highlighted when touched.</li>
 </ol>
 </li>
-      <li>Calling <a href="http://api.jquery.com/event.stopPropagation"><code>event.stopPropagation()</code></a> in the event handler is ineffective in stopping event handlers attached lower in the document; the event has already propagated to <code>document</code>.</li>
+      <li>Calling <code>event.stopPropagation()</code> in the event handler is ineffective in stopping event handlers attached lower in the document; the event has already propagated to <code>document</code>.</li>
       <li>The <code>.live()</code> method interacts with other event methods in ways that can be surprising, e.g., <code>$(document).off("click")</code> removes all click handlers attached by any call to <code>.live()</code>!</li>
     </ul>
     <p>For pages still using <code>.live()</code>, this list of version-specific differences may be helpful:</p>

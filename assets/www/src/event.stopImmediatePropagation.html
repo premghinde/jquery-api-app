@@ -18,12 +18,12 @@
 <ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>In addition to keeping any additional handlers on an element from being executed, this method also stops the bubbling by implicitly calling <code>event.stopPropagation()</code>. To simply prevent the event from bubbling to ancestor elements but allow other event handlers to execute on the same element, we can use <code><a href="http://api.jquery.com/event.stopPropagation">event.stopPropagation()</a></code> instead.</p>
-    <p>Use <code><a href="http://api.jquery.com/event.isImmediatePropagationStopped">event.isImmediatePropagationStopped()</a></code> to know whether this method was ever called (on that event object).</p>
+    <p>In addition to keeping any additional handlers on an element from being executed, this method also stops the bubbling by implicitly calling <code>event.stopPropagation()</code>. To simply prevent the event from bubbling to ancestor elements but allow other event handlers to execute on the same element, we can use <code>event.stopPropagation()</code> instead.</p>
+    <p>Use <code>event.isImmediatePropagationStopped()</code> to know whether this method was ever called (on that event object).</p>
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul><li>
-			Since the <a href="http://api.jquery.com/live"><code>.live()</code></a> method handles events once they have propagated to the top of the document, it is not possible to stop propagation of live events. Similarly, events handled by <code><a href="http://api.jquery.com/delegate/">.delegate()</a></code> will propagate to the elements to which they are delegated; event handlers bound on any elements below it in the DOM tree will already have been executed by the time the delegated event handler is called. These handlers, therefore, may prevent the delegated handler from triggering by calling <code><a href="http://api.jquery.com/event.stopPropagation/">event.stopPropagation()</a></code> or returning <code>false</code>.
+			Since the <code>.live()</code> method handles events once they have propagated to the top of the document, it is not possible to stop propagation of live events. Similarly, events handled by <code>.delegate()</code> will propagate to the elements to which they are delegated; event handlers bound on any elements below it in the DOM tree will already have been executed by the time the delegated event handler is called. These handlers, therefore, may prevent the delegated handler from triggering by calling <code>event.stopPropagation()</code> or returning <code>false</code>.
 		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Prevents other event handlers from being called.</span></h4>

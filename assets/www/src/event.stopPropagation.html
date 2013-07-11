@@ -18,13 +18,13 @@
 <ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>We can use <code><a href="/event.isPropagationStopped">event.isPropagationStopped()</a></code> to determine if this method was ever called (on that event object). </p>
-    <p>This method works for custom events triggered with <a href="/trigger">trigger()</a>, as well.</p>
+    <p>We can use <code>event.isPropagationStopped()</code> to determine if this method was ever called (on that event object). </p>
+    <p>This method works for custom events triggered with trigger(), as well.</p>
     <p>Note that this will not prevent other handlers <em>on the same element</em> from running. </p>
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul><li>
-			Since the <a href="http://api.jquery.com/live"><code>.live()</code></a> method handles events once they have propagated to the top of the document, it is not possible to stop propagation of live events. Similarly, events handled by <code><a href="http://api.jquery.com/delegate/">.delegate()</a></code> will propagate to the elements to which they are delegated; event handlers bound on any elements below it in the DOM tree will already have been executed by the time the delegated event handler is called. These handlers, therefore, may prevent the delegated handler from triggering by calling <code><a href="http://api.jquery.com/event.stopPropagation/">event.stopPropagation()</a></code> or returning <code>false</code>.
+			Since the <code>.live()</code> method handles events once they have propagated to the top of the document, it is not possible to stop propagation of live events. Similarly, events handled by <code>.delegate()</code> will propagate to the elements to which they are delegated; event handlers bound on any elements below it in the DOM tree will already have been executed by the time the delegated event handler is called. These handlers, therefore, may prevent the delegated handler from triggering by calling <code>event.stopPropagation()</code> or returning <code>false</code>.
 		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Kill the bubbling on the click event.</span></h4>

@@ -17,7 +17,7 @@
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul><li>
-			Because <code>:selected</code> is a jQuery extension and not part of the CSS specification, queries using <code>:selected</code> cannot take advantage of the performance boost provided by the native DOM <code>querySelectorAll()</code> method. To achieve the best performance when using <code>:selected</code> to select elements, first select the elements using a pure CSS selector, then use <a href="http://api.jquery.com/filter/"><code>.filter(":selected")</code></a>.
+			Because <code>:selected</code> is a jQuery extension and not part of the CSS specification, queries using <code>:selected</code> cannot take advantage of the performance boost provided by the native DOM <code>querySelectorAll()</code> method. To achieve the best performance when using <code>:selected</code> to select elements, first select the elements using a pure CSS selector, then use <code>.filter(":selected")</code>.
 		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Attaches a change event to the select that gets the text for each selected option and writes them in the div.  It then triggers the event for the initial text draw.</span></h4>

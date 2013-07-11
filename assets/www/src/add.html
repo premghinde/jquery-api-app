@@ -198,7 +198,7 @@ Using an HTML snippet as the <code>.add()</code> method's argument (as in the th
 
     <p>Although the new paragraph has been created and its background color changed, it still does not appear on the page. To place it on the page, we could add one of the insertion methods to the chain.</p>
     <p>As of jQuery 1.4 the results from .add() will always be returned in document order (rather than a simple concatenation).</p>
-    <p><strong>Note:</strong> To reverse the <code>.add()</code> you can use <a href="http://api.jquery.com/not"><code>.not( elements | selector )</code></a> to remove elements from the jQuery results, or <a href="http://api.jquery.com/end"><code>.end()</code></a> to return to the selection before you added.</p>
+    <p><strong>Note:</strong> To reverse the <code>.add()</code> you can use <code>.not( elements | selector )</code> to remove elements from the jQuery results, or <code>.end()</code> to return to the selection before you added.</p>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
 <h4>Example: <span class="desc">Finds all divs and makes a border.  Then adds all paragraphs to the jQuery object to set their backgrounds yellow.</span>

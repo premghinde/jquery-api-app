@@ -11,7 +11,7 @@
 	}</script><h2 class="section-title">
 <span class="name">.ajaxError( handler(event, jqXHR, ajaxSettings, thrownError) )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
-<p class="desc"><strong>Description: </strong>Register a handler to be called when Ajax requests complete with an error. This is an <a href="/Ajax_Events">Ajax Event</a>.</p>
+<p class="desc"><strong>Description: </strong>Register a handler to be called when Ajax requests complete with an error. This is an Ajax Event.</p>
 <ul class="signatures"><li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.0</span>.ajaxError( handler(event, jqXHR, ajaxSettings, thrownError) )</h4>
@@ -91,7 +91,7 @@
 
     <p>When the user clicks the button and the Ajax request fails, because the requested file is missing, the log message is displayed.</p>
     <p><strong>As of jQuery 1.8, the <code>.ajaxError()</code> method should only be attached to <code>document</code>.</strong></p>
-    <p>All <code>ajaxError</code> handlers are invoked, regardless of what Ajax request was completed. To differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxError</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (prior to jQuery 1.5, the <code><abbr title="XMLHttpRequest">XHR</abbr></code> object), and the settings object that was used in the creation of the request. When an HTTP error occurs, the fourth argument (<code>thrownError</code>) receives the textual portion of the HTTP status, such as "Not Found" or "Internal Server Error." For example, to restrict the error callback to only handling events dealing with a particular URL:</p>
+    <p>All <code>ajaxError</code> handlers are invoked, regardless of what Ajax request was completed. To differentiate between the requests, use the parameters passed to the handler. Each time an <code>ajaxError</code> handler is executed, it is passed the event object, the <code>jqXHR</code> object (prior to jQuery 1.5, the <code>XHR</abbr></code> object), and the settings object that was used in the creation of the request. When an HTTP error occurs, the fourth argument (<code>thrownError</code>) receives the textual portion of the HTTP status, such as "Not Found" or "Internal Server Error." For example, to restrict the error callback to only handling events dealing with a particular URL:</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -120,7 +120,7 @@
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul><li>
-			If <code><a href="/jQuery.Ajax/">$.ajax()</a></code> or <code><a href="/jQuery.ajaxSetup/">$.ajaxSetup()</a></code> is called with the <code>global</code> option set to <code>false</code>, the <code>.ajaxError()</code> method will not fire.
+			If <code>$.ajax()</code> or <code>$.ajaxSetup()</code> is called with the <code>global</code> option set to <code>false</code>, the <code>.ajaxError()</code> method will not fire.
 		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Show a message when an Ajax request fails.</span></h4>

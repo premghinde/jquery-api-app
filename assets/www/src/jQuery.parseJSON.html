@@ -30,7 +30,7 @@
 <code>{'test': 1}</code> ('test' is using single quotes instead of double quotes).</li>
     </ul>
 	<p>The JSON standard does not permit "control characters" such as a tab or newline. An example like <code>$.parseJSON('{"testing":"1\t2\n3"}')</code> will throw an error in most implementations because the JavaScript parser converts the string's tab and newline escapes into literal tab and newline; doubling the backslashes like <code>"1\\t2\\n3"</code> yields expected results. This problem is often seen when injecting JSON into a JavaScript file from a server-side language such as PHP.</p>
-	<p>Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see <a href="http://json.org/">http://json.org/</a>.</p>
+	<p>Where the browser provides a native implementation of <code>JSON.parse</code>, jQuery uses it to parse the string. For details on the JSON format, see http://json.org/.</p>
 	<p>Prior to jQuery 1.9, <code>$.parseJSON</code> returned <code>null</code> instead of throwing an error if it was passed an empty string, <code>null</code>, or <code>undefined</code>, even though those are not valid JSON. </p>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">

@@ -35,7 +35,7 @@
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
     <div class="warning">
-      <p>Note: The event handling suite also has a method named <code><a href="/load-event">.load()</a></code>. jQuery determines which method to fire based on the set of arguments passed to it.</p>
+      <p>Note: The event handling suite also has a method named <code>.load()</code>. jQuery determines which method to fire based on the set of arguments passed to it.</p>
     </div>
     <p>This method is the simplest way to fetch data from the server. It is roughly equivalent to <code>$.get(url, data, success)</code> except that it is a method rather than global function and it has an implicit callback function.  When a successful response is detected (i.e. when <code>textStatus</code> is "success" or "notmodified"), <code>.load()</code> sets the HTML contents of the matched element to the returned data. This means that most uses of the method can be quite simple:</p>
     <div class="syntaxhighlighter javascript nogutter">
@@ -83,7 +83,7 @@
     <h4 id="request-method">Request Method</h4>
     <p>The POST method is used if data is provided as an object; otherwise, GET is assumed.</p>
     <h4 id="loading-page-fragments">Loading Page Fragments</h4>
-    <p>The <code>.load()</code> method, unlike <code><a href="/jQuery.get">$.get()</a></code>, allows us to specify a portion of the remote document to be inserted. This is achieved with a special syntax for the <code>url</code> parameter. If one or more space characters are included in the string, the portion of the string following the first space is assumed to be a jQuery selector that determines the content to be loaded.   </p>
+    <p>The <code>.load()</code> method, unlike <code>$.get()</code>, allows us to specify a portion of the remote document to be inserted. This is achieved with a special syntax for the <code>url</code> parameter. If one or more space characters are included in the string, the portion of the string following the first space is assumed to be a jQuery selector that determines the content to be loaded.   </p>
     <p>We could modify the example above to use only part of the document that is fetched:</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
@@ -146,7 +146,7 @@
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul><li>
-			Due to browser security restrictions, most "Ajax" requests are subject to the <a title="Same Origin Policy on Wikipedia" href="http://en.wikipedia.org/wiki/Same_origin_policy">same origin policy</a>; the request can not successfully retrieve data from a different domain, subdomain, or protocol.
+			Due to browser security restrictions, most "Ajax" requests are subject to the same origin policy; the request can not successfully retrieve data from a different domain, subdomain, or protocol.
 		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
 <h4>Example: <span class="desc">Load the main page's footer navigation into an ordered list.</span>

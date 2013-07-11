@@ -16,7 +16,7 @@
 <span class="version-details">version added: 1.2.6</span>event.timeStamp</h4></li></ul>
 <div class="longdesc" id="entry-longdesc">
     <p>This property can be useful for profiling event performance by getting the <code>event.timeStamp</code> value at two points in the code and noting the difference. To simply determine the current time inside an event handler, use <code>(new Date).getTime()</code> instead.</p>
-    <p>Note: Due to a <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=238041">bug open since 2004</a>, this value is not populated correctly in Firefox and it is not possible to know the time the event was created in that browser.</p>
+    <p>Note: Due to a bug open since 2004, this value is not populated correctly in Firefox and it is not possible to know the time the event was created in that browser.</p>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Display the time since the click handler last executed.</span></h4>

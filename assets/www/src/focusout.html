@@ -41,8 +41,8 @@
 </ul>
 <div class="longdesc" id="entry-longdesc">
     <p>This method is a shortcut for <code>.on('focusout', handler)</code> when passed arguments, and <code>.trigger('focusout')</code> when no arguments are passed.</p>
-    <p>The <code>focusout</code> event is sent to an element when it, or any element inside of it, loses focus. This is distinct from the <a href="/blur">blur</a> event in that it supports detecting the loss of focus on descendant elements (in other words, it supports event bubbling).</p>
-    <p>This event will likely be used together with the <a href="/focusin">focusin</a> event.</p>
+    <p>The <code>focusout</code> event is sent to an element when it, or any element inside of it, loses focus. This is distinct from the blur event in that it supports detecting the loss of focus on descendant elements (in other words, it supports event bubbling).</p>
+    <p>This event will likely be used together with the focusin event.</p>
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Watch for a loss of focus to occur inside paragraphs and note the difference between the <code>focusout</code> count and the <code>blur</code> count. (The <code>blur</code> count does not change because those events do not bubble.)</span></h4>
