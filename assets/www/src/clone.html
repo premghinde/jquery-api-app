@@ -44,8 +44,8 @@
 </li>
 </ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>The <code>.clone()</code> method performs a <em>deep</em> copy of the set of matched elements, meaning that it copies the matched elements as well as all of their descendant elements and text nodes. For performance reasons, the dynamic state of form elements (e.g., user data typed into <code>input</code>, and <code>textarea</code> or user selections made to a <code>select</code>) is not copied to the cloned elemements. The clone operation sets these fields to their default values as specified in the HTML.</p>
-	<p>When used in conjunction with one of the insertion methods, <code>.clone()</code> is a convenient way to duplicate elements on a page. Consider the following HTML:</p>
+    <p>The <code>.clone()</code> method performs a <em>deep</em> copy of the set of matched elements, meaning that it copies the matched elements as well as all of their descendant elements and text nodes. For performance reasons, the dynamic state of form elements (e.g., user data typed into <code>input</code>, and <code>textarea</code> or user selections made to a <code>select</code>) is not copied to the cloned elements. The clone operation sets these fields to their default values as specified in the HTML.</p>
+    <p>When used in conjunction with one of the insertion methods, <code>.clone()</code> is a convenient way to duplicate elements on a page. Consider the following HTML:</p>
     <div class="syntaxhighlighter xml nogutter">
 	<table>
 		<tbody>
@@ -80,7 +80,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'.hello'</span>).appendTo(<span class="string">'.goodbye'</span>);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">".hello"</span> ).appendTo( <span class="string">".goodbye"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -126,7 +126,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'.hello'</span>).clone().appendTo(<span class="string">'.goodbye'</span>);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">".hello"</span> ).clone().appendTo( <span class="string">".goodbye"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -180,9 +180,13 @@
 					
 						<div class="line n3">3</div>
 					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> $elem = $(<span class="string">'#elem'</span>).data( <span class="string">"arr"</span>: [ <span class="number">1</span> ] ), <span class="comment">// Original element with attached data</span></code></div></div><div class="container"><div class="line"><code>    $clone = $elem.clone( <span class="literal">true</span> )</code></div></div><div class="container"><div class="line"><code>    .data( <span class="string">"arr"</span>, $.extend( [], $elem.data(<span class="string">"arr"</span>) ) ); <span class="comment">// Deep copy to prevent data sharing</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="comment">// Original element with attached data</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> $elem = $( <span class="string">"#elem"</span> ).data( <span class="string">"arr"</span>: [ <span class="number">1</span> ] ),</code></div></div><div class="container"><div class="line"><code>    $clone = $elem.clone( <span class="literal">true</span> )</code></div></div><div class="container"><div class="line"><code>      <span class="comment">// Deep copy to prevent data sharing</span></code></div></div><div class="container"><div class="line"><code>      .data( <span class="string">"arr"</span>, $.extend( [], $elem.data( <span class="string">"arr"</span> ) ) );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -194,60 +198,8 @@
       <p><strong>Note:</strong> Using <code>.clone()</code> has the side-effect of producing elements with duplicate <code>id</code> attributes, which are supposed to be unique. Where possible, it is recommended to avoid cloning elements with this attribute or using <code>class</code> attributes as identifiers instead.</p>
     </div>
   </div>
-<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
-<h4>Example: <span class="desc">Clones all b elements (and selects the clones) and prepends them to all paragraphs.</span>
-</h4>
-<div class="syntaxhighlighter xml ">
-	<table>
-		<tbody>
-			<tr>
-				<td class="gutter">
-					
-						<div class="line n1">1</div>
-					
-						<div class="line n2">2</div>
-					
-						<div class="line n3">3</div>
-					
-						<div class="line n4">4</div>
-					
-						<div class="line n5">5</div>
-					
-						<div class="line n6">6</div>
-					
-						<div class="line n7">7</div>
-					
-						<div class="line n8">8</div>
-					
-						<div class="line n9">9</div>
-					
-						<div class="line n10">10</div>
-					
-						<div class="line n11">11</div>
-					
-						<div class="line n12">12</div>
-					
-						<div class="line n13">13</div>
-					
-						<div class="line n14">14</div>
-					
-						<div class="line n15">15</div>
-					
-				</td>
-				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">b</span>&gt;</span>Hello<span class="tag">&lt;/<span class="title">b</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>, how are you?<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"b"</span>).clone().prependTo(<span class="string">"p"</span>);</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-
-<h4>Demo:</h4>
-<div class="demo code-demo"></div>
-</div>
-<div class="entry-example" id="example-1">
-<h4>Example: <span class="desc">When using <code>.clone()</code> to clone a collection of elements that are not attached to the DOM, their order when inserted into the DOM is not guaranteed. However, it may be possible to preserve sort order with a workaround, as demonstrated:</span>
-</h4>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Clones all b elements (and selects the clones) and prepends them to all paragraphs.</span></h4>
 <div class="syntaxhighlighter xml ">
 	<table>
 		<tbody>
@@ -288,61 +240,9 @@
 					
 						<div class="line n17">17</div>
 					
-						<div class="line n18">18</div>
-					
-						<div class="line n19">19</div>
-					
-						<div class="line n20">20</div>
-					
-						<div class="line n21">21</div>
-					
-						<div class="line n22">22</div>
-					
-						<div class="line n23">23</div>
-					
-						<div class="line n24">24</div>
-					
-						<div class="line n25">25</div>
-					
-						<div class="line n26">26</div>
-					
-						<div class="line n27">27</div>
-					
-						<div class="line n28">28</div>
-					
-						<div class="line n29">29</div>
-					
-						<div class="line n30">30</div>
-					
-						<div class="line n31">31</div>
-					
-						<div class="line n32">32</div>
-					
-						<div class="line n33">33</div>
-					
-						<div class="line n34">34</div>
-					
-						<div class="line n35">35</div>
-					
-						<div class="line n36">36</div>
-					
-						<div class="line n37">37</div>
-					
-						<div class="line n38">38</div>
-					
-						<div class="line n39">39</div>
-					
-						<div class="line n40">40</div>
-					
-						<div class="line n41">41</div>
-					
-						<div class="line n42">42</div>
-					
-						<div class="line n43">43</div>
-					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="id">#orig</span>, <span class="id">#copy</span>, <span class="id">#copy-correct</span> <span class="rules">{</span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">float</span>:<span class="value"> left;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">20</span>%;</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"orig"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"elem"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span>&gt;</span>1<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"elem"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span>&gt;</span>2<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"elem"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span>&gt;</span>3<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"elem"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span>&gt;</span>4<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"elem"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span>&gt;</span>5<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"copy"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"copy-correct"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="comment">// sort order is not guaranteed here and may vary with browser</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">'#copy'</span>).append($(<span class="string">'#orig .elem'</span>)</code></div></div><div class="container"><div class="line"><code>          .clone()</code></div></div><div class="container"><div class="line"><code>          .children(<span class="string">'a'</span>)</code></div></div><div class="container"><div class="line"><code>          .prepend(<span class="string">'foo - '</span>)</code></div></div><div class="container"><div class="line"><code>          .parent()</code></div></div><div class="container"><div class="line"><code>          .clone());</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// correct way to approach where order is maintained</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">'#copy-correct'</span>)</code></div></div><div class="container"><div class="line"><code>          .append($(<span class="string">'#orig .elem'</span>)</code></div></div><div class="container"><div class="line"><code>          .clone()</code></div></div><div class="container"><div class="line"><code>          .children(<span class="string">'a'</span>)</code></div></div><div class="container"><div class="line"><code>          .prepend(<span class="string">'bar - '</span>)</code></div></div><div class="container"><div class="line"><code>          .end());</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>clone demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">b</span>&gt;</span>Hello<span class="tag">&lt;/<span class="title">b</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>, how are you?<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">"b"</span> ).clone().prependTo( <span class="string">"p"</span> );</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

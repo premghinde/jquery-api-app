@@ -60,7 +60,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(document).ajaxSend(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxSend handler."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ajaxSend(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxSend handler."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -110,7 +110,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(document).ajaxSend(<span class="keyword">function</span>(event, jqxhr, settings) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( settings.url == <span class="string">"ajax/test.html"</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxSend handler."</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ajaxSend(<span class="keyword">function</span>( event, jqxhr, settings ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( settings.url == <span class="string">"ajax/test.html"</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxSend handler."</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -138,7 +138,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(document).ajaxSend(<span class="keyword">function</span>(event, request, settings) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"#msg"</span> ).append( <span class="string">"&lt;li&gt;Starting request at "</span> + settings.url + <span class="string">"&lt;/li&gt;"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ajaxSend(<span class="keyword">function</span>( event, request, settings ) {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"#msg"</span> ).append( <span class="string">"&lt;li&gt;Starting request at "</span> + settings.url + <span class="string">"&lt;/li&gt;"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

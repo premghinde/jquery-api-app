@@ -60,7 +60,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(document).ajaxError(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"div.log"</span> ).text( <span class="string">"Triggered ajaxError handler."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ajaxError(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"div.log"</span> ).text( <span class="string">"Triggered ajaxError handler."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -110,7 +110,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( document ).ajaxError(<span class="keyword">function</span>(event, jqxhr, settings, exception) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( settings.url == <span class="string">"ajax/missing.html"</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"div.log"</span> ).text( <span class="string">"Triggered ajaxError handler."</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ajaxError(<span class="keyword">function</span>( event, jqxhr, settings, exception ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( settings.url == <span class="string">"ajax/missing.html"</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"div.log"</span> ).text( <span class="string">"Triggered ajaxError handler."</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -138,7 +138,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(document).ajaxError(<span class="keyword">function</span>(event, request, settings) {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"#msg"</span> ).append( <span class="string">"&lt;li&gt;Error requesting page "</span> + settings.url + <span class="string">"&lt;/li&gt;"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ajaxError(<span class="keyword">function</span>( event, request, settings ) {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"#msg"</span> ).append( <span class="string">"&lt;li&gt;Error requesting page "</span> + settings.url + <span class="string">"&lt;/li&gt;"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

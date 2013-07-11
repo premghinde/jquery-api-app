@@ -64,7 +64,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).die()</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"p"</span> ).die();</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -85,7 +85,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).die( <span class="string">"click"</span> )</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"p"</span> ).die( <span class="string">"click"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -116,9 +116,13 @@
 					
 						<div class="line n7">7</div>
 					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  <span class="comment">// code to handle some kind of event</span></code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).live(<span class="string">"click"</span>, foo); <span class="comment">// ... now foo will be called when paragraphs are clicked ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).die(<span class="string">"click"</span>, foo); <span class="comment">// ... foo will no longer be called.</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> foo = <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Code to handle some kind of event</span></code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Now foo will be called when paragraphs are clicked</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">"p"</span> ).live( <span class="string">"click"</span>, foo );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Now foo will no longer be called</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">"p"</span> ).die( <span class="string">"click"</span>, foo );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

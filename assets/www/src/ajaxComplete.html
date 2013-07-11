@@ -60,7 +60,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(document).ajaxComplete(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxComplete handler."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ajaxComplete(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxComplete handler."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -112,7 +112,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(document).ajaxComplete(<span class="keyword">function</span>(event, xhr, settings) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( settings.url === <span class="string">"ajax/test.html"</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxComplete handler. The result is "</span> +</code></div></div><div class="container"><div class="line"><code>                     xhr.responseHTML );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ajaxComplete(<span class="keyword">function</span>( event, xhr, settings ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( settings.url === <span class="string">"ajax/test.html"</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxComplete handler. The result is "</span> +</code></div></div><div class="container"><div class="line"><code>      xhr.responseHTML );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -141,7 +141,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(document).ajaxComplete(<span class="keyword">function</span>(event,request, settings) {</code></div></div><div class="container"><div class="line"><code>   $( <span class="string">"#msg"</span> ).append( <span class="string">"&lt;li&gt;Request Complete.&lt;/li&gt;"</span> );</code></div></div><div class="container"><div class="line"><code> });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ajaxComplete(<span class="keyword">function</span>( event,request, settings ) {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"#msg"</span> ).append( <span class="string">"&lt;li&gt;Request Complete.&lt;/li&gt;"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

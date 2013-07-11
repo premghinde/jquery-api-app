@@ -45,7 +45,7 @@
 </li>
 </ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>This method is a shortcut for <code>.on('dblclick', handler)</code> in the first two variations, and <code>.trigger('dblclick')</code> in the third.
+    <p>This method is a shortcut for <code>.on( "dblclick", handler)</code> in the first two variations, and <code>.trigger( "dblclick" )</code> in the third.
     The <code>dblclick</code> event is sent to an element when the element is double-clicked. Any HTML element can receive this event.
     For example, consider the HTML:</p>
     <div class="syntaxhighlighter xml nogutter">
@@ -93,7 +93,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'#target'</span>).dblclick(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">'Handler for .dblclick() called.'</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#target"</span> ).dblclick(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"Handler for .dblclick() called."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -119,7 +119,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'#other'</span>).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">'#target'</span>).dblclick();</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#other"</span> ).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"#target"</span> ).dblclick();</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -148,9 +148,13 @@
 					
 						<div class="line n1">1</div>
 					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).dblclick( <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span> alert(<span class="string">"Hello World!"</span>); });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"p"</span> ).dblclick(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"Hello World!"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -215,9 +219,27 @@
 					
 						<div class="line n24">24</div>
 					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+						<div class="line n28">28</div>
+					
+						<div class="line n29">29</div>
+					
+						<div class="line n30">30</div>
+					
+						<div class="line n31">31</div>
+					
+						<div class="line n32">32</div>
+					
+						<div class="line n33">33</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!DOCTYPE html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">div</span> <span class="rules">{ <span class="rule"><span class="attribute">background</span>:<span class="value">blue;</span></span></span></code></div></div><div class="container"><div class="line"><code>        <span class="rule"><span class="attribute">color</span>:<span class="value">white;</span></span></code></div></div><div class="container"><div class="line"><code>        <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">100</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>        <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">150</span>px;</span></span></code></div></div><div class="container"><div class="line"><code> <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">div</span><span class="class">.dbl</span> <span class="rules">{ <span class="rule"><span class="attribute">background</span>:<span class="value">yellow;</span></span><span class="rule"><span class="attribute">color</span>:<span class="value">black;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>Double click the block<span class="tag">&lt;/<span class="title">span</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> divdbl = $(<span class="string">"div:first"</span>);</code></div></div><div class="container"><div class="line"><code>  divdbl.dblclick(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>    divdbl.toggleClass(<span class="string">'dbl'</span>);</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>dblclick demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">div</span> <span class="rules">{</span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">background</span>:<span class="value"> blue;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">color</span>:<span class="value"> white;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">150</span>px;</span></span></code></div></div><div class="container"><div class="line"><code> <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">div</span><span class="class">.dbl</span> <span class="rules">{</span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">background</span>:<span class="value"> yellow;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">color</span>:<span class="value"> black;</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">span</span>&gt;</span>Double click the block<span class="tag">&lt;/<span class="title">span</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> divdbl = $( <span class="string">"div:first"</span> );</code></div></div><div class="container"><div class="line"><code>divdbl.dblclick(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  divdbl.toggleClass( <span class="string">"dbl"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

@@ -45,7 +45,7 @@
 </li>
 </ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>This method is a shortcut for <code>.on('blur', handler)</code> in the first two variations, and <code>.trigger('blur')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on( "blur", handler )</code> in the first two variations, and <code>.trigger( "blur" )</code> in the third.</p>
     <p>The <code>blur</code> event is sent to an element when it loses focus. Originally, this event was only applicable to form elements, such as <code>&lt;input&gt;</code>. In recent browsers, the domain of the event has been extended to include all element types. An element can lose focus via keyboard commands, such as the Tab key, or by mouse clicks elsewhere on the page.</p>
     <p>For example, consider the HTML:</p>
     <div class="syntaxhighlighter xml nogutter">
@@ -78,7 +78,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">form</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"target"</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">value</span>=<span class="value">"Field 1"</span> /&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">value</span>=<span class="value">"Field 2"</span> /&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">form</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"other"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  Trigger the handler</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>The event handler can be bound to the first input field:</code></div></div><div class="container"><div class="line"><code>$('#target').blur(function() {</code></div></div><div class="container"><div class="line"><code>  alert('Handler for .blur() called.');</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">form</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"target"</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">value</span>=<span class="value">"Field 1"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">value</span>=<span class="value">"Field 2"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">form</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"other"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  Trigger the handler</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>The event handler can be bound to the first input field:</code></div></div><div class="container"><div class="line"><code>$( "#target" ).blur(function() {</code></div></div><div class="container"><div class="line"><code>  alert( "Handler for .blur() called." );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -104,7 +104,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'#other'</span>).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">'#target'</span>).blur();</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#other"</span> ).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"#target"</span> ).blur();</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -126,7 +126,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).blur();</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"p"</span> ).blur();</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

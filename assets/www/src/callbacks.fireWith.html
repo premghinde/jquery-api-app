@@ -29,10 +29,11 @@
 </ul>
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>). </p>
-    <h2 id="example-1">Example</h2>
-    <p>Use <code>callbacks.fireWith()</code> to fire a list of callbacks with a specific context and an array of arguments:</p>
-    <div class="syntaxhighlighter javascript nogutter">
+    <p>This method returns the Callbacks object onto which it is attached (<code>this</code>).</p>
+  </div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Use <code>callbacks.fireWith()</code> to fire a list of callbacks with a specific context and an array of arguments:</span></h4>
+<div class="syntaxhighlighter javascript ">
 	<table>
 		<tbody>
 			<tr>
@@ -68,16 +69,14 @@
 					
 						<div class="line n15">15</div>
 					
-						<div class="line n16">16</div>
-					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="comment">// a sample logging function to be added to a callbacks list</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> log = <span class="keyword">function</span>( value1, value2 ) {</code></div></div><div class="container"><div class="line"><code>  console.log( <span class="string">"Received: "</span> + value1 + <span class="string">","</span> + value2 );</code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> callbacks = $.Callbacks();</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// add the log method to the callbacks list</span></code></div></div><div class="container"><div class="line"><code>callbacks.add( log );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// fire the callbacks on the list using the context "window"</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// and an arguments array</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>callbacks.fireWith( window, [<span class="string">"foo"</span>,<span class="string">"bar"</span>]);</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// outputs: "Received: foo, bar"</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="comment">// A sample logging function to be added to a callbacks list</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> log = <span class="keyword">function</span>( value1, value2 ) {</code></div></div><div class="container"><div class="line"><code>  console.log( <span class="string">"Received: "</span> + value1 + <span class="string">","</span> + value2 );</code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> callbacks = $.Callbacks();</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Add the log method to the callbacks list</span></code></div></div><div class="container"><div class="line"><code>callbacks.add( log );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Fire the callbacks on the list using the context "window"</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// and an arguments array</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>callbacks.fireWith( window, [ <span class="string">"foo"</span>,<span class="string">"bar"</span> ] );</code></div></div><div class="container"><div class="line"><code><span class="comment">// Outputs: "Received: foo, bar"</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
-  </div>
+</div></section>
 </div>
