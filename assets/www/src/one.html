@@ -2,7 +2,7 @@
 		"title":
 			".one()",
 		"excerpt":
-			"Attach a handler to an event for the elements. The handler is executed at most once per element.",
+			"Attach a handler to an event for the elements. The handler is executed at most once per element per event type.",
 		"termSlugs": {
 			"category": [
 				"events/event-handler-attachment","version/1.1"
@@ -11,7 +11,7 @@
 	}</script><h2 class="section-title">
 <span class="name">.one( events [, data ], handler(eventObject) )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
-<p class="desc"><strong>Description: </strong>Attach a handler to an event for the elements. The handler is executed at most once per element.</p>
+<p class="desc"><strong>Description: </strong>Attach a handler to an event for the elements. The handler is executed at most once per element per event type.</p>
 <ul class="signatures">
 <li class="signature">
 <h4 class="name">
@@ -104,7 +104,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"#foo"</span>).one(<span class="string">"click"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"This will be displayed only once."</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"body"</span>).one(<span class="string">"click"</span>, <span class="string">"#foo"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"This displays if #foo is the first thing clicked in the body."</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).one( <span class="string">"click"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"This will be displayed only once."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code>$( <span class="string">"body"</span> ).one( <span class="string">"click"</span>, <span class="string">"#foo"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"This displays if #foo is the first thing clicked in the body."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -128,7 +128,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"#foo"</span>).on(<span class="string">"click"</span>, <span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"This will be displayed only once."</span>);</code></div></div><div class="container"><div class="line"><code>  $(<span class="keyword">this</span>).off( event );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).on( <span class="string">"click"</span>, <span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"This will be displayed only once."</span> );</code></div></div><div class="container"><div class="line"><code>  $( <span class="keyword">this</span> ).off( event );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -225,9 +225,25 @@
 					
 						<div class="line n39">39</div>
 					
+						<div class="line n40">40</div>
+					
+						<div class="line n41">41</div>
+					
+						<div class="line n42">42</div>
+					
+						<div class="line n43">43</div>
+					
+						<div class="line n44">44</div>
+					
+						<div class="line n45">45</div>
+					
+						<div class="line n46">46</div>
+					
+						<div class="line n47">47</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>one demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code><span class="tag">div</span> <span class="rules">{ <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">60</span>px;</span></span> <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">60</span>px;</span></span> <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">5</span>px;</span></span> <span class="rule"><span class="attribute">float</span>:<span class="value">left;</span></span></span></code></div></div><div class="container"><div class="line"><code><span class="rule"><span class="attribute">background</span>:<span class="value">green;</span></span> <span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">10</span>px outset;</span></span></code></div></div><div class="container"><div class="line"><code><span class="rule"><span class="attribute">cursor</span>:<span class="value">pointer;</span></span> <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code><span class="tag">p</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">red;</span></span> <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span>;</span></span> <span class="rule"><span class="attribute">clear</span>:<span class="value">left;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>Click a green square...<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> n = <span class="number">0</span>;</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"div"</span>).one(<span class="string">"click"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> index = $(<span class="string">"div"</span>).index(<span class="keyword">this</span>);</code></div></div><div class="container"><div class="line"><code>  $(<span class="keyword">this</span>).css({</code></div></div><div class="container"><div class="line"><code>    borderStyle:<span class="string">"inset"</span>,</code></div></div><div class="container"><div class="line"><code>    cursor:<span class="string">"auto"</span></code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"p"</span>).text(<span class="string">"Div at index #"</span> + index + <span class="string">" clicked."</span> +</code></div></div><div class="container"><div class="line"><code>      <span class="string">"  That's "</span> + ++n + <span class="string">" total clicks."</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>one demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">div</span> <span class="rules">{</span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">60</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">60</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">5</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">float</span>:<span class="value"> left;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">background</span>:<span class="value"> green;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">10</span>px outset;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">cursor</span>:<span class="value">pointer;</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">p</span> <span class="rules">{</span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">color</span>:<span class="value"> red;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span>;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">clear</span>:<span class="value"> left;</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>Click a green square...<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> n = <span class="number">0</span>;</code></div></div><div class="container"><div class="line"><code>$( <span class="string">"div"</span> ).one( <span class="string">"click"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> index = $( <span class="string">"div"</span> ).index( <span class="keyword">this</span> );</code></div></div><div class="container"><div class="line"><code>  $( <span class="keyword">this</span> ).css({</code></div></div><div class="container"><div class="line"><code>    borderStyle: <span class="string">"inset"</span>,</code></div></div><div class="container"><div class="line"><code>    cursor: <span class="string">"auto"</span></code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"p"</span> ).text( <span class="string">"Div at index #"</span> + index + <span class="string">" clicked."</span> +</code></div></div><div class="container"><div class="line"><code>    <span class="string">" That's "</span> + (++n) + <span class="string">" total clicks."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -254,12 +270,75 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).one(<span class="string">"click"</span>, <span class="keyword">function</span>(){</code></div></div><div class="container"><div class="line"><code>alert( $(<span class="keyword">this</span>).text() );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"p"</span> ).one( <span class="string">"click"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( $( <span class="keyword">this</span> ).text() );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
+</div>
+<div class="entry-example" id="example-2">
+<h4>Example: <span class="desc">Event handlers will trigger once per element per event type</span>
+</h4>
+<div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>one demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"count"</span>&gt;</span>0<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"target"</span>&gt;</span>Hover/click me<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> n = <span class="number">0</span>;</code></div></div><div class="container"><div class="line"><code>$(<span class="string">".target"</span>).one(<span class="string">"click mouseenter"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">".count"</span>).html(++n);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo"></div>
 </div></section>
 </div>

@@ -44,7 +44,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajaxPrefilter( <span class="keyword">function</span>( options, originalOptions, jqXHR ) {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Modify options, control originalOptions, store jqXHR, etc</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajaxPrefilter(<span class="keyword">function</span>( options, originalOptions, jqXHR ) {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Modify options, control originalOptions, store jqXHR, etc</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -118,7 +118,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajaxPrefilter( <span class="keyword">function</span>( options ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( options.crossDomain ) {</code></div></div><div class="container"><div class="line"><code>    options.url = <span class="string">"http://mydomain.net/proxy/"</span> + encodeURIComponent( options.url );</code></div></div><div class="container"><div class="line"><code>    options.crossDomain = <span class="literal">false</span>;</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajaxPrefilter(<span class="keyword">function</span>( options ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( options.crossDomain ) {</code></div></div><div class="container"><div class="line"><code>    options.url = <span class="string">"http://mydomain.net/proxy/"</span> + encodeURIComponent( options.url );</code></div></div><div class="container"><div class="line"><code>    options.crossDomain = <span class="literal">false</span>;</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

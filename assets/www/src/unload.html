@@ -40,7 +40,7 @@
 </li>
 </ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>This method is a shortcut for <code>.on('unload', handler)</code>.</p>
+    <p>This method is a shortcut for <code>.on( "unload", handler )</code>.</p>
     <p>The <code>unload</code> event is sent to the <code>window</code> element when the user navigates away from the page. This could mean one of many things. The user could have clicked on a link to leave the page, or typed in a new URL in the address bar. The forward and back buttons will trigger the event. Closing the browser window will cause the event to be triggered. Even a page reload will first create an <code>unload</code> event.</p>
     <div class="warning">
       <p>The exact handling of the <code>unload</code> event has varied from version to version of browsers. For example, some versions of Firefox trigger the event when a link is followed, but not when the window is closed. In practical usage, behavior should be tested on all supported browsers, and contrasted with the proprietary <code>beforeunload</code> event.</p>
@@ -60,7 +60,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(window).unload(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">'Handler for .unload() called.'</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( window ).unload(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"Handler for .unload() called."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -81,9 +81,13 @@ It is not possible to cancel the <code>unload</code> event with <code>.preventDe
 					
 						<div class="line n1">1</div>
 					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(window).unload( <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span> alert(<span class="string">"Bye now!"</span>); } );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( window ).unload(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"Bye now!"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

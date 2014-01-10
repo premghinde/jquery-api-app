@@ -86,7 +86,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.post(<span class="string">'ajax/test.html'</span>, <span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">'.result'</span>).html(data);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.post( <span class="string">"ajax/test.html"</span>, <span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">".result"</span> ).html( data );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -130,9 +130,25 @@
 					
 						<div class="line n13">13</div>
 					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="comment">// Assign handlers immediately after making the request,</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// and remember the jqxhr object for this request</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> jqxhr = $.post(<span class="string">"example.php"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"success"</span>);</code></div></div><div class="container"><div class="line"><code>})</code></div></div><div class="container"><div class="line"><code>.done(<span class="keyword">function</span>() { alert(<span class="string">"second success"</span>); })</code></div></div><div class="container"><div class="line"><code>.fail(<span class="keyword">function</span>() { alert(<span class="string">"error"</span>); })</code></div></div><div class="container"><div class="line"><code>.always(<span class="keyword">function</span>() { alert(<span class="string">"finished"</span>); });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// perform other work here ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Set another completion function for the request above</span></code></div></div><div class="container"><div class="line"><code>jqxhr.always(<span class="keyword">function</span>(){ alert(<span class="string">"second finished"</span>); });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="comment">// Assign handlers immediately after making the request,</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// and remember the jqxhr object for this request</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> jqxhr = $.post( <span class="string">"example.php"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"success"</span> );</code></div></div><div class="container"><div class="line"><code>})</code></div></div><div class="container"><div class="line"><code>  .done(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"second success"</span> );</code></div></div><div class="container"><div class="line"><code>  })</code></div></div><div class="container"><div class="line"><code>  .fail(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"error"</span> );</code></div></div><div class="container"><div class="line"><code>  })</code></div></div><div class="container"><div class="line"><code>  .always(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"finished"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Perform other work here ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Set another completion function for the request above</span></code></div></div><div class="container"><div class="line"><code>jqxhr.always(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"second finished"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -165,7 +181,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.post(<span class="string">"test.php"</span>);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.post( <span class="string">"test.php"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -186,7 +202,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.post(<span class="string">"test.php"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> } );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.post( <span class="string">"test.php"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> } );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -207,7 +223,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.post(<span class="string">"test.php"</span>, { <span class="string">'choices[]'</span>: [<span class="string">"Jon"</span>, <span class="string">"Susan"</span>] });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.post( <span class="string">"test.php"</span>, { <span class="string">'choices[]'</span>: [ <span class="string">"Jon"</span>, <span class="string">"Susan"</span> ] } );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -228,7 +244,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.post(<span class="string">"test.php"</span>, $(<span class="string">"#testform"</span>).serialize());</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.post( <span class="string">"test.php"</span>, $( <span class="string">"#testform"</span> ).serialize() );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -253,7 +269,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.post(<span class="string">"test.php"</span>, <span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"Data Loaded: "</span> + data);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.post( <span class="string">"test.php"</span>, <span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"Data Loaded: "</span> + data );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -280,7 +296,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.post(<span class="string">"test.php"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> })</code></div></div><div class="container"><div class="line"><code>.done(<span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"Data Loaded: "</span> + data);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.post( <span class="string">"test.php"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> })</code></div></div><div class="container"><div class="line"><code>  .done(<span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"Data Loaded: "</span> + data );</code></div></div><div class="container"><div class="line"><code>  });</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -305,11 +321,9 @@
 					
 						<div class="line n4">4</div>
 					
-						<div class="line n5">5</div>
-					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.post(<span class="string">"test.php"</span>, { <span class="string">"func"</span>: <span class="string">"getNameAndTime"</span> },</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">function</span>(data){</code></div></div><div class="container"><div class="line"><code>    console.log(data.name); <span class="comment">// John</span></code></div></div><div class="container"><div class="line"><code>    console.log(data.time); <span class="comment">//  2pm</span></code></div></div><div class="container"><div class="line"><code>  }, <span class="string">"json"</span>);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.post( <span class="string">"test.php"</span>, { func: <span class="string">"getNameAndTime"</span> }, <span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>  console.log( data.name ); <span class="comment">// John</span></code></div></div><div class="container"><div class="line"><code>  console.log( data.time ); <span class="comment">// 2pm</span></code></div></div><div class="container"><div class="line"><code>}, <span class="string">"json"</span>);</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -406,9 +420,11 @@
 					
 						<div class="line n40">40</div>
 					
+						<div class="line n41">41</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>jQuery.post demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">"/"</span> <span class="attribute">id</span>=<span class="value">"searchForm"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>   <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"s"</span> <span class="attribute">placeholder</span>=<span class="value">"Search..."</span> /&gt;</span></code></div></div><div class="container"><div class="line"><code>   <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Search"</span> /&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">form</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="comment">&lt;!-- the result of the search will be rendered inside this div --&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"result"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="comment">/* attach a submit handler to the form */</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#searchForm"</span>).submit(<span class="keyword">function</span>(event) {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* stop form from submitting normally */</span></code></div></div><div class="container"><div class="line"><code>  event.preventDefault();</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* get some values from elements on the page: */</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> $form = $( <span class="keyword">this</span> ),</code></div></div><div class="container"><div class="line"><code>      term = $form.find( <span class="string">'input[name="s"]'</span> ).val(),</code></div></div><div class="container"><div class="line"><code>      url = $form.attr( <span class="string">'action'</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* Send the data using post */</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> posting = $.post( url, { s: term } );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">/* Put the results in a div */</span></code></div></div><div class="container"><div class="line"><code>  posting.done(<span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">var</span> content = $( data ).find( <span class="string">'#content'</span> );</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"#result"</span> ).empty().append( content );</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>jQuery.post demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">"/"</span> <span class="attribute">id</span>=<span class="value">"searchForm"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"s"</span> <span class="attribute">placeholder</span>=<span class="value">"Search..."</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Search"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">form</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="comment">&lt;!-- the result of the search will be rendered inside this div --&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"result"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="comment">// Attach a submit handler to the form</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">"#searchForm"</span> ).submit(<span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Stop form from submitting normally</span></code></div></div><div class="container"><div class="line"><code>  event.preventDefault();</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Get some values from elements on the page:</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> $form = $( <span class="keyword">this</span> ),</code></div></div><div class="container"><div class="line"><code>    term = $form.find( <span class="string">"input[name='s']"</span> ).val(),</code></div></div><div class="container"><div class="line"><code>    url = $form.attr( <span class="string">"action"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Send the data using post</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> posting = $.post( url, { s: term } );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Put the results in a div</span></code></div></div><div class="container"><div class="line"><code>  posting.done(<span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">var</span> content = $( data ).find( <span class="string">"#content"</span> );</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"#result"</span> ).empty().append( content );</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

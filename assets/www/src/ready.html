@@ -31,15 +31,15 @@
     <p>All three of the following syntaxes are equivalent:</p>
     <ul>
       <li>
-        <code>$(document).ready(handler)</code>
+        <code>$( document ).ready( handler )</code>
       </li>
       <li>
-<code>$().ready(handler)</code> (this is not recommended)</li>
+<code>$().ready( handler )</code> (this is not recommended)</li>
       <li>
-        <code>$(handler)</code>
+        <code>$( handler )</code>
       </li>
     </ul>
-    <p>There is also <code>$(document).on("ready", handler)</code>, <em>deprecated as of jQuery 1.8</em>. This behaves similarly to the ready method but if the ready event has already fired and you try to <code>.on("ready")</code> the bound handler will not be executed. Ready handlers bound this way are executed <em>after</em> any bound by the other three methods above.</p>
+    <p>There is also <code>$(document).on( "ready", handler )</code>, <em>deprecated as of jQuery 1.8</em>. This behaves similarly to the ready method but if the ready event has already fired and you try to <code>.on( "ready" )</code> the bound handler will not be executed. Ready handlers bound this way are executed <em>after</em> any bound by the other three methods above.</p>
     <p>The <code>.ready()</code> method can only be called on a jQuery object matching the current document, so the selector can be omitted.</p>
     <p>The <code>.ready()</code> method is typically used with an anonymous function:</p>
     <div class="syntaxhighlighter javascript nogutter">
@@ -56,7 +56,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(document).ready(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Handler for .ready() called.</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ready(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Handler for .ready() called.</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -78,7 +78,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>     <span class="comment">// Handler for .ready() called.</span></code></div></div><div class="container"><div class="line"><code>    });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Handler for .ready() called.</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -102,7 +102,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>jQuery(document).ready(<span class="keyword">function</span>($) {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Code using $ as usual goes here.</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>jQuery( document ).ready(<span class="keyword">function</span>( $ ) {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Code using $ as usual goes here.</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -156,9 +156,25 @@
 					
 						<div class="line n19">19</div>
 					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>ready demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"><span class="tag">p</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">red;</span></span> <span class="rule">}</span></span>	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>  $(document).ready(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"p"</span>).text(<span class="string">"The DOM is now loaded and can be manipulated."</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">p</span>&gt;</span>Not loaded yet.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>ready demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">p</span> <span class="rules">{</span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">color</span>:<span class="value"> red;</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  $( document ).ready(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"p"</span> ).text( <span class="string">"The DOM is now loaded and can be manipulated."</span> );</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>Not loaded yet.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

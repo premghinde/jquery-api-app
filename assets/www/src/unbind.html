@@ -9,13 +9,13 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">.unbind(  [eventType ] [, handler(eventObject) ] )</span><span class="returns">Returns: jQuery</span>
+<span class="name">.unbind( eventType [, handler(eventObject) ] )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Remove a previously-attached event handler from the elements.</p>
 <ul class="signatures">
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.0</span>.unbind(  [eventType ] [, handler(eventObject) ] )</h4>
+<span class="version-details">version added: 1.0</span>.unbind( eventType [, handler(eventObject) ] )</h4>
 <ul>
 <li>
 <div><strong>eventType</strong></div>
@@ -54,6 +54,11 @@
 <div>A JavaScript event object as passed to an event handler.</div>
 </li></ul>
 </li>
+<li class="signature">
+<h4 class="name">
+<span class="version-details">version added: 1.0</span>.unbind()</h4>
+<ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
+</li>
 </ul>
 <div class="longdesc" id="entry-longdesc">
     <p>Event handlers attached with <code>.bind()</code> can be removed with <code>.unbind()</code>. (As of jQuery 1.7, the <code>.on()</code> and <code>.off()</code> methods are preferred to attach and remove event handlers on elements.) In the simplest case, with no arguments, <code>.unbind()</code> removes all handlers attached to the elements:</p>
@@ -67,7 +72,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'#foo'</span>).unbind();</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).unbind();</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -85,7 +90,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'#foo'</span>).unbind(<span class="string">'click'</span>);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span>).unbind( <span class="string">"click"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -111,7 +116,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> handler = <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">'The quick brown fox jumps over the lazy dog.'</span>);</code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code>$(<span class="string">'#foo'</span>).bind(<span class="string">'click'</span>, handler);</code></div></div><div class="container"><div class="line"><code>$(<span class="string">'#foo'</span>).unbind(<span class="string">'click'</span>, handler);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> handler = <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"The quick brown fox jumps over the lazy dog."</span> );</code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).bind( <span class="string">"click"</span>, handler );</code></div></div><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).unbind( <span class="string">"click"</span>, handler );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -143,7 +148,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'#foo'</span>).bind(<span class="string">'click'</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">'The quick brown fox jumps over the lazy dog.'</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// will NOT work</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">'#foo'</span>).unbind(<span class="string">'click'</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">'The quick brown fox jumps over the lazy dog.'</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).bind( <span class="string">"click"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"The quick brown fox jumps over the lazy dog."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Will NOT work</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).unbind( <span class="string">"click"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"The quick brown fox jumps over the lazy dog."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -166,7 +171,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'#foo'</span>).bind(<span class="string">'click.myEvents'</span>, handler);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).bind( <span class="string">"click.myEvents"</span>, handler );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -184,7 +189,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'#foo'</span>).unbind(<span class="string">'click'</span>);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).unbind( <span class="string">"click"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -202,7 +207,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'#foo'</span>).unbind(<span class="string">'click.myEvents'</span>);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).unbind( <span class="string">"click.myEvents"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -220,7 +225,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'#foo'</span>).unbind(<span class="string">'.myEvents'</span>);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).unbind( <span class="string">".myEvents"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -254,7 +259,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> timesClicked = <span class="number">0</span>;</code></div></div><div class="container"><div class="line"><code>$(<span class="string">'#foo'</span>).bind(<span class="string">'click'</span>, <span class="keyword">function</span>(event) {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">'The quick brown fox jumps over the lazy dog.'</span>);</code></div></div><div class="container"><div class="line"><code>  timesClicked++;</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> (timesClicked &gt;= <span class="number">3</span>) {</code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).unbind(event);</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> timesClicked = <span class="number">0</span>;</code></div></div><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).bind( <span class="string">"click"</span>, <span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"The quick brown fox jumps over the lazy dog."</span> );</code></div></div><div class="container"><div class="line"><code>  timesClicked++;</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( timesClicked &gt;= <span class="number">3</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="keyword">this</span> ).unbind( event );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -343,9 +348,21 @@ This example is also an illustration of a closure. Since the handler refers to t
 					
 						<div class="line n35">35</div>
 					
+						<div class="line n36">36</div>
+					
+						<div class="line n37">37</div>
+					
+						<div class="line n38">38</div>
+					
+						<div class="line n39">39</div>
+					
+						<div class="line n40">40</div>
+					
+						<div class="line n41">41</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>unbind demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code><span class="tag">button</span> <span class="rules">{ <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">5</span>px;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code><span class="tag">button</span><span class="id">#theone</span> <span class="rules">{ <span class="rule"><span class="attribute">color</span>:<span class="value">red;</span></span> <span class="rule"><span class="attribute">background</span>:<span class="value">yellow;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"theone"</span>&gt;</span>Does nothing...<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"bind"</span>&gt;</span>Bind Click<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"unbind"</span>&gt;</span>Unbind Click<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"display:none;"</span>&gt;</span>Click!<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="function"><span class="keyword">function</span> <span class="title">aClick</span><span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"div"</span>).show().fadeOut(<span class="string">"slow"</span>);</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#bind"</span>).click(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// could use .bind('click', aClick) instead but for variety...</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#theone"</span>).click(aClick)</code></div></div><div class="container"><div class="line"><code>  .text(<span class="string">"Can Click!"</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#unbind"</span>).click(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>$(<span class="string">"#theone"</span>).unbind(<span class="string">'click'</span>, aClick)</code></div></div><div class="container"><div class="line"><code>  .text(<span class="string">"Does nothing..."</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>unbind demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">button</span> <span class="rules">{</span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">5</span>px;</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">button</span><span class="id">#theone</span> <span class="rules">{</span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">color</span>:<span class="value"> red;</span></span></code></div></div><div class="container"><div class="line"><code>    <span class="rule"><span class="attribute">background</span>:<span class="value"> yellow;</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="rule">}</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"theone"</span>&gt;</span>Does nothing...<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"bind"</span>&gt;</span>Bind Click<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"unbind"</span>&gt;</span>Unbind Click<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"display:none;"</span>&gt;</span>Click!<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code><span class="function"><span class="keyword">function</span> <span class="title">aClick</span><span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"div"</span> ).show().fadeOut( <span class="string">"slow"</span> );</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code>$( <span class="string">"#bind"</span> ).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"#theone"</span> )</code></div></div><div class="container"><div class="line"><code>    .bind( <span class="string">"click"</span>, aClick )</code></div></div><div class="container"><div class="line"><code>    .text( <span class="string">"Can Click!"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code>$( <span class="string">"#unbind"</span> ).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"#theone"</span> )</code></div></div><div class="container"><div class="line"><code>    .unbind( <span class="string">"click"</span>, aClick )</code></div></div><div class="container"><div class="line"><code>    .text( <span class="string">"Does nothing..."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -368,7 +385,7 @@ This example is also an illustration of a closure. Since the handler refers to t
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).unbind()</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"p"</span> ).unbind();</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -389,7 +406,7 @@ This example is also an illustration of a closure. Since the handler refers to t
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).unbind( <span class="string">"click"</span> )</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"p"</span> ).unbind( <span class="string">"click"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -422,7 +439,7 @@ This example is also an illustration of a closure. Since the handler refers to t
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// code to handle some kind of event</span></code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).bind(<span class="string">"click"</span>, foo); <span class="comment">// ... now foo will be called when paragraphs are clicked ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$(<span class="string">"p"</span>).unbind(<span class="string">"click"</span>, foo); <span class="comment">// ... foo will no longer be called.</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> foo = <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Code to handle some kind of event</span></code></div></div><div class="container"><div class="line"><code>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$( <span class="string">"p"</span> ).bind( <span class="string">"click"</span>, foo ); <span class="comment">// ... Now foo will be called when paragraphs are clicked ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$( <span class="string">"p"</span> ).unbind( <span class="string">"click"</span>, foo ); <span class="comment">// ... foo will no longer be called.</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

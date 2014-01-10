@@ -24,7 +24,7 @@
 <div class="longdesc" id="entry-longdesc">
     <p>For details on the settings available for <code>$.ajaxSetup()</code>, see <code>$.ajax()</code>. </p>
     <p>All subsequent Ajax calls using any function will use the new settings, unless overridden by the individual calls, until the next invocation of <code>$.ajaxSetup()</code>.</p>
-	<p><strong>Note:</strong> The settings specified here will affect <em>all</em> calls to <code>$.ajax</code> or AJAX-based derivatives such as <code>$.get()</code>. This can cause undesirable behavior since other callers (for example, plugins) may be expecting the normal default settings. For that reason we <em>strongly recommend against using this API</em>. Instead, set the options explicitly in the call or define a simple plugin to do so.</p>
+    <p><strong>Note:</strong> The settings specified here will affect <em>all</em> calls to <code>$.ajax</code> or Ajax-based derivatives such as <code>$.get()</code>. This can cause undesirable behavior since other callers (for example, plugins) may be expecting the normal default settings. For that reason we <em>strongly recommend against using this API</em>. Instead, set the options explicitly in the call or define a simple plugin to do so.</p>
     <p>For example, the following sets a default for the <code>url</code> parameter before pinging the server repeatedly:</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
@@ -40,7 +40,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajaxSetup({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">'ping.php'</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajaxSetup({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"ping.php"</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -64,7 +64,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajax({</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// url not set here; uses ping.php</span></code></div></div><div class="container"><div class="line"><code>  data: {<span class="string">'name'</span>: <span class="string">'Dan'</span>}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajax({</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// url not set here; uses ping.php</span></code></div></div><div class="container"><div class="line"><code>  data: { <span class="string">"name"</span>: <span class="string">"Dan"</span> }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -95,11 +95,9 @@
 					
 						<div class="line n6">6</div>
 					
-						<div class="line n7">7</div>
-					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajaxSetup({</code></div></div><div class="container"><div class="line"><code>   url: <span class="string">"/xmlhttp/"</span>,</code></div></div><div class="container"><div class="line"><code>   global: <span class="literal">false</span>,</code></div></div><div class="container"><div class="line"><code>   type: <span class="string">"POST"</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code> });</code></div></div><div class="container"><div class="line"><code> $.ajax({ data: myData });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajaxSetup({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"/xmlhttp/"</span>,</code></div></div><div class="container"><div class="line"><code>  global: <span class="literal">false</span>,</code></div></div><div class="container"><div class="line"><code>  type: <span class="string">"POST"</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code>$.ajax({ data: myData });</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

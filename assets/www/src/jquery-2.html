@@ -48,7 +48,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> a = { what: <span class="string">"A regular JS object"</span> },</code></div></div><div class="container"><div class="line"><code>    b = $(<span class="string">'body'</span>);</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="keyword">if</span> ( a.jquery ) { <span class="comment">// falsy, since it's undefined</span></code></div></div><div class="container"><div class="line"><code>    alert(<span class="string">' a is a jQuery object! '</span>);</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="keyword">if</span> ( b.jquery ) { <span class="comment">// truthy, since it's a string</span></code></div></div><div class="container"><div class="line"><code>    alert(<span class="string">' b is a jQuery object! '</span>);</code></div></div><div class="container"><div class="line"><code>}</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> a = { what: <span class="string">"A regular JS object"</span> },</code></div></div><div class="container"><div class="line"><code>  b = $( <span class="string">"body"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="keyword">if</span> ( a.jquery ) { <span class="comment">// Falsy, since it's undefined</span></code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"a is a jQuery object!"</span> );</code></div></div><div class="container"><div class="line"><code>}</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="keyword">if</span> ( b.jquery ) { <span class="comment">// Truthy, since it's a string</span></code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"b is a jQuery object!"</span> );</code></div></div><div class="container"><div class="line"><code>}</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -69,7 +69,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>alert( <span class="string">'You are running jQuery version: '</span> + $.fn.jquery );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>alert( <span class="string">"You are running jQuery version: "</span> + $.fn.jquery );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

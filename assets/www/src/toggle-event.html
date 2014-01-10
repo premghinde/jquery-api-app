@@ -38,7 +38,8 @@
       <p>Note: This method signature was deprecated in jQuery 1.8 and removed in jQuery 1.9. jQuery also provides an animation method named .toggle() that toggles the visibility of elements. Whether the animation or the event method is fired depends on the set of arguments passed.</p>
     </div>
     <p>The <code>.toggle()</code> method binds a handler for the <code>click</code> event, so the rules outlined for the triggering of <code>click</code> apply here as well.</p>
-    <div class="syntaxhighlighter javascript nogutter">
+    <p>For example, consider the HTML:</p>
+    <div class="syntaxhighlighter xml nogutter">
 	<table>
 		<tbody>
 			<tr>
@@ -50,11 +51,9 @@
 					
 						<div class="line n3">3</div>
 					
-						<div class="line n4">4</div>
-					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>For example, consider the HTML:</code></div></div><div class="container"><div class="line"><code><span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"target"</span>&gt;</span></span></code></div></div><div class="container"><div class="line"><code>  Click here</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"target"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  Click here</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -80,7 +79,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'#target'</span>).toggle(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">'First handler for .toggle() called.'</span>);</code></div></div><div class="container"><div class="line"><code>}, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">'Second handler for .toggle() called.'</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#target"</span> ).toggle(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"First handler for .toggle() called."</span> );</code></div></div><div class="container"><div class="line"><code>}, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"Second handler for .toggle() called."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -124,11 +123,9 @@
 					
 						<div class="line n7">7</div>
 					
-						<div class="line n8">8</div>
-					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"td"</span>).toggle(</code></div></div><div class="container"><div class="line"><code>  <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).addClass(<span class="string">"selected"</span>);</code></div></div><div class="container"><div class="line"><code>  },</code></div></div><div class="container"><div class="line"><code>  <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).removeClass(<span class="string">"selected"</span>);</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"td"</span> ).toggle(</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    $( <span class="keyword">this</span> ).addClass( <span class="string">"selected"</span> );</code></div></div><div class="container"><div class="line"><code>  }, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    $( <span class="keyword">this</span> ).removeClass( <span class="string">"selected"</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>);</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

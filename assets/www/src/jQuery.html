@@ -127,7 +127,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">"div.foo"</span> ).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $(  <span class="string">"span"</span>, <span class="keyword">this</span> ).addClass( <span class="string">"bar"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"div.foo"</span> ).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"span"</span>, <span class="keyword">this</span> ).addClass( <span class="string">"bar"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -155,7 +155,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">"div.foo"</span> ).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $(<span class="keyword">this</span>).slideUp();</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"div.foo"</span> ).click(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="keyword">this</span> ).slideUp();</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -178,7 +178,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.post( <span class="string">"url.xml"</span>, <span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> $child = $(data).find(<span class="string">"child"</span>);</code></div></div><div class="container"><div class="line"><code>})</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.post( <span class="string">"url.xml"</span>, <span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> $child = $( data ).find( <span class="string">"child"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -247,7 +247,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="comment">// define a plain object</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> foo = {foo: <span class="string">"bar"</span>, hello: <span class="string">"world"</span>};</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Pass it to the jQuery function</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> $foo = $( foo );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// test accessing property values</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> test1 = $foo.prop( <span class="string">"foo"</span> ); <span class="comment">// bar</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// test setting property values</span></code></div></div><div class="container"><div class="line"><code>$foo.prop( <span class="string">"foo"</span>, <span class="string">"foobar"</span> );</code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> test2 = $foo.prop( <span class="string">"foo"</span> ); <span class="comment">// foobar</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// test using .data() as summarized above</span></code></div></div><div class="container"><div class="line"><code>$foo.data( <span class="string">"keyName"</span>, <span class="string">"someValue"</span>);</code></div></div><div class="container"><div class="line"><code>console.log( $foo ); <span class="comment">// will now contain a jQuery{randomNumber} property</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// test binding an event name and triggering</span></code></div></div><div class="container"><div class="line"><code>$foo.on( <span class="string">"eventName"</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  console.log(<span class="string">"eventName was called"</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$foo.trigger( <span class="string">"eventName"</span> ); <span class="comment">// logs "eventName was called"</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="comment">// Define a plain object</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> foo = { foo: <span class="string">"bar"</span>, hello: <span class="string">"world"</span> };</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Pass it to the jQuery function</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> $foo = $( foo );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Test accessing property values</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> test1 = $foo.prop( <span class="string">"foo"</span> ); <span class="comment">// bar</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Test setting property values</span></code></div></div><div class="container"><div class="line"><code>$foo.prop( <span class="string">"foo"</span>, <span class="string">"foobar"</span> );</code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> test2 = $foo.prop( <span class="string">"foo"</span> ); <span class="comment">// foobar</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Test using .data() as summarized above</span></code></div></div><div class="container"><div class="line"><code>$foo.data( <span class="string">"keyName"</span>, <span class="string">"someValue"</span> );</code></div></div><div class="container"><div class="line"><code>console.log( $foo ); <span class="comment">// will now contain a jQuery{randomNumber} property</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Test binding an event name and triggering</span></code></div></div><div class="container"><div class="line"><code>$foo.on( <span class="string">"eventName"</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  console.log( <span class="string">"eventName was called"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$foo.trigger( <span class="string">"eventName"</span> ); <span class="comment">// Logs "eventName was called"</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -265,7 +265,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$foo.triggerHandler( <span class="string">"eventName"</span> ); <span class="comment">// also logs "eventName was called"</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$foo.triggerHandler( <span class="string">"eventName"</span> ); <span class="comment">// Also logs "eventName was called"</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -312,9 +312,17 @@
 					
 						<div class="line n15">15</div>
 					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>jQuery demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://code.jquery.com/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">p</span>&gt;</span>one<span class="tag">&lt;/<span class="title">p</span>&gt;</span> <span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>two<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span> <span class="tag">&lt;<span class="title">p</span>&gt;</span>three<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">"div &gt; p"</span>).css(<span class="string">"border"</span>, <span class="string">"1px solid gray"</span>);</code></div></div><div class="container"><div class="line"><code>    <span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>jQuery demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>one<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>two<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>three<span class="tag">&lt;/<span class="title">p</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">"div &gt; p"</span> ).css( <span class="string">"border"</span>, <span class="string">"1px solid gray"</span> );</code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -337,7 +345,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"input:radio"</span>, document.forms[<span class="number">0</span>]);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"input:radio"</span>, document.forms[ <span class="number">0</span> ] );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -358,7 +366,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">"div"</span>, xml.responseXML);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"div"</span>, xml.responseXML );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -379,7 +387,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(document.body).css( <span class="string">"background"</span>, <span class="string">"black"</span> );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document.body ).css( <span class="string">"background"</span>, <span class="string">"black"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -400,7 +408,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(myForm.elements).hide()</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( myForm.elements ).hide();</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -467,7 +475,7 @@
 </div>
 
       <p>For explicit parsing of a string to HTML, use the $.parseHTML() method.</p>
-	  <p>By default, elements are created with an <code>ownerDocument</code> matching the document into which the jQuery library was loaded. Elements being injected into a different document should be created using that document, e.g., <code>$("&lt;p&gt;hello iframe&lt;/p&gt;", $("#myiframe").prop("contentWindow").document)</code>.</p>
+      <p>By default, elements are created with an <code>ownerDocument</code> matching the document into which the jQuery library was loaded. Elements being injected into a different document should be created using that document, e.g., <code>$("&lt;p&gt;hello iframe&lt;/p&gt;", $("#myiframe").prop("contentWindow").document)</code>.</p>
       <p>If the HTML is more complex than a single tag without attributes, as it is in the above example, the actual creation of the elements is handled by the browser's <code>innerHTML</code> mechanism. In most cases, jQuery creates a new &lt;div&gt; element and sets the innerHTML property of the element to the HTML snippet that was passed in. When the parameter has a single tag (with optional closing tag or quick-closing) — <code>$( "&lt;img /&gt;" )</code> or <code>$( "&lt;img&gt;" )</code>, <code>$( "&lt;a&gt;&lt;/a&gt;" )</code> or <code>$( "&lt;a&gt;" )</code> — jQuery creates the element using the native JavaScript <code>createElement()</code> function.</p>
       <p>When passing in complex HTML, some browsers may not generate a DOM that exactly replicates the HTML source provided. As mentioned, jQuery uses the browser"s <code>.innerHTML</code> property to parse the passed HTML and insert it into the current document. During this process, some  browsers filter out certain elements such as  <code>&lt;html&gt;</code>,  <code>&lt;title&gt;</code>, or  <code>&lt;head&gt;</code> elements. As a result, the  elements inserted may not be representative of the original string  passed.</p>
       <p>Filtering isn't, however, limited to these tags. For example, Internet Explorer prior to version 8 will also convert all <code>href</code> properties on links to absolute URLs, and Internet Explorer prior to version 9 will not correctly handle HTML5 elements without the addition of a separate compatibility layer.</p>
@@ -502,7 +510,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">"&lt;img /&gt;"</span> );</code></div></div><div class="container"><div class="line"><code>$( <span class="string">"&lt;input&gt;"</span> );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"&lt;img&gt;"</span> );</code></div></div><div class="container"><div class="line"><code>$( <span class="string">"&lt;input&gt;"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -522,7 +530,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> el = $( <span class="string">"1&lt;br/&gt;2&lt;br/&gt;3"</span> ); <span class="comment">// returns [&lt;br&gt;, "2", &lt;br&gt;]</span></code></div></div><div class="container"><div class="line"><code>el  = $( <span class="string">"1&lt;br/&gt;2&lt;br/&gt;3 &gt;"</span> ); <span class="comment">// returns [&lt;br&gt;, "2", &lt;br&gt;, "3 &amp;gt;"]</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> el = $( <span class="string">"1&lt;br&gt;2&lt;br&gt;3"</span> ); <span class="comment">// returns [&lt;br&gt;, "2", &lt;br&gt;]</span></code></div></div><div class="container"><div class="line"><code>el = $( <span class="string">"1&lt;br&gt;2&lt;br&gt;3 &gt;"</span> ); <span class="comment">// returns [&lt;br&gt;, "2", &lt;br&gt;, "3 &amp;gt;"]</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -557,7 +565,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">"&lt;div&gt;&lt;/div&gt;"</span>, {</code></div></div><div class="container"><div class="line"><code>  <span class="string">"class"</span>: <span class="string">"my-div"</span>,</code></div></div><div class="container"><div class="line"><code>  on: {</code></div></div><div class="container"><div class="line"><code>    touchstart: <span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code>      <span class="comment">// do something</span></code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>}).appendTo( <span class="string">"body"</span> );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"&lt;div&gt;&lt;/div&gt;"</span>, {</code></div></div><div class="container"><div class="line"><code>  <span class="string">"class"</span>: <span class="string">"my-div"</span>,</code></div></div><div class="container"><div class="line"><code>  on: {</code></div></div><div class="container"><div class="line"><code>    touchstart: <span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code>      <span class="comment">// Do something</span></code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>}).appendTo( <span class="string">"body"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -565,7 +573,7 @@
 </div>
 
       <p>The name <code>"class"</code> must be quoted in the object since it is a JavaScript reserved word, and <code>"className"</code> cannot be used since it refers to the DOM property, not the attribute. </p>
-      <p>While the second argument is convenient, its flexibility can lead to unintended consequences (e.g. <code>$("&lt;input&gt;", {size: "4"})</code> calling the <code>.size()</code> method instead of setting the size attribute). The previous code block could thus be written instead as:</p>
+      <p>While the second argument is convenient, its flexibility can lead to unintended consequences (e.g. <code>$( "&lt;input&gt;", {size: "4"} )</code> calling the <code>.size()</code> method instead of setting the size attribute). The previous code block could thus be written instead as:</p>
 <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -586,9 +594,11 @@
 					
 						<div class="line n7">7</div>
 					
+						<div class="line n8">8</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">"&lt;div&gt;&lt;/div&gt;"</span> )</code></div></div><div class="container"><div class="line"><code>.addClass( <span class="string">"my-div"</span> )</code></div></div><div class="container"><div class="line"><code>.on({</code></div></div><div class="container"><div class="line"><code>  touchstart: <span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code>    <span class="comment">// do something</span></code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>}).appendTo( <span class="string">"body"</span> );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"&lt;div&gt;&lt;/div&gt;"</span> )</code></div></div><div class="container"><div class="line"><code>  .addClass( <span class="string">"my-div"</span> )</code></div></div><div class="container"><div class="line"><code>  .on({</code></div></div><div class="container"><div class="line"><code>    touchstart: <span class="keyword">function</span>( event ) {</code></div></div><div class="container"><div class="line"><code>      <span class="comment">// Do something</span></code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  })</code></div></div><div class="container"><div class="line"><code>    .appendTo( <span class="string">"body"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -640,9 +650,11 @@
 					
 						<div class="line n7">7</div>
 					
+						<div class="line n8">8</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">"&lt;div/&gt;"</span>, {</code></div></div><div class="container"><div class="line"><code>  <span class="string">"class"</span>: <span class="string">"test"</span>,</code></div></div><div class="container"><div class="line"><code>  text: <span class="string">"Click me!"</span>,</code></div></div><div class="container"><div class="line"><code>  click: <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    $( <span class="keyword">this</span> ).toggleClass( <span class="string">"test"</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>}).appendTo( <span class="string">"body"</span> );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"&lt;div/&gt;"</span>, {</code></div></div><div class="container"><div class="line"><code>  <span class="string">"class"</span>: <span class="string">"test"</span>,</code></div></div><div class="container"><div class="line"><code>  text: <span class="string">"Click me!"</span>,</code></div></div><div class="container"><div class="line"><code>  click: <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    $( <span class="keyword">this</span> ).toggleClass( <span class="string">"test"</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>})</code></div></div><div class="container"><div class="line"><code>  .appendTo( <span class="string">"body"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -664,7 +676,7 @@
 </li></ul>
 </li></ul>
 <div class="longdesc" id="entry-longdesc-2">
-      <p>This function behaves just like <code>$(document).ready()</code>, in that it should be used to wrap other <code>$()</code> operations on your page that depend on the DOM being ready. While this function is, technically, chainable, there really isn"t much use for chaining against it.</p>
+      <p>This function behaves just like <code>$( document ).ready()</code>, in that it should be used to wrap other <code>$()</code> operations on your page that depend on the DOM being ready. While this function is, technically, chainable, there really isn"t much use for chaining against it.</p>
     </div>
 <section class="entry-examples" id="entry-examples-2"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-2-0">
 <h4>Example: <span class="desc">Execute the function when the DOM is ready to be used.</span>
@@ -683,7 +695,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="keyword">function</span>(){</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Document is ready</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Document is ready</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -708,7 +720,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>jQuery(<span class="keyword">function</span>($) {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Your code using failsafe $ alias here...</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>jQuery(<span class="keyword">function</span>( $ ) {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Your code using failsafe $ alias here...</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

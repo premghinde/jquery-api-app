@@ -86,7 +86,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.get(<span class="string">'ajax/test.html'</span>, <span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">'.result'</span>).html(data);</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">'Load was performed.'</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.get( <span class="string">"ajax/test.html"</span>, <span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">".result"</span> ).html( data );</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"Load was performed."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -129,9 +129,25 @@
 					
 						<div class="line n13">13</div>
 					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="comment">// Assign handlers immediately after making the request,</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// and remember the jqxhr object for this request</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> jqxhr = $.get(<span class="string">"example.php"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"success"</span>);</code></div></div><div class="container"><div class="line"><code>})</code></div></div><div class="container"><div class="line"><code>.done(<span class="keyword">function</span>() { alert(<span class="string">"second success"</span>); })</code></div></div><div class="container"><div class="line"><code>.fail(<span class="keyword">function</span>() { alert(<span class="string">"error"</span>); })</code></div></div><div class="container"><div class="line"><code>.always(<span class="keyword">function</span>() { alert(<span class="string">"finished"</span>); });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// perform other work here ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Set another completion function for the request above</span></code></div></div><div class="container"><div class="line"><code>jqxhr.always(<span class="keyword">function</span>(){ alert(<span class="string">"second finished"</span>); });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="comment">// Assign handlers immediately after making the request,</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// and remember the jqxhr object for this request</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> jqxhr = $.get( <span class="string">"example.php"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"success"</span> );</code></div></div><div class="container"><div class="line"><code>})</code></div></div><div class="container"><div class="line"><code>  .done(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"second success"</span> );</code></div></div><div class="container"><div class="line"><code>  })</code></div></div><div class="container"><div class="line"><code>  .fail(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"error"</span> );</code></div></div><div class="container"><div class="line"><code>  })</code></div></div><div class="container"><div class="line"><code>  .always(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"finished"</span> );</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Perform other work here ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Set another completion function for the request above</span></code></div></div><div class="container"><div class="line"><code>jqxhr.always(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"second finished"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -166,7 +182,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.php"</span>);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.get( <span class="string">"test.php"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -187,7 +203,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.php"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> } );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.get( <span class="string">"test.php"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> } );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -208,7 +224,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.php"</span>, { <span class="string">'choices[]'</span>: [<span class="string">"Jon"</span>, <span class="string">"Susan"</span>]} );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.get( <span class="string">"test.php"</span>, { <span class="string">"choices[]"</span>: [<span class="string">"Jon"</span>, <span class="string">"Susan"</span>] } );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -233,7 +249,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.php"</span>, <span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"Data Loaded: "</span> + data);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.get( <span class="string">"test.php"</span>, <span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"Data Loaded: "</span> + data );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -260,7 +276,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.cgi"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> })</code></div></div><div class="container"><div class="line"><code>.done(<span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>  alert(<span class="string">"Data Loaded: "</span> + data);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.get( <span class="string">"test.cgi"</span>, { name: <span class="string">"John"</span>, time: <span class="string">"2pm"</span> } )</code></div></div><div class="container"><div class="line"><code>  .done(<span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"Data Loaded: "</span> + data );</code></div></div><div class="container"><div class="line"><code>  });</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -269,7 +285,7 @@
 
 </div>
 <div class="entry-example" id="example-5">
-<h4>Example: <span class="desc"> Get the test.php page contents, which has been returned in json format (&lt;?php echo json_encode(array("name"=&gt;"John","time"=&gt;"2pm")); ?&gt;), and add it to the page.</span>
+<h4>Example: <span class="desc"> Get the test.php page contents, which has been returned in json format (&lt;?php echo json_encode( array( "name"=&gt;"John","time"=&gt;"2pm" ) ); ?&gt;), and add it to the page.</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -289,7 +305,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.get(<span class="string">"test.php"</span>,</code></div></div><div class="container"><div class="line"><code>   <span class="keyword">function</span>(data) {</code></div></div><div class="container"><div class="line"><code>     $(<span class="string">'body'</span>).append( <span class="string">"Name: "</span> + data.name ) <span class="comment">// John</span></code></div></div><div class="container"><div class="line"><code>              .append( <span class="string">"Time: "</span> + data.time ); <span class="comment">//  2pm</span></code></div></div><div class="container"><div class="line"><code>   }, <span class="string">"json"</span>);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.get( <span class="string">"test.php"</span>, <span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"body"</span> )</code></div></div><div class="container"><div class="line"><code>    .append( <span class="string">"Name: "</span> + data.name ) <span class="comment">// John</span></code></div></div><div class="container"><div class="line"><code>    .append( <span class="string">"Time: "</span> + data.time ); <span class="comment">//  2pm</span></code></div></div><div class="container"><div class="line"><code>}, <span class="string">"json"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

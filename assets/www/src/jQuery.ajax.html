@@ -41,13 +41,13 @@
 <div>
 <strong>accepts</strong> (default: <code>depends on DataType</code>)</div>
 <div>Type: PlainObject</div>
-<div>The content type sent in the request header that tells the server what kind of response it will accept in return. If the <code>accepts</code> setting needs modification, it is recommended to do so once in the <code>$.ajaxSetup()</code> method.</div>
+<div>The content type sent in the request header that tells the server what kind of response it will accept in return.</div>
 </li>
 <li>
 <div>
 <strong>async</strong> (default: <code>true</code>)</div>
 <div>Type: Boolean</div>
-<div>By default, all requests are sent asynchronously (i.e. this is set to <code>true</code> by default). If you need synchronous requests, set this option to <code>false</code>. Cross-domain requests and <code>dataType: "jsonp"</code> requests do not support synchronous operation. Note that synchronous requests may temporarily lock the browser, disabling any actions while the request is active. <strong>As of jQuery 1.8, the use of <code> async: false </code> with jqXHR (<code>$.Deferred</code>) is deprecated; you must use the success/error/complete callback options instead of the corresponding methods of the jqXHR object such as <code>jqXHR.done()</code> or the deprecated <code>jqXHR.success()</code>.</strong>
+<div>By default, all requests are sent asynchronously (i.e. this is set to <code>true</code> by default). If you need synchronous requests, set this option to <code>false</code>. Cross-domain requests and <code>dataType: "jsonp"</code> requests do not support synchronous operation. Note that synchronous requests may temporarily lock the browser, disabling any actions while the request is active. <strong>As of jQuery 1.8, the use of <code>async: false</code> with jqXHR (<code>$.Deferred</code>) is deprecated; you must use the success/error/complete callback options instead of the corresponding methods of the jqXHR object such as <code>jqXHR.done()</code> or the deprecated <code>jqXHR.success()</code>.</strong>
 </div>
 </li>
 <li>
@@ -81,7 +81,8 @@
 <li>
 <div><strong>context</strong></div>
 <div>Type: PlainObject</div>
-<div>This object will be made the context of all Ajax-related callbacks. By default, the context is an object that represents the ajax settings used in the call (<code>$.ajaxSettings</code> merged with the settings passed to <code>$.ajax</code>). For example,  specifying a DOM element as the context will make that the context for the <code>complete</code> callback of a request, like so: <div class="syntaxhighlighter javascript nogutter">
+<div>This object will be made the context of all Ajax-related callbacks. By default, the context is an object that represents the ajax settings used in the call (<code>$.ajaxSettings</code> merged with the settings passed to <code>$.ajax</code>). For example,  specifying a DOM element as the context will make that the context for the <code>complete</code> callback of a request, like so:
+          <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
 			<tr>
@@ -101,14 +102,14 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajax({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"test.html"</span>,</code></div></div><div class="container"><div class="line"><code>  context: document.body</code></div></div><div class="container"><div class="line"><code>}).done(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $(<span class="keyword">this</span>).addClass(<span class="string">"done"</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajax({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"test.html"</span>,</code></div></div><div class="container"><div class="line"><code>  context: document.body</code></div></div><div class="container"><div class="line"><code>}).done(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="keyword">this</span> ).addClass( <span class="string">"done"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
-</div>
+        </div>
 </li>
 <li>
 <div>
@@ -149,9 +150,9 @@
 <li>"jsonp": Loads in a JSON block using JSONP. Adds an extra "?callback=?" to the end of your URL to specify the callback. Disables caching by appending a query string parameter, "_=[TIMESTAMP]", to the URL unless the <code>cache</code> option is set to <code>true</code>.</li>
 <li>"text": A plain text string.</li>
 <li>multiple, space-separated values: <strong>As of jQuery 1.5</strong>, jQuery can convert a dataType from what it received in the Content-Type header to what you require. For example, if you want a text response to be treated as XML, use "text xml" for the dataType. You can also make a JSONP request, have it received as text, and interpreted by jQuery as XML: "jsonp text xml." Similarly, a shorthand string such as "jsonp xml" will first attempt to convert from jsonp to xml, and, failing that, convert from jsonp to text, and then from text to xml.
-            </li>
+          </li>
 </ul>
-</div>
+        </div>
 </li>
 <li>
 <div><strong>error</strong></div>
@@ -245,7 +246,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajax({</code></div></div><div class="container"><div class="line"><code>  statusCode: {</code></div></div><div class="container"><div class="line"><code>    <span class="number">404</span>: <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>      alert(<span class="string">"page not found"</span>);</code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajax({</code></div></div><div class="container"><div class="line"><code>  statusCode: {</code></div></div><div class="container"><div class="line"><code>    <span class="number">404</span>: <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>      alert( <span class="string">"page not found"</span> );</code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -298,8 +299,8 @@
 <div><strong>xhrFields</strong></div>
 <div>Type: PlainObject</div>
 <div>
-          <p>An object of fieldName-fieldValue pairs to set on the native <code>XHR</abbr></code> object. For example, you can use it to set <code>withCredentials</code> to <code>true</code> for cross-domain requests if needed.
-<div class="syntaxhighlighter javascript nogutter">
+          <p>An object of fieldName-fieldValue pairs to set on the native <code>XHR</abbr></code> object. For example, you can use it to set <code>withCredentials</code> to <code>true</code> for cross-domain requests if needed.</p>
+          <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
 			<tr>
@@ -326,9 +327,7 @@
 	</table>
 </div>
 
-</p><p><strong>In jQuery 1.5</strong>, the <code>withCredentials</code> property was not propagated to the native <code>XHR</code> and thus CORS requests requiring it would ignore this flag. For this reason, we recommend using jQuery 1.5.1+ should you require the use of it.
-</p>
-
+          <p><strong>In jQuery 1.5</strong>, the <code>withCredentials</code> property was not propagated to the native <code>XHR</code> and thus CORS requests requiring it would ignore this flag. For this reason, we recommend using jQuery 1.5.1+ should you require the use of it.</p>
         <span class="version-details"> (version added: 1.5.1)</span>
 </div>
 </li>
@@ -387,9 +386,11 @@
 					
 						<div class="line n10">10</div>
 					
+						<div class="line n11">11</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajax({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"http://fiddle.jshell.net/favicon.png"</span>,</code></div></div><div class="container"><div class="line"><code>  beforeSend: <span class="function"><span class="keyword">function</span> <span class="params">( xhr )</span> {</span></code></div></div><div class="container"><div class="line"><code>    xhr.overrideMimeType(<span class="string">"text/plain; charset=x-user-defined"</span>);</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>}).done(<span class="function"><span class="keyword">function</span> <span class="params">( data )</span> {</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span>( console &amp;&amp; console.log ) {</code></div></div><div class="container"><div class="line"><code>    console.log(<span class="string">"Sample of data:"</span>, data.slice(<span class="number">0</span>, <span class="number">100</span>));</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajax({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"http://fiddle.jshell.net/favicon.png"</span>,</code></div></div><div class="container"><div class="line"><code>  beforeSend: <span class="keyword">function</span>( xhr ) {</code></div></div><div class="container"><div class="line"><code>    xhr.overrideMimeType( <span class="string">"text/plain; charset=x-user-defined"</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>})</code></div></div><div class="container"><div class="line"><code>  .done(<span class="keyword">function</span>( data ) {</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">if</span> ( console &amp;&amp; console.log ) {</code></div></div><div class="container"><div class="line"><code>      console.log( <span class="string">"Sample of data:"</span>, data.slice( <span class="number">0</span>, <span class="number">100</span> ) );</code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  });</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -399,21 +400,21 @@
     <p>The jqXHR objects returned by <code>$.ajax()</code> as of jQuery 1.5 implement the Promise interface, giving them all the properties, methods, and behavior of a Promise (see Deferred object for more information). These methods take one or more function arguments that are called when the <code>$.ajax()</code> request terminates. This allows you to assign multiple callbacks on a single request, and even to assign callbacks after the request may have completed. (If the request is already complete, the callback is fired immediately.) Available Promise methods of the jqXHR object include: </p>
     <ul>
       <li>
-        <strong>jqXHR.done(function(data, textStatus, jqXHR) {});</strong>
+        <strong>jqXHR.done(function( data, textStatus, jqXHR ) {});</strong>
         <p>An alternative construct to the success callback option, the <code>.done()</code> method replaces the deprecated <code>jqXHR.success()</code> method. Refer to <code>deferred.done()</code> for implementation details.</p>
       </li>
       <li>
-        <strong>jqXHR.fail(function(jqXHR, textStatus, errorThrown) {});</strong>
+        <strong>jqXHR.fail(function( jqXHR, textStatus, errorThrown ) {});</strong>
         <p>An alternative construct to the error callback option, the <code>.fail()</code> method replaces the deprecated <code>.error()</code> method. Refer to <code>deferred.fail()</code> for implementation details.
         </p>
       </li>
       <li>
-        <strong>jqXHR.always(function(data|jqXHR, textStatus, jqXHR|errorThrown) { });</strong>
+        <strong>jqXHR.always(function( data|jqXHR, textStatus, jqXHR|errorThrown ) { });</strong>
         <p>An alternative construct to the complete callback option, the <code>.always()</code> method replaces the deprecated <code>.complete()</code> method.</p>
         <p>In response to a successful request, the function's arguments are the same as those of <code>.done()</code>: data, textStatus, and the jqXHR object. For failed requests the arguments are the same as those of <code>.fail()</code>: the jqXHR object, textStatus, and errorThrown. Refer to <code>deferred.always()</code> for implementation details.</p>
       </li>
       <li>
-        <strong>jqXHR.then(function(data, textStatus, jqXHR) {}, function(jqXHR, textStatus, errorThrown) {});</strong>
+        <strong>jqXHR.then(function( data, textStatus, jqXHR ) {}, function( jqXHR, textStatus, errorThrown ) {});</strong>
         <p>Incorporates the functionality of the <code>.done()</code> and <code>.fail()</code> methods, allowing (as of jQuery 1.8) the underlying Promise to be manipulated. Refer to <code>deferred.then()</code> for implementation details.
         </p>
       </li>
@@ -449,9 +450,25 @@
 					
 						<div class="line n11">11</div>
 					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="comment">// Assign handlers immediately after making the request,</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// and remember the jqxhr object for this request</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> jqxhr = $.ajax( <span class="string">"example.php"</span> )</code></div></div><div class="container"><div class="line"><code>    .done(<span class="keyword">function</span>() { alert(<span class="string">"success"</span>); })</code></div></div><div class="container"><div class="line"><code>    .fail(<span class="keyword">function</span>() { alert(<span class="string">"error"</span>); })</code></div></div><div class="container"><div class="line"><code>    .always(<span class="keyword">function</span>() { alert(<span class="string">"complete"</span>); });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// perform other work here ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Set another completion function for the request above</span></code></div></div><div class="container"><div class="line"><code>jqxhr.always(<span class="keyword">function</span>() { alert(<span class="string">"second complete"</span>); });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="comment">// Assign handlers immediately after making the request,</span></code></div></div><div class="container"><div class="line"><code><span class="comment">// and remember the jqXHR object for this request</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> jqxhr = $.ajax( <span class="string">"example.php"</span> )</code></div></div><div class="container"><div class="line"><code>  .done(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"success"</span> );</code></div></div><div class="container"><div class="line"><code>  })</code></div></div><div class="container"><div class="line"><code>  .fail(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"error"</span> );</code></div></div><div class="container"><div class="line"><code>  })</code></div></div><div class="container"><div class="line"><code>  .always(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"complete"</span> );</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Perform other work here ...</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// Set another completion function for the request above</span></code></div></div><div class="container"><div class="line"><code>jqxhr.always(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"second complete"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -528,81 +545,6 @@
     <p>The <code>scriptCharset</code> allows the character set to be explicitly specified for requests that use a <code>&lt;script&gt;</code> tag (that is, a type of <code>script</code> or <code>jsonp</code>). This is useful if the script and host page have differing character sets.</p>
     <p>The first letter in Ajax stands for "asynchronous," meaning that the operation occurs in parallel and the order of completion is not guaranteed. The <code>async</code> option to <code>$.ajax()</code> defaults to <code>true</code>, indicating that code execution can continue after the request is made. Setting this option to <code>false</code> (and thus making the call no longer asynchronous) is strongly discouraged, as it can cause the browser to become unresponsive.</p>
     <p>The <code>$.ajax()</code> function returns the <code>XMLHttpRequest</code> object that it creates. Normally jQuery handles the creation of this object internally, but a custom function for manufacturing one can be specified using the <code>xhr</code> option. The returned object can generally be discarded, but does provide a lower-level interface for observing and manipulating the request. In particular, calling <code>.abort()</code> on the object will halt the request before it completes.</p>
-    <p><strong>At present</strong>, due to a bug in Firefox where <code>.getAllResponseHeaders()</code> returns the empty string although <code>.getResponseHeader('Content-Type')</code> returns a non-empty string, automatically decoding JSON CORS responses in Firefox with jQuery is not supported.</p>
-    <p>A workaround to this is possible by overriding <code>jQuery.ajaxSettings.xhr</code> as follows:</p>
-    <div class="syntaxhighlighter javascript nogutter">
-	<table>
-		<tbody>
-			<tr>
-				<td class="gutter">
-					
-						<div class="line n1">1</div>
-					
-						<div class="line n2">2</div>
-					
-						<div class="line n3">3</div>
-					
-						<div class="line n4">4</div>
-					
-						<div class="line n5">5</div>
-					
-						<div class="line n6">6</div>
-					
-						<div class="line n7">7</div>
-					
-						<div class="line n8">8</div>
-					
-						<div class="line n9">9</div>
-					
-						<div class="line n10">10</div>
-					
-						<div class="line n11">11</div>
-					
-						<div class="line n12">12</div>
-					
-						<div class="line n13">13</div>
-					
-						<div class="line n14">14</div>
-					
-						<div class="line n15">15</div>
-					
-						<div class="line n16">16</div>
-					
-						<div class="line n17">17</div>
-					
-						<div class="line n18">18</div>
-					
-						<div class="line n19">19</div>
-					
-						<div class="line n20">20</div>
-					
-						<div class="line n21">21</div>
-					
-						<div class="line n22">22</div>
-					
-						<div class="line n23">23</div>
-					
-						<div class="line n24">24</div>
-					
-						<div class="line n25">25</div>
-					
-						<div class="line n26">26</div>
-					
-						<div class="line n27">27</div>
-					
-						<div class="line n28">28</div>
-					
-						<div class="line n29">29</div>
-					
-				</td>
-				<td class="code">
-					<pre><div class="container"><div class="line"><code>(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> _super = jQuery.ajaxSettings.xhr,</code></div></div><div class="container"><div class="line"><code>    xhrCorsHeaders = [ <span class="string">"Cache-Control"</span>, <span class="string">"Content-Language"</span>, <span class="string">"Content-Type"</span>, <span class="string">"Expires"</span>, <span class="string">"Last-Modified"</span>, <span class="string">"Pragma"</span> ];</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  jQuery.ajaxSettings.xhr = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>    <span class="keyword">var</span> xhr = _super(),</code></div></div><div class="container"><div class="line"><code>      getAllResponseHeaders = xhr.getAllResponseHeaders;</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    xhr.getAllResponseHeaders = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>      <span class="keyword">var</span> allHeaders = <span class="string">""</span>;</code></div></div><div class="container"><div class="line"><code>      <span class="keyword">try</span> {</code></div></div><div class="container"><div class="line"><code>        allHeaders = getAllResponseHeaders.apply( xhr );</code></div></div><div class="container"><div class="line"><code>        <span class="keyword">if</span> ( allHeaders ) {</code></div></div><div class="container"><div class="line"><code>          <span class="keyword">return</span> allHeaders;</code></div></div><div class="container"><div class="line"><code>        }</code></div></div><div class="container"><div class="line"><code>      } <span class="keyword">catch</span> ( e ) {</code></div></div><div class="container"><div class="line"><code>      }</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>      $.each( xhrCorsHeaders, <span class="function"><span class="keyword">function</span> <span class="params">( i, headerName )</span> {</span></code></div></div><div class="container"><div class="line"><code>        <span class="keyword">if</span> ( xhr.getResponseHeader( headerName ) ) {</code></div></div><div class="container"><div class="line"><code>          allHeaders += headerName + <span class="string">": "</span> + xhr.getResponseHeader( headerName ) + <span class="string">"\n"</span>;</code></div></div><div class="container"><div class="line"><code>        }</code></div></div><div class="container"><div class="line"><code>      });</code></div></div><div class="container"><div class="line"><code>      <span class="keyword">return</span> allHeaders;</code></div></div><div class="container"><div class="line"><code>    };</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>    <span class="keyword">return</span> xhr;</code></div></div><div class="container"><div class="line"><code>  };</code></div></div><div class="container"><div class="line"><code>})();</code></div></div></pre>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-
 
     <h4 id="extending-ajax">Extending Ajax</h4>
     <p><strong>As of jQuery 1.5</strong>, jQuery's Ajax implementation includes prefilters, transports, and converters that allow you to extend Ajax with a great deal of flexibility.</p>
@@ -639,7 +581,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajaxSetup({</code></div></div><div class="container"><div class="line"><code>  contents: {</code></div></div><div class="container"><div class="line"><code>    mycustomtype: <span class="regexp">/mycustomtype/</span></code></div></div><div class="container"><div class="line"><code>  },</code></div></div><div class="container"><div class="line"><code>  converters: {</code></div></div><div class="container"><div class="line"><code>    <span class="string">"mycustomtype json"</span>: <span class="function"><span class="keyword">function</span> <span class="params">( result )</span> {</span></code></div></div><div class="container"><div class="line"><code>      <span class="comment">// do stuff</span></code></div></div><div class="container"><div class="line"><code>      <span class="keyword">return</span> newresult;</code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajaxSetup({</code></div></div><div class="container"><div class="line"><code>  contents: {</code></div></div><div class="container"><div class="line"><code>    mycustomtype: <span class="regexp">/mycustomtype/</span></code></div></div><div class="container"><div class="line"><code>  },</code></div></div><div class="container"><div class="line"><code>  converters: {</code></div></div><div class="container"><div class="line"><code>    <span class="string">"mycustomtype json"</span>: <span class="keyword">function</span>( result ) {</code></div></div><div class="container"><div class="line"><code>      <span class="comment">// Do stuff</span></code></div></div><div class="container"><div class="line"><code>      <span class="keyword">return</span> newresult;</code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -680,7 +622,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajaxSetup({</code></div></div><div class="container"><div class="line"><code>  contents: {</code></div></div><div class="container"><div class="line"><code>    mycustomtype: <span class="regexp">/mycustomtype/</span></code></div></div><div class="container"><div class="line"><code>  },</code></div></div><div class="container"><div class="line"><code>  converters: {</code></div></div><div class="container"><div class="line"><code>    <span class="string">"text mycustomtype"</span>: <span class="literal">true</span>,</code></div></div><div class="container"><div class="line"><code>    <span class="string">"mycustomtype json"</span>: <span class="function"><span class="keyword">function</span> <span class="params">( result )</span> {</span></code></div></div><div class="container"><div class="line"><code>      <span class="comment">// do stuff</span></code></div></div><div class="container"><div class="line"><code>      <span class="keyword">return</span> newresult;</code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajaxSetup({</code></div></div><div class="container"><div class="line"><code>  contents: {</code></div></div><div class="container"><div class="line"><code>    mycustomtype: <span class="regexp">/mycustomtype/</span></code></div></div><div class="container"><div class="line"><code>  },</code></div></div><div class="container"><div class="line"><code>  converters: {</code></div></div><div class="container"><div class="line"><code>    <span class="string">"text mycustomtype"</span>: <span class="literal">true</span>,</code></div></div><div class="container"><div class="line"><code>    <span class="string">"mycustomtype json"</span>: <span class="keyword">function</span>( result ) {</code></div></div><div class="container"><div class="line"><code>      <span class="comment">// Do stuff</span></code></div></div><div class="container"><div class="line"><code>      <span class="keyword">return</span> newresult;</code></div></div><div class="container"><div class="line"><code>    }</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -721,9 +663,11 @@
 					
 						<div class="line n7">7</div>
 					
+						<div class="line n8">8</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajax({</code></div></div><div class="container"><div class="line"><code>  type: <span class="string">"POST"</span>,</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"some.php"</span>,</code></div></div><div class="container"><div class="line"><code>  data: { name: <span class="string">"John"</span>, location: <span class="string">"Boston"</span> }</code></div></div><div class="container"><div class="line"><code>}).done(<span class="keyword">function</span>( msg ) {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"Data Saved: "</span> + msg );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajax({</code></div></div><div class="container"><div class="line"><code>  type: <span class="string">"POST"</span>,</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"some.php"</span>,</code></div></div><div class="container"><div class="line"><code>  data: { name: <span class="string">"John"</span>, location: <span class="string">"Boston"</span> }</code></div></div><div class="container"><div class="line"><code>})</code></div></div><div class="container"><div class="line"><code>  .done(<span class="keyword">function</span>( msg ) {</code></div></div><div class="container"><div class="line"><code>    alert( <span class="string">"Data Saved: "</span> + msg );</code></div></div><div class="container"><div class="line"><code>  });</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -752,9 +696,11 @@
 					
 						<div class="line n6">6</div>
 					
+						<div class="line n7">7</div>
+					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajax({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"test.html"</span>,</code></div></div><div class="container"><div class="line"><code>  cache: <span class="literal">false</span></code></div></div><div class="container"><div class="line"><code>}).done(<span class="keyword">function</span>( html ) {</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"#results"</span>).append(html);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajax({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"test.html"</span>,</code></div></div><div class="container"><div class="line"><code>  cache: <span class="literal">false</span></code></div></div><div class="container"><div class="line"><code>})</code></div></div><div class="container"><div class="line"><code>  .done(<span class="keyword">function</span>( html ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"#results"</span> ).append( html );</code></div></div><div class="container"><div class="line"><code>  });</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -790,7 +736,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> xmlDocument = [create xml document];</code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> xmlRequest = $.ajax({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"page.php"</span>,</code></div></div><div class="container"><div class="line"><code>  processData: <span class="literal">false</span>,</code></div></div><div class="container"><div class="line"><code>  data: xmlDocument</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>xmlRequest.done(handleResponse);</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> xmlDocument = [create xml document];</code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> xmlRequest = $.ajax({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"page.php"</span>,</code></div></div><div class="container"><div class="line"><code>  processData: <span class="literal">false</span>,</code></div></div><div class="container"><div class="line"><code>  data: xmlDocument</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>xmlRequest.done( handleResponse );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -839,7 +785,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> menuId = $(<span class="string">"ul.nav"</span>).first().attr(<span class="string">"id"</span>);</code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> request = $.ajax({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"script.php"</span>,</code></div></div><div class="container"><div class="line"><code>  type: <span class="string">"POST"</span>,</code></div></div><div class="container"><div class="line"><code>  data: {id : menuId},</code></div></div><div class="container"><div class="line"><code>  dataType: <span class="string">"html"</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>request.done(<span class="keyword">function</span>(msg) {</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">"#log"</span>).html( msg );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>request.fail(<span class="keyword">function</span>(jqXHR, textStatus) {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"Request failed: "</span> + textStatus );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> menuId = $( <span class="string">"ul.nav"</span> ).first().attr( <span class="string">"id"</span> );</code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> request = $.ajax({</code></div></div><div class="container"><div class="line"><code>  url: <span class="string">"script.php"</span>,</code></div></div><div class="container"><div class="line"><code>  type: <span class="string">"POST"</span>,</code></div></div><div class="container"><div class="line"><code>  data: { id : menuId },</code></div></div><div class="container"><div class="line"><code>  dataType: <span class="string">"html"</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>request.done(<span class="keyword">function</span>( msg ) {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"#log"</span> ).html( msg );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>request.fail(<span class="keyword">function</span>( jqXHR, textStatus ) {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"Request failed: "</span> + textStatus );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

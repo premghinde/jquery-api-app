@@ -45,7 +45,7 @@
 </li>
 </ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>This method is a shortcut for <code>.on('resize', handler)</code> in the first and second variations, and <code>.trigger('resize')</code> in the third.</p>
+    <p>This method is a shortcut for <code>.on('resize', handler)</code> in the first and second variations, and <code>.trigger( "resize" )</code> in the third.</p>
     <p>The <code>resize</code> event is sent to the <code>window</code> element when the size of the browser window changes:</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
@@ -61,7 +61,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(window).resize(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">'#log'</span>).append(<span class="string">'&lt;div&gt;Handler for .resize() called.&lt;/div&gt;'</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( window ).resize(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"#log"</span> ).append( <span class="string">"&lt;div&gt;Handler for .resize() called.&lt;/div&gt;"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -87,7 +87,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(window).resize(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $(<span class="string">'body'</span>).prepend(<span class="string">'&lt;div&gt;'</span> + $(window).width() + <span class="string">'&lt;/div&gt;'</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( window ).resize(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">"body"</span> ).prepend( <span class="string">"&lt;div&gt;"</span> + $( window ).width() + <span class="string">"&lt;/div&gt;"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

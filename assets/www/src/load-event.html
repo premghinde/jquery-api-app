@@ -40,7 +40,7 @@
 </li>
 </ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>This method is a shortcut for <code>.on('load', handler)</code>.</p>
+    <p>This method is a shortcut for <code>.on( "load", handler )</code>.</p>
     <p>The <code>load</code> event is sent to an element when it and all sub-elements have been completely loaded. This event can be sent to any element associated with a URL: images, scripts, frames, iframes, and the <code>window</code> object.</p>
     <p>For example, consider a page with a simple image:</p>
     <div class="syntaxhighlighter xml nogutter">
@@ -53,7 +53,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"book.png"</span> <span class="attribute">alt</span>=<span class="value">"Book"</span> <span class="attribute">id</span>=<span class="value">"book"</span> /&gt;</span></code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"book.png"</span> <span class="attribute">alt</span>=<span class="value">"Book"</span> <span class="attribute">id</span>=<span class="value">"book"</span>&gt;</span></code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -75,7 +75,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'#book'</span>).load(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Handler for .load() called.</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#book"</span> ).load(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Handler for .load() called.</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -121,7 +121,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(window).load(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span></code></div></div><div class="container"><div class="line"><code>  <span class="comment">// run code</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( window ).load(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// Run code</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -130,7 +130,7 @@
 
 </div>
 <div class="entry-example" id="example-1">
-<h4>Example: <span class="desc">Add the class bigImg to all images with height greater then 100 upon each image load.</span>
+<h4>Example: <span class="desc">Add the class bigImg to all images with height greater than 100 upon each image load.</span>
 </h4>
 <div class="syntaxhighlighter javascript ">
 	<table>
@@ -150,7 +150,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$(<span class="string">'img.userIcon'</span>).load(<span class="keyword">function</span>(){</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span>($(<span class="keyword">this</span>).height() &gt; <span class="number">100</span>) {</code></div></div><div class="container"><div class="line"><code>    $(<span class="keyword">this</span>).addClass(<span class="string">'bigImg'</span>);</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"img.userIcon"</span> ).load(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( $( <span class="keyword">this</span> ).height() &gt; <span class="number">100</span>) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="keyword">this</span> ).addClass( <span class="string">"bigImg"</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
