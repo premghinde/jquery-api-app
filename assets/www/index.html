@@ -5,19 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <title>jQuery API Documentation</title>
 
-<link rel="stylesheet" href="c/jquery.mobile-1.2.0.min.css" />
+<link rel="stylesheet" href="c/jquery.mobile-1.4.0.min.css" />
 
 <style>
 
 .gutter {
 	display: none;
-}
-
-#panel2 li p {
-	margin: 0 40px 8px 14px;
-	/*color: #666;*/
-	font-size: 0.9em;
-	white-space: normal;
 }
 
 .ui-btn-text {
@@ -32,72 +25,38 @@
 </style>
 
 <script src="j/jquery.min.js"></script>
-<script src="j/jquery.mobile-1.2.0.js"></script>
+<script src="j/jquery.mobile-1.4.0.min.js"></script>
 <script>
 
 $(function(){
 	"use strict";
 
-	var cache = '';
-
-	$('#showlist').click(function() {
-		if (!$('#panel2 .ui-listview').length) {
-			$.ajax({
-				url: 'list/listing.html',
-				dataType: 'html',
-				success: function (d) {
-					var listholder = $('#listcontents');
-					listholder.html(d);
-					listholder.find('ul').listview(); 
-					$('#showlist').click(); 
-				}
-			});
-		}
-	});
+	if (!$('#panel2 .ui-listview').length) {
+		$.ajax({
+			url: 'list/listing.html',
+			dataType: 'html',
+			success: function (d) {
+				var listholder = $('#listcontents');
+				listholder.html(d);
+				listholder.find('ul').listview();
+			}
+		});
+	}
 	
 	$('#panel2').on('click', 'li', function(e) {
-		var linky = $(this).find('a'),
-			desc = '';
-
-		if (linky.next().is('p')) {
+		$.get($(this).find('a').attr('rel'), function (d) {
 			$('#panel3 h1:first')
-				.text(cache.find('span.name:first').text());
+				.text($(d).find('span.name:first').text());
 			$('#doccontents')
-				.html(cache);
-		} else {
-			$.get(linky.attr('rel'), function (d) {
-				cache = $(d);
-				desc = cache.find('.desc:first');
-				$('<p>', {
-					html: desc.html()
-				})
-					.insertAfter(linky)
-					.find('strong')
-					.remove();
-			});
-			return false;
-		}
+				.html($(d));
+		});
 	});
 
-	$('#showlist').click(); 
 });
 </script>
 
 </head>
 <body>
-<div id="contents" data-role="page">
-	<div data-role="header">
-		<h1></h1>
-	</div><!-- /header -->
-
-	<div data-role="content">
-		<h1>jQuery API Documentation</h1>
-		<h2>Version 1.9</h2>
-		<p>Please use the <a href="#panel2" id="showlist">entry list</a> to navigate to the document your require.</p>
-		<p>If you find this app useful please <a href="https://play.google.com/store/apps/details?id=com.nearlydone.jqueryapi" target="_blank">rate this app</a> in the Play store.</p>
-	</div>
-	
-</div>
 <div id="panel2" data-role="page">
 	<div data-role="header">
 		<h1>Entry List</h1>
