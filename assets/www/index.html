@@ -5,10 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <title>jQuery API Documentation</title>
 
-<link rel="stylesheet" href="c/jquery.mobile-1.4.0.min.css" />
 
 <style>
-
+@font-face {
+	font-family: "Roboto";
+	src: url("font/Roboto-Light.ttf");
+}
 .gutter {
 	display: none;
 }
@@ -22,12 +24,16 @@
 	display: none;
 }
 
+code {
+	white-space: normal;
+}
+
 </style>
+<link rel="stylesheet" href="c/jquery.mobile-1.4.0.min.css" />
 
 <script src="j/jquery.min.js"></script>
 <script src="j/jquery.mobile-1.4.0.min.js"></script>
 <script>
-
 $(function(){
 	"use strict";
 
@@ -39,6 +45,7 @@ $(function(){
 				var listholder = $('#listcontents');
 				listholder.html(d);
 				listholder.find('ul').listview();
+				navigator.splashscreen.hide();
 			}
 		});
 	}

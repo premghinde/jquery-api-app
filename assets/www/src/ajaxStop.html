@@ -60,7 +60,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">".log"</span> ).ajaxStop(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="keyword">this</span> ).text( <span class="string">"Triggered ajaxStop handler."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ajaxStop(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxStop handler."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
