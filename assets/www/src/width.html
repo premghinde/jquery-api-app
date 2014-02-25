@@ -20,7 +20,7 @@
 </li>
 </ul>
 </div><h2 class="section-title">
-<span class="name">.width()</span><span class="returns">Returns: Integer</span>
+<span class="name">.width()</span><span class="returns">Returns: Number</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Get the current computed width for the first element in the set of matched elements.</p>
 <ul class="signatures"><li class="signature">
@@ -61,6 +61,10 @@
 
       <p>Note that <code>.width()</code> will always return the content width, regardless of the value of the CSS <code>box-sizing</code> property. As of jQuery 1.8, this may require retrieving the CSS width plus <code>box-sizing</code> property and then subtracting any potential border and padding on each element when the element has <code>box-sizing: border-box</code>. To avoid this penalty, use <code>.css( "width" )</code> rather than <code>.width()</code>.</p>
     </div>
+<h3>Additional Notes:</h3>
+<div class="longdesc"><ul><li>
+			The numbers returned by dimensions-related APIs, including <code>.width()</code>, may be fractional in some cases. Code should not assume it is an integer. Also, dimensions may be incorrect when the page is zoomed by the user; browsers do not expose an API to detect this condition.
+		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Show various widths.  Note the values are from the iframe so might be smaller than you expected.  The yellow highlight shows the iframe body.</span></h4>
 <div class="syntaxhighlighter xml ">

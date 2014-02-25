@@ -144,6 +144,10 @@
     <p>If there is more than one target element, however, cloned copies of the inserted element will be created for each target after the first, and that new set (the original element plus clones) is returned.</p>
     <p><strong>Before jQuery 1.9,</strong> the append-to-single-element case did not create a new set, but instead returned the original set which made it difficult to use the <code>.end()</code> method reliably when being used with an unknown number of elements.</p>
   </div>
+<h3>Additional Notes:</h3>
+<div class="longdesc"><ul><li>
+			By design, any jQuery constructor or method that accepts an HTML string — jQuery(), .append(), .after(), etc. — can potentially execute code. This can occur by injection of script tags or use of HTML attributes that execute code (for example, <code>&lt;img onload=""&gt;</code>). Do not use these methods to insert strings obtained from untrusted sources such as URL query parameters, cookies, or form inputs. Doing so can introduce cross-site-scripting (XSS) vulnerabilities. Remove or escape any user input before adding content to the document.
+		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Insert all paragraphs before an element with id of "foo". Same as $( "#foo" ).before( "p" )</span></h4>
 <div class="syntaxhighlighter xml ">

@@ -24,6 +24,10 @@
       <p><strong>Note:</strong> jQuery does not support getting the position coordinates of hidden elements or accounting for borders, margins, or padding set on the body element.</p>
     </div>
   </div>
+<h3>Additional Notes:</h3>
+<div class="longdesc"><ul><li>
+			The numbers returned by dimensions-related APIs, including <code>.position()</code>, may be fractional in some cases. Code should not assume it is an integer. Also, dimensions may be incorrect when the page is zoomed by the user; browsers do not expose an API to detect this condition.
+		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Access the position of the second paragraph:</span></h4>
 <div class="syntaxhighlighter xml ">

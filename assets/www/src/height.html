@@ -20,7 +20,7 @@
 </li>
 </ul>
 </div><h2 class="section-title">
-<span class="name">.height()</span><span class="returns">Returns: Integer</span>
+<span class="name">.height()</span><span class="returns">Returns: Number</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Get the current computed height for the first element in the set of matched elements.</p>
 <ul class="signatures"><li class="signature">
@@ -58,6 +58,10 @@
         <p><strong>Note:</strong> Although <code>style</code> and <code>script</code> tags will report a value for <code>.width()</code> or <code>height()</code> when absolutely positioned and given <code>display:block</code>, it is strongly discouraged to call those methods on these tags. In addition to being a bad practice, the results may also prove unreliable.</p>
       </div>
     </div>
+<h3>Additional Notes:</h3>
+<div class="longdesc"><ul><li>
+			The numbers returned by dimensions-related APIs, including <code>.height()</code>, may be fractional in some cases. Code should not assume it is an integer. Also, dimensions may be incorrect when the page is zoomed by the user; browsers do not expose an API to detect this condition.
+		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Show various heights.  Note the values are from the iframe so might be smaller than you expected.  The yellow highlight shows the iframe body.</span></h4>
 <div class="syntaxhighlighter xml ">

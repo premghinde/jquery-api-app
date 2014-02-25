@@ -36,6 +36,10 @@
         <p>While it is possible to get the coordinates of elements with <code>visibility:hidden</code> set, <code>display:none</code> is excluded from the rendering tree and thus has a position that is undefined.</p>
       </div>
     </div>
+<h3>Additional Notes:</h3>
+<div class="longdesc"><ul><li>
+			The numbers returned by dimensions-related APIs, including <code>.offset()</code>, may be fractional in some cases. Code should not assume it is an integer. Also, dimensions may be incorrect when the page is zoomed by the user; browsers do not expose an API to detect this condition.
+		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
 <h4>Example: <span class="desc">Access the offset of the second paragraph:</span>
 </h4>
@@ -233,7 +237,7 @@
 <ul><li>
 <div><strong>coordinates</strong></div>
 <div>Type: PlainObject</div>
-<div>An object containing the properties <code>top</code> and <code>left</code>, which are integers indicating the new top and left coordinates for the elements.</div>
+<div>An object containing the properties <code>top</code> and <code>left</code>, which are numbers indicating the new top and left coordinates for the elements.</div>
 </li></ul>
 </li>
 <li class="signature">
