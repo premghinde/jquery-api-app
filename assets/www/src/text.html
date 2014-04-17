@@ -13,8 +13,8 @@
 <ul class="toc-list">
 <li>.text()<ul><li>.text()</li></ul>
 </li>
-<li>.text( textString )<ul>
-<li>.text( textString )</li>
+<li>.text( text )<ul>
+<li>.text( text )</li>
 <li>.text( function(index, text) )</li>
 </ul>
 </li>
@@ -143,17 +143,17 @@
 <div class="demo code-demo"></div>
 </div></section>
 </div><h2 class="section-title">
-<span class="name">.text( textString )</span><span class="returns">Returns: jQuery</span>
+<span class="name">.text( text )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Set the content of each element in the set of matched elements to the specified text.</p>
 <ul class="signatures">
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.0</span>.text( textString )</h4>
+<span class="version-details">version added: 1.0</span>.text( text )</h4>
 <ul><li>
-<div><strong>textString</strong></div>
-<div>Type: String</div>
-<div>A string of text to set as the content of each matched element.</div>
+<div><strong>text</strong></div>
+<div>Type: String or Number or Boolean</div>
+<div>The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.</div>
 </li></ul>
 </li>
 <li class="signature">
