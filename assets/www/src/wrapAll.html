@@ -12,7 +12,8 @@
 <span class="name">.wrapAll( wrappingElement )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Wrap an HTML structure around all elements in the set of matched elements.</p>
-<ul class="signatures"><li class="signature">
+<ul class="signatures">
+<li class="signature">
 <h4 class="name">
 <span class="version-details">version added: 1.2</span>.wrapAll( wrappingElement )</h4>
 <ul><li>
@@ -20,7 +21,19 @@
 <div>Type: Selector or htmlString or Element or jQuery</div>
 <div>A selector, element, HTML string, or jQuery object specifying the structure to wrap around the matched elements.</div>
 </li></ul>
+</li>
+<li class="signature">
+<h4 class="name">
+<span class="version-details">version added: 1.4</span>.wrapAll( function )</h4>
+<ul><li>
+<div><strong>function</strong></div>
+<div>Type: Function( Integer index )
+			=&gt;
+			String</div>
+<div>A function that returns a structure to wrap around the matched elements. Receives the index position of the element in the set as an argument. Within the function, <code>this</code> refers to the current element in the set.</div>
 </li></ul>
+</li>
+</ul>
 <div class="longdesc" id="entry-longdesc">
     <p>The <code>.wrapAll()</code> function can take any string or object that could be passed to the <code>$()</code> function to specify a DOM structure. This structure may be nested several levels deep, but should contain only one inmost element. The structure will be wrapped around all of the elements in the set of matched elements, as a single group.</p>
     <p>Consider the following HTML:</p>

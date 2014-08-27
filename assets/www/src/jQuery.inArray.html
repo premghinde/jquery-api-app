@@ -35,7 +35,25 @@
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
     <p>The <code>$.inArray()</code> method is similar to JavaScript's native <code>.indexOf()</code> method in that it returns -1 when it doesn't find a match. If the first element within the array matches <code>value</code>, <code>$.inArray()</code> returns 0.</p>
-    <p>Because JavaScript treats 0 as loosely equal to false (i.e. 0 == false, but 0 !== false), if we're checking for the presence of <code>value</code> within <code>array</code>, we need to check if it's not equal to (or greater than) -1.</p>
+    <p>Because JavaScript treats 0 as loosely equal to false (i.e. 0 == false, but 0 !== false), to check for the presence of <code>value</code> within <code>array</code>, you need to check if it's not equal to (or greater than) -1.</p>
+    <p>The comparison between values is strict. The following will return <code>-1</code> (not found) because a number is being searched in an array of strings:</p>
+    <div class="syntaxhighlighter javascript nogutter">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>$.inArray( <span class="number">5</span> + <span class="number">5</span>, [ <span class="string">"8"</span>, <span class="string">"9"</span>, <span class="string">"10"</span>, <span class="number">10</span> + <span class="string">""</span> ] );</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
   </div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Report the index of some elements in the array.</span></h4>

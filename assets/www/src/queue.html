@@ -15,7 +15,7 @@
 </li>
 <li>.queue(  [queueName ], newQueue )<ul>
 <li>.queue(  [queueName ], newQueue )</li>
-<li>.queue(  [queueName ], callback( next ) )</li>
+<li>.queue(  [queueName ], callback )</li>
 </ul>
 </li>
 </ul>
@@ -189,7 +189,7 @@
 </li>
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.2</span>.queue(  [queueName ], callback( next ) )</h4>
+<span class="version-details">version added: 1.2</span>.queue(  [queueName ], callback )</h4>
 <ul>
 <li>
 <div><strong>queueName</strong></div>
@@ -197,8 +197,8 @@
 <div>A string containing the name of the queue. Defaults to <code>fx</code>, the standard effects queue.</div>
 </li>
 <li>
-<div><strong>callback( next )</strong></div>
-<div>Type: Function()</div>
+<div><strong>callback</strong></div>
+<div>Type: Function( Function next() )</div>
 <div>The new function to add to the queue, with a function to call that will dequeue the next item.</div>
 </li>
 </ul>

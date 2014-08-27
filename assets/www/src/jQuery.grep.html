@@ -9,12 +9,12 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">jQuery.grep( array, function(elementOfArray, indexInArray) [, invert ] )</span><span class="returns">Returns: Array</span>
+<span class="name">jQuery.grep( array, function [, invert ] )</span><span class="returns">Returns: Array</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Finds the elements of an array which satisfy a filter function. The original array is not affected.</p>
 <ul class="signatures"><li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.0</span>jQuery.grep( array, function(elementOfArray, indexInArray) [, invert ] )</h4>
+<span class="version-details">version added: 1.0</span>jQuery.grep( array, function [, invert ] )</h4>
 <ul>
 <li>
 <div><strong>array</strong></div>
@@ -22,8 +22,10 @@
 <div>The array to search through.</div>
 </li>
 <li>
-<div><strong>function(elementOfArray, indexInArray)</strong></div>
-<div>Type: Function()</div>
+<div><strong>function</strong></div>
+<div>Type: Function( Object elementOfArray, Integer indexInArray )
+			=&gt;
+			Boolean</div>
 <div>The function to process each item against.  The first argument to the function is the item, and the second argument is the index.  The function should return a Boolean value.  <code>this</code> will be the global window object.</div>
 </li>
 <li>

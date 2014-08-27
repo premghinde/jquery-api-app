@@ -15,7 +15,7 @@
 </li>
 <li>.height( value )<ul>
 <li>.height( value )</li>
-<li>.height( function(index, height) )</li>
+<li>.height( function )</li>
 </ul>
 </li>
 </ul>
@@ -208,10 +208,12 @@
 </li>
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.4.1</span>.height( function(index, height) )</h4>
+<span class="version-details">version added: 1.4.1</span>.height( function )</h4>
 <ul><li>
-<div><strong>function(index, height)</strong></div>
-<div>Type: Function()</div>
+<div><strong>function</strong></div>
+<div>Type: Function( Integer index, Integer height )
+			=&gt;
+			String or Number</div>
 <div>A function returning the height to set. Receives the index position of the element in the set and the old height as arguments. Within the function, <code>this</code> refers to the current element in the set.</div>
 </li></ul>
 </li>

@@ -9,13 +9,13 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">.off( events [, selector ] [, handler(eventObject) ] )</span><span class="returns">Returns: jQuery</span>
+<span class="name">.off( events [, selector ] [, handler ] )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Remove an event handler.</p>
 <ul class="signatures">
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.7</span>.off( events [, selector ] [, handler(eventObject) ] )</h4>
+<span class="version-details">version added: 1.7</span>.off( events [, selector ] [, handler ] )</h4>
 <ul>
 <li>
 <div><strong>events</strong></div>
@@ -28,8 +28,8 @@
 <div>A selector which should match the one originally passed to <code>.on()</code> when attaching event handlers.</div>
 </li>
 <li>
-<div><strong>handler(eventObject)</strong></div>
-<div>Type: Function()</div>
+<div><strong>handler</strong></div>
+<div>Type: Function( Event eventObject )</div>
 <div>A handler function previously attached for the event(s), or the special value <code>false</code>.</div>
 </li>
 </ul>

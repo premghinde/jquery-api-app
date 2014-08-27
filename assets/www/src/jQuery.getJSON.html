@@ -9,12 +9,12 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">jQuery.getJSON( url [, data ] [, success( data, textStatus, jqXHR ) ] )</span><span class="returns">Returns: jqXHR</span>
+<span class="name">jQuery.getJSON( url [, data ] [, success ] )</span><span class="returns">Returns: jqXHR</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Load JSON-encoded data from the server using a GET HTTP request.</p>
 <ul class="signatures"><li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.0</span>jQuery.getJSON( url [, data ] [, success( data, textStatus, jqXHR ) ] )</h4>
+<span class="version-details">version added: 1.0</span>jQuery.getJSON( url [, data ] [, success ] )</h4>
 <ul>
 <li>
 <div><strong>url</strong></div>
@@ -27,8 +27,8 @@
 <div>A plain object or string that is sent to the server with the request.</div>
 </li>
 <li>
-<div><strong>success( data, textStatus, jqXHR )</strong></div>
-<div>Type: Function()</div>
+<div><strong>success</strong></div>
+<div>Type: Function( PlainObject data, String textStatus, jqXHR jqXHR )</div>
 <div>A callback function that is executed if the request succeeds.</div>
 </li>
 </ul>

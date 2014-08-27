@@ -9,25 +9,43 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">jQuery.each( collection, callback(indexInArray, valueOfElement) )</span><span class="returns">Returns: Object</span>
+<span class="name">jQuery.each( array, callback )</span><span class="returns">Returns: Object</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length property (such as a function's arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties.</p>
-<ul class="signatures"><li class="signature">
+<ul class="signatures">
+<li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.0</span>jQuery.each( collection, callback(indexInArray, valueOfElement) )</h4>
+<span class="version-details">version added: 1.0</span>jQuery.each( array, callback )</h4>
 <ul>
 <li>
-<div><strong>collection</strong></div>
-<div>Type: Object</div>
-<div>The object or array to iterate over.</div>
+<div><strong>array</strong></div>
+<div>Type: Array</div>
+<div>The array to iterate over.</div>
 </li>
 <li>
-<div><strong>callback(indexInArray, valueOfElement)</strong></div>
-<div>Type: Function()</div>
+<div><strong>callback</strong></div>
+<div>Type: Function( Integer indexInArray, Object value )</div>
 <div>The function that will be executed on every object.</div>
 </li>
 </ul>
-</li></ul>
+</li>
+<li class="signature">
+<h4 class="name">
+<span class="version-details">version added: 1.0</span>jQuery.each( object, callback )</h4>
+<ul>
+<li>
+<div><strong>object</strong></div>
+<div>Type: Object</div>
+<div>The object to iterate over.</div>
+</li>
+<li>
+<div><strong>callback</strong></div>
+<div>Type: Function( String propertyName, Object valueOfProperty )</div>
+<div>The function that will be executed on every object.</div>
+</li>
+</ul>
+</li>
+</ul>
 <div class="longdesc" id="entry-longdesc">
     <p>The <code>$.each()</code> function is not the same as $(selector).each(), which is used to iterate, exclusively, over a jQuery object. The <code>$.each()</code> function can be used to iterate over any collection, whether it is an object or an array. In the case of an array, the callback is passed an array index and a corresponding array value each time. (The value can also be accessed through the <code>this</code> keyword, but Javascript will always wrap the <code>this</code> value as an <code>Object</code> even if it is a simple string or number value.) The method returns its first argument, the object that was iterated.</p>
     <div class="syntaxhighlighter javascript nogutter">

@@ -193,9 +193,14 @@
     <p>The <code>.replaceWith()</code> method, like most jQuery methods, returns the jQuery object so that other methods can be chained onto it. However, it must be noted that the <em>original</em> jQuery object is returned. This object refers to the element that has been removed from the DOM, not the new element that has replaced it.</p>
   </div>
 <h3>Additional Notes:</h3>
-<div class="longdesc"><ul><li>
+<div class="longdesc"><ul>
+<li>
+			The <code>.replaceWith()</code> method removes all data and event handlers associated with the removed nodes.
+		</li>
+<li>
 			Prior to jQuery 1.9, <code>.replaceWith()</code> would attempt to add or change nodes in the current jQuery set if the first node in the set was not connected to a document, and in those cases return a new jQuery set rather than the original set. The method might or might not have returned a new result depending on the number or connectedness of its arguments! As of jQuery 1.9, <code>.after()</code>, <code>.before()</code>, and <code>.replaceWith()</code> always return the original unmodified set. Attempting to use these methods on a node without a parent has no effect—that is, neither the set nor the nodes it contains are changed.
-		</li></ul></div>
+		</li>
+</ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
 <h4>Example: <span class="desc">On click, replace the button with a div containing the same word.</span>
 </h4>

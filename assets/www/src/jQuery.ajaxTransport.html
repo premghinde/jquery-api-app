@@ -9,12 +9,12 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">jQuery.ajaxTransport( dataType, handler(options, originalOptions, jqXHR) )</span><span class="returns">Returns: undefined</span>
+<span class="name">jQuery.ajaxTransport( dataType, handler )</span><span class="returns">Returns: undefined</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Creates an object that handles the actual transmission of Ajax data.</p>
 <ul class="signatures"><li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.5</span>jQuery.ajaxTransport( dataType, handler(options, originalOptions, jqXHR) )</h4>
+<span class="version-details">version added: 1.5</span>jQuery.ajaxTransport( dataType, handler )</h4>
 <ul>
 <li>
 <div><strong>dataType</strong></div>
@@ -22,8 +22,8 @@
 <div>A string identifying the data type to use</div>
 </li>
 <li>
-<div><strong>handler(options, originalOptions, jqXHR)</strong></div>
-<div>Type: Function()</div>
+<div><strong>handler</strong></div>
+<div>Type: Function( PlainObject options, PlainObject originalOptions, jqXHR jqXHR )</div>
 <div>A handler to return the new transport object to use with the data type provided in the first argument.</div>
 </li>
 </ul>
@@ -64,7 +64,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$.ajaxTransport(<span class="keyword">function</span>( options, originalOptions, jqXHR ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span>( <span class="comment">/* transportCanHandleRequest */</span> ) {</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">return</span> {</code></div></div><div class="container"><div class="line"><code>      send: <span class="keyword">function</span>( headers, completeCallback ) {</code></div></div><div class="container"><div class="line"><code>        <span class="comment">// Send code</span></code></div></div><div class="container"><div class="line"><code>      },</code></div></div><div class="container"><div class="line"><code>      abort: <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>        <span class="comment">// Abort code</span></code></div></div><div class="container"><div class="line"><code>      }</code></div></div><div class="container"><div class="line"><code>    };</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$.ajaxTransport( dataType, <span class="keyword">function</span>( options, originalOptions, jqXHR ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span>( <span class="comment">/* transportCanHandleRequest */</span> ) {</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">return</span> {</code></div></div><div class="container"><div class="line"><code>      send: <span class="keyword">function</span>( headers, completeCallback ) {</code></div></div><div class="container"><div class="line"><code>        <span class="comment">// Send code</span></code></div></div><div class="container"><div class="line"><code>      },</code></div></div><div class="container"><div class="line"><code>      abort: <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>        <span class="comment">// Abort code</span></code></div></div><div class="container"><div class="line"><code>      }</code></div></div><div class="container"><div class="line"><code>    };</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

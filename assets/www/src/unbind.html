@@ -9,13 +9,13 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">.unbind( eventType [, handler(eventObject) ] )</span><span class="returns">Returns: jQuery</span>
+<span class="name">.unbind( eventType [, handler ] )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Remove a previously-attached event handler from the elements.</p>
 <ul class="signatures">
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.0</span>.unbind( eventType [, handler(eventObject) ] )</h4>
+<span class="version-details">version added: 1.0</span>.unbind( eventType [, handler ] )</h4>
 <ul>
 <li>
 <div><strong>eventType</strong></div>
@@ -23,8 +23,8 @@
 <div>A string containing a JavaScript event type, such as <code>click</code> or <code>submit</code>.</div>
 </li>
 <li>
-<div><strong>handler(eventObject)</strong></div>
-<div>Type: Function()</div>
+<div><strong>handler</strong></div>
+<div>Type: Function( Event eventObject )</div>
 <div>The function that is to be no longer executed.</div>
 </li>
 </ul>

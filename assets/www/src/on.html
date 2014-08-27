@@ -9,13 +9,13 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">.on( events [, selector ] [, data ], handler(eventObject) )</span><span class="returns">Returns: jQuery</span>
+<span class="name">.on( events [, selector ] [, data ], handler )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Attach an event handler function for one or more events to the selected elements.</p>
 <ul class="signatures">
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.7</span>.on( events [, selector ] [, data ], handler(eventObject) )</h4>
+<span class="version-details">version added: 1.7</span>.on( events [, selector ] [, data ], handler )</h4>
 <ul>
 <li>
 <div><strong>events</strong></div>
@@ -33,8 +33,8 @@
 <div>Data to be passed to the handler in <code>event.data</code> when an event is triggered.</div>
 </li>
 <li>
-<div><strong>handler(eventObject)</strong></div>
-<div>Type: Function()</div>
+<div><strong>handler</strong></div>
+<div>Type: Function( Event eventObject )</div>
 <div>A function to execute when the event is triggered. The value <code>false</code> is also allowed as a shorthand for a function that simply does <code>return false</code>.</div>
 </li>
 </ul>

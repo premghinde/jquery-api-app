@@ -9,13 +9,13 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">jQuery.map( array, callback( elementOfArray, indexInArray ) )</span><span class="returns">Returns: Array</span>
+<span class="name">jQuery.map( array, callback )</span><span class="returns">Returns: Array</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Translate all items in an array or object to new array of items.</p>
 <ul class="signatures">
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.0</span>jQuery.map( array, callback( elementOfArray, indexInArray ) )</h4>
+<span class="version-details">version added: 1.0</span>jQuery.map( array, callback )</h4>
 <ul>
 <li>
 <div><strong>array</strong></div>
@@ -23,25 +23,29 @@
 <div>The Array to translate.</div>
 </li>
 <li>
-<div><strong>callback( elementOfArray, indexInArray )</strong></div>
-<div>Type: Function()</div>
-<div>The function to process each item against.  The first argument to the function is the array item, the second argument is the index in array The function can return any value. Within the function, <code>this</code> refers to the global (window) object.</div>
+<div><strong>callback</strong></div>
+<div>Type: Function( Object elementOfArray, Integer indexInArray )
+			=&gt;
+			Object</div>
+<div>The function to process each item against.  The first argument to the function is the array item, the second argument is the index in array The function can return any value. A returned array will be flattened into the resulting array. Within the function, <code>this</code> refers to the global (window) object.</div>
 </li>
 </ul>
 </li>
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.6</span>jQuery.map( arrayOrObject, callback( value, indexOrKey ) )</h4>
+<span class="version-details">version added: 1.6</span>jQuery.map( object, callback )</h4>
 <ul>
 <li>
-<div><strong>arrayOrObject</strong></div>
-<div>Type: Array or Object</div>
-<div>The Array or Object to translate.</div>
+<div><strong>object</strong></div>
+<div>Type: Object</div>
+<div>The Object to translate.</div>
 </li>
 <li>
-<div><strong>callback( value, indexOrKey )</strong></div>
-<div>Type: Function()</div>
-<div>The function to process each item against.  The first argument to the function is the value; the second argument is the index or key of the array or object property. The function can return any value to add to the array. A returned array will be flattened into the resulting array. Within the function, <code>this</code> refers to the global (window) object. </div>
+<div><strong>callback</strong></div>
+<div>Type: Function( Object propertyOfObject, String key )
+			=&gt;
+			Object</div>
+<div>The function to process each item against.  The first argument to the function is the value; the second argument is the key of the object property. The function can return any value to add to the array. A returned array will be flattened into the resulting array. Within the function, <code>this</code> refers to the global (window) object. </div>
 </li>
 </ul>
 </li>

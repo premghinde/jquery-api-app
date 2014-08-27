@@ -18,34 +18,27 @@
 <span class="version-details">version added: 1.0</span>.not( selector )</h4>
 <ul><li>
 <div><strong>selector</strong></div>
-<div>Type: Selector</div>
-<div>A string containing a selector expression to match elements against.</div>
+<div>Type: Selector or Element or Array</div>
+<div>A string containing a selector expression, a DOM element, or an array of elements to match against the set.</div>
 </li></ul>
 </li>
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.0</span>.not( elements )</h4>
+<span class="version-details">version added: 1.4</span>.not( function )</h4>
 <ul><li>
-<div><strong>elements</strong></div>
-<div>Type: Elements</div>
-<div>One or more DOM elements to remove from the matched set.</div>
+<div><strong>function</strong></div>
+<div>Type: Function( Integer index, Element element )
+			=&gt;
+			Boolean</div>
+<div>A function used as a test for each element in the set. It accepts two arguments, <code>index</code>, which is the element's index in the jQuery collection, and <code>element</code>, which is the DOM element. Within the function, <code>this</code> refers to the current DOM element.</div>
 </li></ul>
 </li>
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.4</span>.not( function(index) )</h4>
+<span class="version-details">version added: 1.4</span>.not( selection )</h4>
 <ul><li>
-<div><strong>function(index)</strong></div>
-<div>Type: Function()</div>
-<div>A function used as a test for each element in the set. <code>this</code> is the current DOM element.</div>
-</li></ul>
-</li>
-<li class="signature">
-<h4 class="name">
-<span class="version-details">version added: 1.4</span>.not( jQuery object )</h4>
-<ul><li>
-<div><strong>jQuery object</strong></div>
-<div>Type: PlainObject</div>
+<div><strong>selection</strong></div>
+<div>Type: jQuery</div>
 <div>An existing jQuery object to match the current set of elements against.</div>
 </li></ul>
 </li>

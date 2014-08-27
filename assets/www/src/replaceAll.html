@@ -22,7 +22,7 @@
 </li></ul>
 </li></ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>The <code>.replaceAll()</code> method is corollary to <code>.replaceWith()</code>, but with the source and target reversed. Consider this DOM structure:</p>
+    <p>The <code>.replaceAll()</code> method is similar to <code>.replaceWith()</code>, but with the source and target reversed. Consider this DOM structure:</p>
     <div class="syntaxhighlighter xml nogutter">
 	<table>
 		<tbody>
@@ -136,6 +136,10 @@
 
     <p>From this example, we can see that the selected element replaces the target by being moved from its old location, not by being cloned.</p>
   </div>
+<h3>Additional Notes:</h3>
+<div class="longdesc"><ul><li>
+			The <code>.replaceAll()</code> method removes all data and event handlers associated with the removed nodes.
+		</li></ul></div>
 <section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
 <h4><span class="desc">Replace all the paragraphs with bold words.</span></h4>
 <div class="syntaxhighlighter xml ">

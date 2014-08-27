@@ -9,12 +9,12 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">jQuery.ajaxPrefilter(  [dataTypes ], handler(options, originalOptions, jqXHR) )</span><span class="returns">Returns: undefined</span>
+<span class="name">jQuery.ajaxPrefilter(  [dataTypes ], handler )</span><span class="returns">Returns: undefined</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Handle custom Ajax options or modify existing options before each request is sent and before they are processed by <code>$.ajax()</code>.</p>
 <ul class="signatures"><li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.5</span>jQuery.ajaxPrefilter(  [dataTypes ], handler(options, originalOptions, jqXHR) )</h4>
+<span class="version-details">version added: 1.5</span>jQuery.ajaxPrefilter(  [dataTypes ], handler )</h4>
 <ul>
 <li>
 <div><strong>dataTypes</strong></div>
@@ -22,8 +22,8 @@
 <div>An optional string containing one or more space-separated dataTypes</div>
 </li>
 <li>
-<div><strong>handler(options, originalOptions, jqXHR)</strong></div>
-<div>Type: Function()</div>
+<div><strong>handler</strong></div>
+<div>Type: Function( PlainObject options, PlainObject originalOptions, jqXHR jqXHR )</div>
 <div>A handler to set default values for future Ajax requests.</div>
 </li>
 </ul>

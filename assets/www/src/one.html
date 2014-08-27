@@ -9,13 +9,13 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">.one( events [, data ], handler(eventObject) )</span><span class="returns">Returns: jQuery</span>
+<span class="name">.one( events [, data ], handler )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Attach a handler to an event for the elements. The handler is executed at most once per element per event type.</p>
 <ul class="signatures">
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.1</span>.one( events [, data ], handler(eventObject) )</h4>
+<span class="version-details">version added: 1.1</span>.one( events [, data ], handler )</h4>
 <ul>
 <li>
 <div><strong>events</strong></div>
@@ -28,15 +28,15 @@
 <div>An object containing data that will be passed to the event handler.</div>
 </li>
 <li>
-<div><strong>handler(eventObject)</strong></div>
-<div>Type: Function()</div>
+<div><strong>handler</strong></div>
+<div>Type: Function( Event eventObject )</div>
 <div>A function to execute at the time the event is triggered.</div>
 </li>
 </ul>
 </li>
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.7</span>.one( events [, selector ] [, data ], handler(eventObject) )</h4>
+<span class="version-details">version added: 1.7</span>.one( events [, selector ] [, data ], handler )</h4>
 <ul>
 <li>
 <div><strong>events</strong></div>
@@ -54,8 +54,8 @@
 <div>Data to be passed to the handler in <code>event.data</code> when an event is triggered.</div>
 </li>
 <li>
-<div><strong>handler(eventObject)</strong></div>
-<div>Type: Function()</div>
+<div><strong>handler</strong></div>
+<div>Type: Function( Event eventObject )</div>
 <div>A function to execute when the event is triggered. The value <code>false</code> is also allowed as a shorthand for a function that simply does <code>return false</code>.</div>
 </li>
 </ul>
@@ -83,7 +83,7 @@
 </li>
 </ul>
 <div class="longdesc" id="entry-longdesc">
-    <p>The first form of this method is identical to <code>.bind()</code>, except that the handler is unbound after its first invocation. The second two forms, introduced in jQuery 1.7, are identical to <code>.on()</code> except that the handler is removed after the first time the event occurs at the delegated element, whether the selector matched anything or not. For example:</p>
+    <p>The  <code>.one()</code> method is identical to  <code>.on()</code>, except that the handler is unbound after its first invocation. For example:</p>
     <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -96,15 +96,9 @@
 					
 						<div class="line n3">3</div>
 					
-						<div class="line n4">4</div>
-					
-						<div class="line n5">5</div>
-					
-						<div class="line n6">6</div>
-					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).one( <span class="string">"click"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"This will be displayed only once."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code>$( <span class="string">"body"</span> ).one( <span class="string">"click"</span>, <span class="string">"#foo"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"This displays if #foo is the first thing clicked in the body."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">"#foo"</span> ).one( <span class="string">"click"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  alert( <span class="string">"This will be displayed only once."</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

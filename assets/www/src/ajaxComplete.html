@@ -9,15 +9,15 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">.ajaxComplete( handler(event, XMLHttpRequest, ajaxOptions) )</span><span class="returns">Returns: jQuery</span>
+<span class="name">.ajaxComplete( handler )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Register a handler to be called when Ajax requests complete. This is an AjaxEvent.</p>
 <ul class="signatures"><li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.0</span>.ajaxComplete( handler(event, XMLHttpRequest, ajaxOptions) )</h4>
+<span class="version-details">version added: 1.0</span>.ajaxComplete( handler )</h4>
 <ul><li>
-<div><strong>handler(event, XMLHttpRequest, ajaxOptions)</strong></div>
-<div>Type: Function()</div>
+<div><strong>handler</strong></div>
+<div>Type: Function( Event event, jqXHR jqXHR, PlainObject ajaxOptions )</div>
 <div>The function to be invoked.</div>
 </li></ul>
 </li></ul>
@@ -112,14 +112,14 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( document ).ajaxComplete(<span class="keyword">function</span>( event, xhr, settings ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( settings.url === <span class="string">"ajax/test.html"</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxComplete handler. The result is "</span> +</code></div></div><div class="container"><div class="line"><code>      xhr.responseHTML );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ajaxComplete(<span class="keyword">function</span>( event, xhr, settings ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( settings.url === <span class="string">"ajax/test.html"</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">".log"</span> ).text( <span class="string">"Triggered ajaxComplete handler. The result is "</span> +</code></div></div><div class="container"><div class="line"><code>      xhr.responseText );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
-    <p><strong>Note:</strong> You can get the returned ajax contents by looking at <code>xhr.responseXML</code> or <code>xhr.responseHTML</code> for xml and html respectively.</p>
+    <p><strong>Note:</strong> You can get the returned ajax contents by looking at <code>xhr.responseText</code>.</p>
   </div>
 <h3>Additional Notes:</h3>
 <div class="longdesc"><ul><li>

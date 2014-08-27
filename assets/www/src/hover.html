@@ -11,27 +11,27 @@
 	}</script>Bind one or two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.<div class="toc">
 <h4><span>Contents:</span></h4>
 <ul class="toc-list">
-<li>.hover( handlerIn(eventObject), handlerOut(eventObject) )<ul><li>.hover( handlerIn(eventObject), handlerOut(eventObject) )</li></ul>
+<li>.hover( handlerIn, handlerOut )<ul><li>.hover( handlerIn, handlerOut )</li></ul>
 </li>
-<li>.hover( handlerInOut(eventObject) )<ul><li>.hover( handlerInOut(eventObject) )</li></ul>
+<li>.hover( handlerInOut )<ul><li>.hover( handlerInOut )</li></ul>
 </li>
 </ul>
 </div><h2 class="section-title">
-<span class="name">.hover( handlerIn(eventObject), handlerOut(eventObject) )</span><span class="returns">Returns: jQuery</span>
+<span class="name">.hover( handlerIn, handlerOut )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Bind two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.</p>
 <ul class="signatures"><li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.0</span>.hover( handlerIn(eventObject), handlerOut(eventObject) )</h4>
+<span class="version-details">version added: 1.0</span>.hover( handlerIn, handlerOut )</h4>
 <ul>
 <li>
-<div><strong>handlerIn(eventObject)</strong></div>
-<div>Type: Function()</div>
+<div><strong>handlerIn</strong></div>
+<div>Type: Function( Event eventObject )</div>
 <div>A function to execute when the mouse pointer enters the element.</div>
 </li>
 <li>
-<div><strong>handlerOut(eventObject)</strong></div>
-<div>Type: Function()</div>
+<div><strong>handlerOut</strong></div>
+<div>Type: Function( Event eventObject )</div>
 <div>A function to execute when the mouse pointer leaves the element.</div>
 </li>
 </ul>
@@ -224,15 +224,15 @@
 
 </div></section>
 </div><h2 class="section-title">
-<span class="name">.hover( handlerInOut(eventObject) )</span><span class="returns">Returns: jQuery</span>
+<span class="name">.hover( handlerInOut )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Bind a single handler to the matched elements, to be executed when the mouse pointer enters or leaves the elements.</p>
 <ul class="signatures"><li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.4</span>.hover( handlerInOut(eventObject) )</h4>
+<span class="version-details">version added: 1.4</span>.hover( handlerInOut )</h4>
 <ul><li>
-<div><strong>handlerInOut(eventObject)</strong></div>
-<div>Type: Function()</div>
+<div><strong>handlerInOut</strong></div>
+<div>Type: Function( Event eventObject )</div>
 <div>A function to execute when the mouse pointer enters or leaves the element.</div>
 </li></ul>
 </li></ul>

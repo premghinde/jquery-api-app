@@ -15,7 +15,7 @@
 </li>
 <li>.html( htmlString )<ul>
 <li>.html( htmlString )</li>
-<li>.html( function(index, oldhtml) )</li>
+<li>.html( function )</li>
 </ul>
 </li>
 </ul>
@@ -214,10 +214,12 @@
 </li>
 <li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.4</span>.html( function(index, oldhtml) )</h4>
+<span class="version-details">version added: 1.4</span>.html( function )</h4>
 <ul><li>
-<div><strong>function(index, oldhtml)</strong></div>
-<div>Type: Function()</div>
+<div><strong>function</strong></div>
+<div>Type: Function( Integer index, htmlString oldhtml )
+			=&gt;
+			htmlString</div>
 <div>A function returning the HTML content to set. Receives the
           index position of the element in the set and the old HTML value as arguments.
           jQuery empties the element before calling the function;

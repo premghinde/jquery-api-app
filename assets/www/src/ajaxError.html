@@ -9,15 +9,15 @@
 			]
 		}
 	}</script><h2 class="section-title">
-<span class="name">.ajaxError( handler(event, jqXHR, ajaxSettings, thrownError) )</span><span class="returns">Returns: jQuery</span>
+<span class="name">.ajaxError( handler )</span><span class="returns">Returns: jQuery</span>
 </h2><div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Register a handler to be called when Ajax requests complete with an error. This is an Ajax Event.</p>
 <ul class="signatures"><li class="signature">
 <h4 class="name">
-<span class="version-details">version added: 1.0</span>.ajaxError( handler(event, jqXHR, ajaxSettings, thrownError) )</h4>
+<span class="version-details">version added: 1.0</span>.ajaxError( handler )</h4>
 <ul><li>
-<div><strong>handler(event, jqXHR, ajaxSettings, thrownError)</strong></div>
-<div>Type: Function()</div>
+<div><strong>handler</strong></div>
+<div>Type: Function( Event event, jqXHR jqXHR, PlainObject ajaxSettings, String thrownError )</div>
 <div>The function to be invoked.</div>
 </li></ul>
 </li></ul>
@@ -110,7 +110,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( document ).ajaxError(<span class="keyword">function</span>( event, jqxhr, settings, exception ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( settings.url == <span class="string">"ajax/missing.html"</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"div.log"</span> ).text( <span class="string">"Triggered ajaxError handler."</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( document ).ajaxError(<span class="keyword">function</span>( event, jqxhr, settings, thrownError ) {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">if</span> ( settings.url == <span class="string">"ajax/missing.html"</span> ) {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"div.log"</span> ).text( <span class="string">"Triggered ajaxError handler."</span> );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
